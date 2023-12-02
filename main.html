@@ -1,48 +1,67 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <div id="container"></div>
-    <script type="module">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Visualization</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .data-div {
+      flex: 1; /* Equal width for all divs in a row */
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .data-div:last-child {
+      margin-right: 0;
+    }
+
+    /* You can customize the styles for each data-div as needed */
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="data-div" id="div1">Div 1 - Your Data Here</div>
+      <div class="data-div" id="div2">Div 2 - Your Data Here</div>
+    </div>
     
-    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-    
-    // Declare the chart dimensions and margins.
-    const width = 640;
-    const height = 400;
-    const marginTop = 20;
-    const marginRight = 20;
-    const marginBottom = 30;
-    const marginLeft = 40;
-    
-    // Declare the x (horizontal position) scale.
-    const x = d3.scaleUtc()
-        .domain([new Date("2023-01-01"), new Date("2024-01-01")])
-        .range([marginLeft, width - marginRight]);
-    
-    // Declare the y (vertical position) scale.
-    const y = d3.scaleLinear()
-        .domain([0, 100])
-        .range([height - marginBottom, marginTop]);
-    
-    // Create the SVG container.
-    const svg = d3.create("svg")
-        .attr("width", width)
-        .attr("height", height);
-    
-    // Add the x-axis.
-    svg.append("g")
-        .attr("transform", `translate(0,${height - marginBottom})`)
-        .call(d3.axisBottom(x));
-    
-    // Add the y-axis.
-    svg.append("g")
-        .attr("transform", `translate(${marginLeft},0)`)
-        .call(d3.axisLeft(y));
-    
-    // Append the SVG element.
-    container.append(svg.node());
-    
-    </script>
-    </body>
-    
+    <div class="row">
+      <div class="data-div" id="div3">Div 3 - Your Data Here</div>
+      <div class="data-div" id="div4">Div 4 - Your Data Here</div>
+      <div class="data-div" id="div5">Div 5 - Your Data Here</div>
+    </div>
+  </div>
+
+  <script>
+    // You can add JavaScript code here for data visualization or interaction if needed
+  </script>
+
+</body>
 </html>
