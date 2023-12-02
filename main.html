@@ -6,13 +6,24 @@
   <title>Data Visualization</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="map.js" type="module"></script>
+  <script src="searchlist.js" type="module"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
 </head>
 <body>
 
   <div class="container">
     <div class="row">
       <div class="data-div" id="div1"><svg id="my_dataviz" width="800" height="500"></svg></div>
-      <div class="data-div" id="div2">Div 2 - Your Data Here</div>
+      <div class="data-div" id="div2">
+        <div class="search-bar">
+          <label for="searchInput">Search:</label>
+          <input type="text" id="myInput" onkeydown="searchTable(this)" placeholder="Search for names..">
+        </div>
+        <table id="data-table">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </div>
     
     <div class="row">
@@ -21,10 +32,4 @@
       <div class="data-div" id="div5">Div 5 - Your Data Here</div>
     </div>
   </div>
-
-  <script>
-    // You can add JavaScript code here for data visualization or interaction if needed
-  </script>
-
-</body>
 </html>

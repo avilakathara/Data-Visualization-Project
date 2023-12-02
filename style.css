@@ -1,36 +1,55 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
 
-  .container {
-    max-width: 1800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    overflow: hidden;
-  }
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-  }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
 
-  .data-div {
-    flex: 1; /* Equal width for all divs in a row */
-    margin-right: 20px;
-    margin-bottom: 20px;
-    background-color: #3498db;
-    color: #fff;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+.data-div {
+  flex: 1; /* Equal width for all divs in a row */
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
 
-  .data-div:last-child {
-    margin-right: 0;
-  }
+.data-div:last-child {
+  margin-right: 0;
+}
 
-  /* You can customize the styles for each data-div as needed */
+/* Additional styles for div2 */
+#div2 {
+  height: 500px; /* Set the height to match the desired height of div1 */
+  width: 50%; /* Set the width to 50% (adjust as needed) */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+.table-container {
+  height: 100%; /* Make the table container fill the height of div2 */
+}
+
+#data-table {
+  width: 100%; /* Make the table fill the container width */
+  border-collapse: collapse; /* Optional: remove borders between cells */
+}
+
+#data-table th, #data-table td {
+  border: 1px solid #ddd; /* Optional: add borders to table cells */
+  padding: 8px; /* Optional: add padding to table cells */
+}
