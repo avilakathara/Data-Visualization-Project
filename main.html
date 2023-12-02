@@ -4,51 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Visualization</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    .data-div {
-      flex: 1; /* Equal width for all divs in a row */
-      margin-right: 20px;
-      margin-bottom: 20px;
-      background-color: #3498db;
-      color: #fff;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .data-div:last-child {
-      margin-right: 0;
-    }
-
-    /* You can customize the styles for each data-div as needed */
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="map.js" type="module"></script>
 </head>
 <body>
 
   <div class="container">
     <div class="row">
-      <div class="data-div" id="div1">Div 1 - Your Data Here</div>
+      <div class="data-div" id="div1"><svg id="my_dataviz" width="800" height="500"></svg></div>
       <div class="data-div" id="div2">Div 2 - Your Data Here</div>
     </div>
     

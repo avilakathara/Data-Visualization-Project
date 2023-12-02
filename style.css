@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .data-div {
+    flex: 1; /* Equal width for all divs in a row */
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .data-div:last-child {
+    margin-right: 0;
+  }
+
+  /* You can customize the styles for each data-div as needed */
