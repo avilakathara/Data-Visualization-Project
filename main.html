@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,9 @@
   <script src="map.js" type="module"></script>
   <script src="searchlist.js" type="module"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
+  <script src="filter.js" defer></script>
 </head>
+
 <body>
 
   <div class="container">
@@ -25,11 +28,22 @@
         </table>
       </div>
     </div>
-    
+
     <div class="row">
-      <div class="data-div" id="div3">Div 3 - Your Data Here</div>
-      <div class="data-div" id="div4">Div 4 - Your Data Here</div>
-      <div class="data-div" id="div5">Div 5 - Your Data Here</div>
+      <div class="data-div" id="div3">
+        <h3>Filter Div 3</h3>
+        <div id="filterDiv3"></div>
+      </div>
+      <div class="data-div" id="div4">
+        <h3>Filter Div 4</h3>
+        <div id="filterDiv4"></div>
+      </div>
+      <div class="data-div" id="div5">
+        <h3>Comparison Div 5</h3>
+        <div id="comparisonDiv"></div>
+      </div>
     </div>
   </div>
+</body>
+
 </html>
