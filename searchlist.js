@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const headers = results.meta.fields;
             const data = results.data;
   
+            const tsearch = document.getElementById("myInput");
+            tsearch.addEventListener("keydown", (e) => searchTable(e))
             const thead = document.getElementById("data-table").getElementsByTagName("thead")[0];
             const tbody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
   
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
   function searchTable(event) {
     if (event.key === 'Enter') {
-      const input = document.getElementById("searchInput").value.toUpperCase();
+      const input = document.getElementById("myInput").value.toUpperCase();
       const table = document.getElementById("data-table");
       const rows = table.getElementsByTagName("tr");
   
