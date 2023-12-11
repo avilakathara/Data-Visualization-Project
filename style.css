@@ -20,7 +20,7 @@ body {
 }
 
 .data-div {
-  flex: 1; /* Equal width for all divs in a row */
+  flex: 1;
   margin-right: 20px;
   margin-bottom: 20px;
   background-color: #3498db;
@@ -33,23 +33,62 @@ body {
   margin-right: 0;
 }
 
-/* Additional styles for div2 */
 #div2 {
-  height: 500px; /* Set the height to match the desired height of div1 */
-  width: 50%; /* Set the width to 50% (adjust as needed) */
-  overflow-y: auto; /* Enable vertical scrolling if needed */
+  height: 300px;
+  width: 60%;
+  position: relative;
 }
 
-.table-container {
-  height: 100%; /* Make the table container fill the height of div2 */
+.search-bar {
+  margin-bottom: 10px;
 }
 
 #data-table {
-  width: 100%; /* Make the table fill the container width */
-  border-collapse: collapse; /* Optional: remove borders between cells */
+  width: 100%;
+  border-collapse: collapse;
 }
 
 #data-table th, #data-table td {
-  border: 1px solid #ddd; /* Optional: add borders to table cells */
-  padding: 8px; /* Optional: add padding to table cells */
+  padding: 8px;
+}
+
+#data-table thead {
+  text-align: left;
+}
+
+
+.table-container {
+  height: calc(100% - 40px); /* Subtract the height of the search bar from the container height */
+  overflow-y: auto;
+}
+
+#myInput {
+  padding: 5px;
+  box-sizing: border-box;
+  width: 20%;
+}
+
+/* Ensure that the table header stays fixed during scrolling */
+#data-table thead {
+  position: sticky;
+  top: 0;
+  background-color: #3498db;
+  color: #fff;
+}
+
+.arrow-icon {
+  display: none;
+  margin-left: 5px;
+}
+
+.sortable.selected .arrow-icon {
+  display: inline-block; /* Display the arrow when selected */
+}
+
+.arrow-up::before {
+  content: '\25B2'; /* Unicode character for upward arrow */
+}
+
+.arrow-down::before {
+  content: '\25BC'; /* Unicode character for downward arrow */
 }

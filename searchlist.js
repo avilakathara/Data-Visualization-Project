@@ -7,6 +7,27 @@ document.addEventListener("DOMContentLoaded", function () {
           header: true,
           skipEmptyLines: true,
           complete: function(results) {
+            const defaultHeaders = ["rank", "net worth", "category", "name", "age", "country", "city", "source"];
+
+            function createArrowIcon() {
+              const arrowIcon = document.createElement("span");
+              arrowIcon.classList.add("arrow-icon");
+              return arrowIcon;
+            }
+
+            function toggleArrow(th, isAscending) {
+              // Remove existing arrow classes from all headers
+              document.querySelectorAll('.sortable').forEach(header => {
+                header.classList.remove("arrow-up", "arrow-down", "selected");
+              });
+
+              // Add the appropriate arrow class based on the sorting order
+              if (isAscending) {
+                th.classList.add("arrow-up", "selected");
+              } else {
+                th.classList.add("arrow-down", "selected");
+              }
+            }
             const headers = results.meta.fields;
             const data = results.data;
   
@@ -19,22 +40,28 @@ document.addEventListener("DOMContentLoaded", function () {
             thead.innerHTML = "";
             tbody.innerHTML = "";
   
-            // Populate table headers
-            const headerRow = thead.insertRow();
-            headers.forEach(headerText => {
+            // Populate table headers with arrow icons
+            defaultHeaders.forEach(headerText => {
               const th = document.createElement("th");
               th.textContent = headerText;
               th.classList.add("sortable");
-              th.addEventListener("click", () => sortTable(headerText));
-              headerRow.appendChild(th);
+              th.appendChild(createArrowIcon()); // Add arrow icon to each header
+              th.addEventListener("click", function () {
+                toggleArrow(this, !this.classList.contains("arrow-up"));
+                // Call the sorting function
+                sortTable(headerText);
+              });
+              thead.appendChild(th);
             });
   
             // Populate table with data
             data.forEach(rowData => {
               const row = tbody.insertRow();
               headers.forEach(headerText => {
-                const cell = row.insertCell();
-                cell.textContent = rowData[headerText];
+                if(defaultHeaders.includes(headerText)) {
+                  const cell = row.insertCell();
+                  cell.textContent = rowData[headerText];
+                }
               });
             });
           },
@@ -46,6 +73,21 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(error => console.error("Error fetching CSV:", error));
   });
   
+  function removeColumn(headerToRemove) {
+    const headerIndex = headers.indexOf(headerToRemove);
+
+    if (headerIndex > -1) {
+      headers.splice(headerIndex, 1);
+
+      data.forEach(rowData => {
+        delete rowData[headerToRemove];
+      });
+
+      // Update the table with the modified data
+      updateTable();
+    }
+  }
+
   function searchTable(event) {
     if (event.key === 'Enter') {
       const input = document.getElementById("myInput").value.toUpperCase();
@@ -57,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let found = false;
   
         for (let j = 0; j < cells.length; j++) {
-          const cellText = cells[j].textContent.toUpperCase();
+          const cellText = cells[3].textContent.toUpperCase();
           if (cellText.includes(input)) {
             found = true;
             break;
@@ -75,11 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const headerIndex = Array.from(table.getElementsByTagName("th")).findIndex(th => th.textContent === headerText);
     const isNumeric = !isNaN(parseFloat(rows[1].cells[headerIndex].textContent));
   
-    // Extracting the header row from the array
-    const headerRow = rows.shift();
-  
     // Check if the current sorting order is ascending or descending
-    const currentOrder = table.getAttribute("data-sort-order") || 'asc';
+    const currentOrder = table.getAttribute("data-sort-order") || 'desc';
     const sortOrder = (currentOrder === 'asc') ? 'desc' : 'asc';
   
     // Update the data-sort-order attribute for the next click
@@ -95,10 +134,20 @@ document.addEventListener("DOMContentLoaded", function () {
       return (sortOrder === 'asc') ? comparison : -comparison;
     });
   
-    // Inserting the header row back to the beginning
-    rows.unshift(headerRow);
-  
     // Update the table with the sorted rows
     rows.forEach(row => table.appendChild(row));
+  }
+
+  // Function to toggle arrow icons
+  function toggleArrow(th, isAscending) {
+    // Remove existing arrow classes
+    th.classList.remove("arrow-up", "arrow-down");
+
+    // Add the appropriate arrow class based on the sorting order
+    if (isAscending) {
+      th.classList.add("arrow-up");
+    } else {
+      th.classList.add("arrow-down");
+    }
   }
   
