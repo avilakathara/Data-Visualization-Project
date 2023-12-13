@@ -92,3 +92,65 @@ body {
 .arrow-down::before {
   content: '\25BC'; /* Unicode character for downward arrow */
 }
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.flex-item {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#data-table-filter {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#data-table-filter th,
+#data-table-filter td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+#data-table-filter th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button {
+  padding: 8px;
+  margin-right: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Add this CSS for styling the dropdown container */
+.dropdown-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Add this CSS for styling the selected value display */
+.selected-value-display {
+  margin-left: 10px;
+  font-style: italic;
+  color: #555;
+}
