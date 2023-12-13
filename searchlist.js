@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const table = document.getElementById("data-table");
       const rows = table.getElementsByTagName("tr");
   
-      for (let i = 1; i < rows.length; i++) {
+      for (let i = 0; i < rows.length; i++) {
         const cells = rows[i].getElementsByTagName("td");
         let found = false;
   
