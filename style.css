@@ -132,6 +132,14 @@ body {
   color: white;
 }
 
+tr:hover {
+  background-color: #9faab4;
+}
+
+.selected {
+  background-color: #9faab4;
+}
+
 button {
   padding: 8px;
   margin-right: 10px;

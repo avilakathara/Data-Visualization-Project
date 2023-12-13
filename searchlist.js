@@ -1,3 +1,5 @@
+var selectedRows = [];
+
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch the CSV file
     fetch("data/Billionaires_Statistics_Dataset.csv")
@@ -18,14 +20,14 @@ document.addEventListener("DOMContentLoaded", function () {
             function toggleArrow(th, isAscending) {
               // Remove existing arrow classes from all headers
               document.querySelectorAll('.sortable').forEach(header => {
-                header.classList.remove("arrow-up", "arrow-down", "selected");
+                header.classList.remove("arrow-up", "arrow-down", "selectedheader");
               });
 
               // Add the appropriate arrow class based on the sorting order
               if (isAscending) {
-                th.classList.add("arrow-up", "selected");
+                th.classList.add("arrow-up", "selectedheader");
               } else {
-                th.classList.add("arrow-down", "selected");
+                th.classList.add("arrow-down", "selectedheader");
               }
             }
             const headers = results.meta.fields;
@@ -64,6 +66,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
             });
+
+            // Get the table element
+            var table = document.getElementById("data-table");
+            const rows = table.getElementsByTagName("tr");
+
+            // Add a click event listener to the table
+            for (let i = 0; i < rows.length; i++) {
+              rows[i].addEventListener("click", function(e) {
+                // Check if the clicked element is a checkbox with the class "row-checkbox"
+                console.log("clicked")
+  
+                // Toggle the "selected" class on the parent row
+                rows[i].classList.toggle("selected");
+  
+                // Get all selected rows
+                var selectedRows = table.querySelectorAll(".selected");
+  
+                // Compare values of the selected rows
+                if (selectedRows.length > 1) {
+                  console.log(selectedRows)
+                }
+              });
+            }
           },
           error: function(error) {
             console.error("Error parsing CSV:", error.message);
