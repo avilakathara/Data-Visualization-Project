@@ -1,0 +1,455 @@
+id,value
+category,
+category;Fashion & Retail,
+category;Fashion & Retail;France,338100
+category;Fashion & Retail;Spain,95800
+category;Fashion & Retail;United States,557600
+category;Fashion & Retail;Germany,144900
+category;Fashion & Retail;Japan,56200
+category;Fashion & Retail;Sweden,22700
+category;Fashion & Retail;India,37300
+category;Fashion & Retail;Italy,75400
+category;Fashion & Retail;South Africa,11100
+category;Fashion & Retail;Mexico,10900
+category;Fashion & Retail;China,101600
+category;Fashion & Retail;Switzerland,21900
+category;Fashion & Retail;Russia,19200
+category;Fashion & Retail;Monaco,11800
+category;Fashion & Retail;Taiwan,10800
+category;Fashion & Retail;Denmark,7300
+category;Fashion & Retail;Eswatini (Swaziland),6500
+category;Fashion & Retail;Canada,19500
+category;Fashion & Retail;Austria,12400
+category;Fashion & Retail;United Arab Emirates,10500
+category;Fashion & Retail;United Kingdom,22700
+category;Fashion & Retail;Poland,4800
+category;Fashion & Retail;Norway,7600
+category;Fashion & Retail;Indonesia,4200
+category;Fashion & Retail;Chile,3700
+category;Fashion & Retail;Luxembourg,3500
+category;Fashion & Retail;Singapore,4800
+category;Fashion & Retail;Brazil,12100
+category;Fashion & Retail;Hong Kong,9000
+category;Fashion & Retail;Bahamas,2200
+category;Fashion & Retail;Australia,10100
+category;Fashion & Retail;Cyprus,4200
+category;Fashion & Retail;South Korea,6700
+category;Fashion & Retail;Turkey,2900
+category;Fashion & Retail;Romania,2800
+category;Fashion & Retail;Cayman Islands,1300
+category;Fashion & Retail;Malaysia,1100
+category;Automotive,
+category;Automotive;United States,225900
+category;Automotive;China,156400
+category;Automotive;Germany,71600
+category;Automotive;India,29500
+category;Automotive;Italy,8400
+category;Automotive;South Korea,6700
+category;Automotive;Switzerland,6900
+category;Automotive;United Arab Emirates,2400
+category;Automotive;Israel,5000
+category;Automotive;France,1700
+category;Automotive;Austria,1600
+category;Automotive;Vietnam,1500
+category;Automotive;Taiwan,1300
+category;Automotive;Japan,1100
+category;Automotive;Singapore,1100
+category;Technology,
+category;Technology;United States,1197400
+category;Technology;China,361700
+category;Technology;India,58400
+category;Technology;United Arab Emirates,11500
+category;Technology;Australia,37200
+category;Technology;Singapore,18300
+category;Technology;Germany,31300
+category;Technology;South Korea,31200
+category;Technology;Hong Kong,15700
+category;Technology;Taiwan,34900
+category;Technology;Switzerland,8000
+category;Technology;Argentina,4900
+category;Technology;Canada,13100
+category;Technology;Japan,11400
+category;Technology;Israel,11700
+category;Technology;Sweden,5200
+category;Technology;Cyprus,4300
+category;Technology;Netherlands,6000
+category;Technology;Russia,2100
+category;Technology;United Kingdom,5100
+category;Technology;Czech Republic,3300
+category;Technology;Indonesia,3100
+category;Technology;Italy,1000
+category;Finance & Investments,
+category;Finance & Investments;United States,1003500
+category;Finance & Investments;Indonesia,26100
+category;Finance & Investments;Switzerland,78300
+category;Finance & Investments;Czech Republic,18200
+category;Finance & Investments;India,25500
+category;Finance & Investments;Hong Kong,24400
+category;Finance & Investments;Russia,22200
+category;Finance & Investments;United Arab Emirates,19800
+category;Finance & Investments;Sweden,18500
+category;Finance & Investments;South Korea,13100
+category;Finance & Investments;France,16800
+category;Finance & Investments;New Zealand,8600
+category;Finance & Investments;Monaco,9800
+category;Finance & Investments;Singapore,14300
+category;Finance & Investments;United Kingdom,54100
+category;Finance & Investments;Germany,23300
+category;Finance & Investments;Colombia,6400
+category;Finance & Investments;Poland,6200
+category;Finance & Investments;Bahamas,6000
+category;Finance & Investments;Israel,12600
+category;Finance & Investments;Georgia,4900
+category;Finance & Investments;China,25500
+category;Finance & Investments;Brazil,27500
+category;Finance & Investments;Taiwan,26200
+category;Finance & Investments;Spain,12300
+category;Finance & Investments;Kazakhstan,19000
+category;Finance & Investments;Latvia,4200
+category;Finance & Investments;Thailand,8400
+category;Finance & Investments;Cayman Islands,3900
+category;Finance & Investments;Italy,9100
+category;Finance & Investments;Canada,14700
+category;Finance & Investments;Chile,2900
+category;Finance & Investments;Netherlands,2600
+category;Finance & Investments;Guernsey,2300
+category;Finance & Investments;Ireland,2200
+category;Finance & Investments;Turks and Caicos Islands,2000
+category;Finance & Investments;Romania,2000
+category;Finance & Investments;Mexico,3300
+category;Finance & Investments;Slovakia,1500
+category;Finance & Investments;Vietnam,1500
+category;Finance & Investments;Peru,1500
+category;Finance & Investments;Australia,2600
+category;Finance & Investments;Morocco,1300
+category;Finance & Investments;Qatar,1200
+category;Finance & Investments;Armenia,1200
+category;Finance & Investments;Belgium,1100
+category;Finance & Investments;South Africa,1000
+category;Media & Entertainment,
+category;Media & Entertainment;United States,246400
+category;Media & Entertainment;Canada,57400
+category;Media & Entertainment;Australia,8400
+category;Media & Entertainment;United Kingdom,15200
+category;Media & Entertainment;Cayman Islands,5700
+category;Media & Entertainment;South Korea,11300
+category;Media & Entertainment;Singapore,8700
+category;Media & Entertainment;Germany,14400
+category;Media & Entertainment;China,20600
+category;Media & Entertainment;Israel,3300
+category;Media & Entertainment;South Africa,2400
+category;Media & Entertainment;India,2400
+category;Media & Entertainment;Poland,2000
+category;Media & Entertainment;Netherlands,3000
+category;Media & Entertainment;Brazil,5400
+category;Media & Entertainment;Thailand,1800
+category;Media & Entertainment;Japan,5300
+category;Media & Entertainment;New Zealand,1500
+category;Media & Entertainment;Turkey,1300
+category;Media & Entertainment;Sweden,2300
+category;Media & Entertainment;Indonesia,1000
+category;Telecom,
+category;Telecom;Mexico,93000
+category;Telecom;Japan,26200
+category;Telecom;United States,17600
+category;Telecom;France,6700
+category;Telecom;Malaysia,5200
+category;Telecom;Hong Kong,4600
+category;Telecom;Switzerland,4300
+category;Telecom;India,8000
+category;Telecom;Italy,4000
+category;Telecom;Egypt,3300
+category;Telecom;United Kingdom,6000
+category;Telecom;Lebanon,5600
+category;Telecom;Ireland,2700
+category;Telecom;Russia,1700
+category;Telecom;Canada,1600
+category;Telecom;Australia,1500
+category;Telecom;Cyprus,1100
+category;Telecom;China,3300
+category;Telecom;Turkey,1000
+category;Diversified,
+category;Diversified;India,201900
+category;Diversified;United States,143800
+category;Diversified;Hong Kong,49800
+category;Diversified;United Kingdom,60900
+category;Diversified;Monaco,28500
+category;Diversified;Thailand,40600
+category;Diversified;Malaysia,11800
+category;Diversified;United Arab Emirates,12800
+category;Diversified;Canada,19300
+category;Diversified;Russia,24300
+category;Diversified;Sweden,27200
+category;Diversified;Nigeria,14300
+category;Diversified;France,27100
+category;Diversified;Austria,7900
+category;Diversified;Mexico,9900
+category;Diversified;Italy,9400
+category;Diversified;China,47100
+category;Diversified;Indonesia,20100
+category;Diversified;Portugal,4700
+category;Diversified;Taiwan,6600
+category;Diversified;Vietnam,6500
+category;Diversified;Brazil,18100
+category;Diversified;Australia,4100
+category;Diversified;British Virgin Islands,3400
+category;Diversified;Singapore,13700
+category;Diversified;Turkey,26500
+category;Diversified;Germany,2800
+category;Diversified;Oman,2700
+category;Diversified;Philippines,20900
+category;Diversified;Chile,3400
+category;Diversified;Argentina,1900
+category;Diversified;Switzerland,4500
+category;Diversified;Qatar,1800
+category;Diversified;Nepal,1800
+category;Diversified;South Korea,4700
+category;Diversified;Greece,1600
+category;Diversified;Morocco,1500
+category;Diversified;Norway,3000
+category;Diversified;Israel,1500
+category;Diversified;Hungary,2700
+category;Diversified;Tanzania,1500
+category;Diversified;Egypt,2800
+category;Diversified;Finland,1400
+category;Diversified;Poland,1300
+category;Diversified;Ukraine,2100
+category;Diversified;Peru,1000
+category;Food & Beverage,
+category;Food & Beverage;China,214800
+category;Food & Beverage;Belgium,38900
+category;Food & Beverage;United States,336300
+category;Food & Beverage;Austria,34700
+category;Food & Beverage;France,43000
+category;Food & Beverage;Switzerland,42000
+category;Food & Beverage;Thailand,18900
+category;Food & Beverage;United Kingdom,41400
+category;Food & Beverage;Brazil,22900
+category;Food & Beverage;Canada,16500
+category;Food & Beverage;India,32600
+category;Food & Beverage;Singapore,12600
+category;Food & Beverage;Mexico,10700
+category;Food & Beverage;Germany,13000
+category;Food & Beverage;Turkey,5000
+category;Food & Beverage;Algeria,4600
+category;Food & Beverage;Czech Republic,4100
+category;Food & Beverage;Italy,9700
+category;Food & Beverage;Bermuda,4600
+category;Food & Beverage;Philippines,4600
+category;Food & Beverage;Australia,4000
+category;Food & Beverage;Norway,2700
+category;Food & Beverage;Ireland,2600
+category;Food & Beverage;Russia,5600
+category;Food & Beverage;Israel,3400
+category;Food & Beverage;Taiwan,6500
+category;Food & Beverage;Monaco,2000
+category;Food & Beverage;Spain,3000
+category;Food & Beverage;Japan,3200
+category;Food & Beverage;Indonesia,1800
+category;Food & Beverage;United Arab Emirates,1500
+category;Food & Beverage;Vietnam,1300
+category;Food & Beverage;Hong Kong,1000
+category;Logistics,
+category;Logistics;Switzerland,102800
+category;Logistics;United Kingdom,13700
+category;Logistics;France,31000
+category;Logistics;Philippines,7300
+category;Logistics;United States,20500
+category;Logistics;Hong Kong,13900
+category;Logistics;Greece,5600
+category;Logistics;China,18700
+category;Logistics;Norway,5100
+category;Logistics;Australia,3200
+category;Logistics;Russia,8500
+category;Logistics;Japan,1600
+category;Logistics;Taiwan,2500
+category;Logistics;Malaysia,1500
+category;Logistics;Indonesia,1300
+category;Logistics;India,1300
+category;Gambling & Casinos,
+category;Gambling & Casinos;United States,49500
+category;Gambling & Casinos;Hong Kong,18700
+category;Gambling & Casinos;Switzerland,8100
+category;Gambling & Casinos;Austria,7100
+category;Gambling & Casinos;United Kingdom,15100
+category;Gambling & Casinos;Israel,5600
+category;Gambling & Casinos;Cambodia,2800
+category;Gambling & Casinos;Germany,2400
+category;Gambling & Casinos;Malaysia,2300
+category;Gambling & Casinos;Sweden,3100
+category;Gambling & Casinos;Japan,4700
+category;Gambling & Casinos;Spain,1100
+category;Manufacturing,
+category;Manufacturing;Germany,72800
+category;Manufacturing;China,373200
+category;Manufacturing;Indonesia,27000
+category;Manufacturing;United Kingdom,56200
+category;Manufacturing;Japan,24700
+category;Manufacturing;Singapore,21500
+category;Manufacturing;Nigeria,14200
+category;Manufacturing;Israel,17600
+category;Manufacturing;Australia,17200
+category;Manufacturing;Russia,31300
+category;Manufacturing;Taiwan,19300
+category;Manufacturing;United States,90700
+category;Manufacturing;India,76200
+category;Manufacturing;Denmark,26800
+category;Manufacturing;Switzerland,30200
+category;Manufacturing;Monaco,6400
+category;Manufacturing;Turkey,10000
+category;Manufacturing;Hong Kong,29100
+category;Manufacturing;Finland,8700
+category;Manufacturing;Malaysia,4000
+category;Manufacturing;Italy,13700
+category;Manufacturing;Netherlands,5200
+category;Manufacturing;Canada,5700
+category;Manufacturing;Mexico,3200
+category;Manufacturing;France,3100
+category;Manufacturing;Ireland,2100
+category;Manufacturing;Thailand,4600
+category;Manufacturing;Vietnam,1800
+category;Manufacturing;Austria,3200
+category;Manufacturing;Spain,1600
+category;Manufacturing;Andorra,1500
+category;Manufacturing;Sweden,1400
+category;Manufacturing;Brazil,4800
+category;Manufacturing;Hungary,1200
+category;Manufacturing;Belgium,1200
+category;Manufacturing;South Korea,1000
+category;Real Estate,
+category;Real Estate;Hong Kong,131500
+category;Real Estate;United States,191900
+category;Real Estate;Australia,26300
+category;Real Estate;China,89200
+category;Real Estate;Germany,14000
+category;Real Estate;Philippines,8600
+category;Real Estate;India,28400
+category;Real Estate;Norway,7700
+category;Real Estate;Singapore,33300
+category;Real Estate;United Kingdom,12900
+category;Real Estate;Switzerland,9700
+category;Real Estate;Austria,6000
+category;Real Estate;Sweden,10500
+category;Real Estate;Canada,15100
+category;Real Estate;United Arab Emirates,6100
+category;Real Estate;Israel,4900
+category;Real Estate;Russia,11200
+category;Real Estate;Malaysia,5600
+category;Real Estate;Japan,8200
+category;Real Estate;Taiwan,9800
+category;Real Estate;Spain,2500
+category;Real Estate;Netherlands,1700
+category;Real Estate;Thailand,5900
+category;Real Estate;France,1700
+category;Real Estate;Slovakia,1600
+category;Real Estate;Argentina,1300
+category;Real Estate;Brazil,1200
+category;Real Estate;Monaco,2000
+category;Metals & Mining,
+category;Metals & Mining;Australia,57300
+category;Metals & Mining;Mexico,30600
+category;Metals & Mining;United Arab Emirates,25200
+category;Metals & Mining;Russia,111400
+category;Metals & Mining;Chile,26400
+category;Metals & Mining;China,58400
+category;Metals & Mining;United Kingdom,23400
+category;Metals & Mining;India,17500
+category;Metals & Mining;Uzbekistan,14400
+category;Metals & Mining;Switzerland,22100
+category;Metals & Mining;South Africa,11100
+category;Metals & Mining;Czech Republic,8000
+category;Metals & Mining;Ukraine,10500
+category;Metals & Mining;Indonesia,6100
+category;Metals & Mining;Kazakhstan,7300
+category;Metals & Mining;Singapore,5200
+category;Metals & Mining;United States,2000
+category;Metals & Mining;Italy,1700
+category;Metals & Mining;Spain,1600
+category;Metals & Mining;Israel,1200
+category;Energy,
+category;Energy;Indonesia,33200
+category;Energy;Russia,93200
+category;Energy;United States,160300
+category;Energy;United Kingdom,26900
+category;Energy;Thailand,15700
+category;Energy;China,63800
+category;Energy;Czech Republic,9200
+category;Energy;France,6400
+category;Energy;Hong Kong,12300
+category;Energy;Canada,5700
+category;Energy;Switzerland,4000
+category;Energy;Argentina,2900
+category;Energy;Brazil,4000
+category;Energy;Turkey,3600
+category;Energy;Singapore,3500
+category;Energy;Finland,1900
+category;Energy;Greece,1900
+category;Energy;Uruguay,1800
+category;Energy;Italy,1600
+category;Energy;Australia,1600
+category;Healthcare,
+category;Healthcare;India,97000
+category;Healthcare;United States,116200
+category;Healthcare;China,211800
+category;Healthcare;Germany,68400
+category;Healthcare;Switzerland,50300
+category;Healthcare;Italy,15400
+category;Healthcare;France,13000
+category;Healthcare;Denmark,6800
+category;Healthcare;South Korea,5600
+category;Healthcare;Hong Kong,10200
+category;Healthcare;Russia,9100
+category;Healthcare;Poland,4000
+category;Healthcare;Brazil,8800
+category;Healthcare;Thailand,4800
+category;Healthcare;United Kingdom,5400
+category;Healthcare;Liechtenstein,2300
+category;Healthcare;United Arab Emirates,2200
+category;Healthcare;Monaco,2000
+category;Healthcare;Finland,2000
+category;Healthcare;Japan,3100
+category;Healthcare;Israel,1500
+category;Healthcare;Turkey,1200
+category;Healthcare;Singapore,1000
+category;Service,
+category;Service;China,52400
+category;Service;United States,67100
+category;Service;Netherlands,6200
+category;Service;Israel,4200
+category;Service;France,4100
+category;Service;India,6600
+category;Service;Germany,3200
+category;Service;Switzerland,7100
+category;Service;United Arab Emirates,3000
+category;Service;Spain,4900
+category;Service;Mexico,2600
+category;Service;Russia,2600
+category;Service;Bahrain,1500
+category;Service;Monaco,4500
+category;Service;Hong Kong,1300
+category;Service;Japan,1100
+category;Service;Norway,1000
+category;Construction & Engineering,
+category;Construction & Engineering;United States,20900
+category;Construction & Engineering;Egypt,7400
+category;Construction & Engineering;United Kingdom,8800
+category;Construction & Engineering;Switzerland,8600
+category;Construction & Engineering;Spain,10900
+category;Construction & Engineering;Italy,7500
+category;Construction & Engineering;Russia,8600
+category;Construction & Engineering;France,6800
+category;Construction & Engineering;Canada,3300
+category;Construction & Engineering;United Arab Emirates,4400
+category;Construction & Engineering;China,7000
+category;Construction & Engineering;Austria,2500
+category;Construction & Engineering;Turkey,4200
+category;Construction & Engineering;India,6100
+category;Construction & Engineering;Malaysia,1600
+category;Construction & Engineering;Mexico,1500
+category;Construction & Engineering;South Korea,1100
+category;Sports,
+category;Sports;United States,127500
+category;Sports;United Kingdom,2900
+category;Sports;Canada,2000
+category;Sports;Switzerland,1100
+category;Sports;Monaco,1000
