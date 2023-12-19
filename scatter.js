@@ -1,7 +1,6 @@
 d3.csv("data/Parsed.csv", function (d) {
     // Convert GDP values to numeric format (remove commas)
     d.gdp = +d.gdp.replace(/\D/g, '');
-
     return d;
 }).then(function (data) {
     // Set up SVG dimensions
@@ -107,8 +106,69 @@ d3.csv("data/Parsed.csv", function (d) {
             .text(d => d);
     }
 
-    // Initial scatter plot with default variables
     updateScatterPlot("gdp", "gdp");
+
+    var xSlider = d3.select("#sliderXmin")
+        .append("input")
+        .attr("type", "range")
+        .attr("min", 0)
+        .attr("max", d3.max(data, d => +d.gdp))
+        .attr("value", 0)
+        .attr("class", "slider");
+
+    var xSlider = d3.select("#sliderXmax")
+        .append("input")
+        .attr("type", "range")
+        .attr("min", 0)
+        .attr("max", d3.max(data, d => +d.gdp))
+        .attr("value", d3.max(data, d => +d.gdp))
+        .attr("class", "slider");
+
+    var ySlider = d3.select("#sliderYmin")
+        .append("input")
+        .attr("type", "range")
+        .attr("min", 0)
+        .attr("max", d3.max(data, d => +d.gdp))
+        .attr("value", 0)
+        .attr("class", "slider");
+
+    var ySlider = d3.select("#sliderYmax")
+        .append("input")
+        .attr("type", "range")
+        .attr("min", 0)
+        .attr("max", d3.max(data, d => +d.gdp))
+        .attr("value", d3.max(data, d => +d.gdp))
+        .attr("class", "slider");
+
+    // Event listener for x-axis slider
+    xSlider.on("input", function () {
+        var xSliderValue = +this.value;
+        var yAxisVar = document.getElementById("y-axis").value;
+        updateScatterPlot("gdp", yAxisVar);
+    });
+
+    // Event listener for y-axis slider
+    ySlider.on("input", function () {
+        var ySliderValue = +this.value;
+        var xAxisVar = document.getElementById("x-axis").value;
+        updateScatterPlot(xAxisVar, "gdp");
+    });
+
+    function updateSliders(xMin, xMax, xValue, yMin, yMax, yValue) {
+        // Update x-axis slider
+        d3.select("#sliderX")
+            .select("input")
+            .attr("min", xMin)
+            .attr("max", xMax)
+            .attr("value", xValue);
+
+        // Update y-axis slider
+        d3.select("#sliderY")
+            .select("input")
+            .attr("min", yMin)
+            .attr("max", yMax)
+            .attr("value", yValue);
+    }
 
     // Event listeners for dropdown changes
     document.getElementById("x-axis").addEventListener("change", function () {

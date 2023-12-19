@@ -150,13 +150,11 @@ button {
   cursor: pointer;
 }
 
-/* Add this CSS for styling the dropdown container */
 .dropdown-container {
   display: flex;
   align-items: center;
 }
 
-/* Add this CSS for styling the selected value display */
 .selected-value-display {
   margin-left: 10px;
   font-style: italic;
@@ -192,3 +190,7 @@ svg {
   margin-right: 5px;
 }
 
+.slider {
+  width: 300px;
+  margin: 10px;
+}
