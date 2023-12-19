@@ -1,102 +1,84 @@
+import { onDataReady } from "./dataloader.js";
 var selectedRows = [];
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Fetch the CSV file
-    fetch("data/Billionaires_Statistics_Dataset.csv")
-      .then(response => response.text())
-      .then(csvData => {
-        Papa.parse(csvData, {
-          header: true,
-          skipEmptyLines: true,
-          complete: function(results) {
-            const defaultHeaders = ["rank", "net worth", "category", "name", "age", "country", "city", "source"];
+    onDataReady((loadedData, headers) => {
+      const defaultHeaders = ["rank", "net worth", "category", "name", "age", "country", "city", "source", "organization"];
 
-            function createArrowIcon() {
-              const arrowIcon = document.createElement("span");
-              arrowIcon.classList.add("arrow-icon");
-              return arrowIcon;
-            }
+      function createArrowIcon() {
+        const arrowIcon = document.createElement("span");
+        arrowIcon.classList.add("arrow-icon");
+        return arrowIcon;
+      }
 
-            function toggleArrow(th, isAscending) {
-              // Remove existing arrow classes from all headers
-              document.querySelectorAll('.sortable').forEach(header => {
-                header.classList.remove("arrow-up", "arrow-down", "selectedheader");
-              });
+      function toggleArrow(th, isAscending) {
+        document.querySelectorAll('.sortable').forEach(header => {
+          header.classList.remove("arrow-up", "arrow-down", "selectedheader");
+        });
 
-              // Add the appropriate arrow class based on the sorting order
-              if (isAscending) {
-                th.classList.add("arrow-up", "selectedheader");
-              } else {
-                th.classList.add("arrow-down", "selectedheader");
-              }
-            }
-            const headers = results.meta.fields;
-            const data = results.data;
-  
-            const tsearch = document.getElementById("myInput");
-            tsearch.addEventListener("keydown", (e) => searchTable(e))
-            const thead = document.getElementById("data-table").getElementsByTagName("thead")[0];
-            const tbody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
-  
-            // Clear existing table content
-            thead.innerHTML = "";
-            tbody.innerHTML = "";
-  
-            // Populate table headers with arrow icons
-            defaultHeaders.forEach(headerText => {
-              const th = document.createElement("th");
-              th.textContent = headerText;
-              th.classList.add("sortable");
-              th.appendChild(createArrowIcon()); // Add arrow icon to each header
-              th.addEventListener("click", function () {
-                toggleArrow(this, !this.classList.contains("arrow-up"));
-                // Call the sorting function
-                sortTable(headerText);
-              });
-              thead.appendChild(th);
-            });
-  
-            // Populate table with data
-            data.forEach(rowData => {
-              const row = tbody.insertRow();
-              headers.forEach(headerText => {
-                if(defaultHeaders.includes(headerText)) {
-                  const cell = row.insertCell();
-                  cell.textContent = rowData[headerText];
-                }
-              });
-            });
+        if (isAscending) {
+          th.classList.add("arrow-up", "selectedheader");
+        } else {
+          th.classList.add("arrow-down", "selectedheader");
+        }
+      }
+      const data = loadedData;
 
-            // Get the table element
-            var table = document.getElementById("data-table");
-            const rows = table.getElementsByTagName("tr");
+      const tsearch = document.getElementById("myInput");
+      tsearch.addEventListener("keydown", (e) => searchTable(e))
+      const thead = document.getElementById("data-table").getElementsByTagName("thead")[0];
+      const tbody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
 
-            // Add a click event listener to the table
-            for (let i = 0; i < rows.length; i++) {
-              rows[i].addEventListener("click", function(e) {
-                // Check if the clicked element is a checkbox with the class "row-checkbox"
-                console.log("clicked")
-  
-                // Toggle the "selected" class on the parent row
-                rows[i].classList.toggle("selected");
-  
-                // Get all selected rows
-                var selectedRows = table.querySelectorAll(".selected");
-  
-                // Compare values of the selected rows
-                if (selectedRows.length > 1) {
-                  console.log(selectedRows)
-                }
-              });
-            }
-          },
-          error: function(error) {
-            console.error("Error parsing CSV:", error.message);
+      // Clear existing table content
+      thead.innerHTML = "";
+      tbody.innerHTML = "";
+
+      defaultHeaders.forEach(headerText => {
+        const th = document.createElement("th");
+        th.textContent = headerText;
+        th.classList.add("sortable");
+        th.appendChild(createArrowIcon()); // Add arrow icon to each header
+        th.addEventListener("click", function () {
+          toggleArrow(this, !this.classList.contains("arrow-up"));
+          sortTable(headerText);
+        });
+        thead.appendChild(th);
+      });
+
+      // Populate table with data
+      data.forEach(rowData => {
+        const row = tbody.insertRow();
+        headers.forEach(headerText => {
+          if(defaultHeaders.includes(headerText)) {
+            const cell = row.insertCell();
+            cell.textContent = rowData[headerText];
           }
         });
-      })
-      .catch(error => console.error("Error fetching CSV:", error));
-  });
+      });
+
+      // Get the table element
+      var table = document.getElementById("data-table");
+      const rows = table.getElementsByTagName("tr");
+
+      // Add a click event listener to the table
+      for (let i = 0; i < rows.length; i++) {
+        rows[i].addEventListener("click", function(e) {
+          // Check if the clicked element is a checkbox with the class "row-checkbox"
+          console.log("clicked")
+
+          // Toggle the "selected" class on the parent row
+          rows[i].classList.toggle("selected");
+
+          // Get all selected rows
+          var selectedRows = table.querySelectorAll(".selected");
+
+          // Compare values of the selected rows
+          if (selectedRows.length > 1) {
+            console.log(selectedRows)
+          }
+        });
+      }
+    });
+    })
   
   function removeColumn(headerToRemove) {
     const headerIndex = headers.indexOf(headerToRemove);
@@ -146,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const currentOrder = table.getAttribute("data-sort-order") || 'desc';
     const sortOrder = (currentOrder === 'asc') ? 'desc' : 'asc';
   
-    // Update the data-sort-order attribute for the next click
     table.setAttribute("data-sort-order", sortOrder);
   
     rows.sort((a, b) => {
@@ -163,9 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     rows.forEach(row => table.appendChild(row));
   }
 
-  // Function to toggle arrow icons
   function toggleArrow(th, isAscending) {
-    // Remove existing arrow classes
     th.classList.remove("arrow-up", "arrow-down");
 
     // Add the appropriate arrow class based on the sorting order

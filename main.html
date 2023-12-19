@@ -7,13 +7,17 @@
   <title>Data Visualization</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <!-- <script src="map.js" type="module"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="dataloader.js" type="module"></script>
   <script src="searchlist.js" type="module"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
   <script src="filter.js" defer></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   <script src="script.js"></script>
+  <script src="piechart.js" type="module"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
 <body>
@@ -34,50 +38,19 @@
       </div>
     </div>
 
-    <div class="flex-container">
-      <div class="flex-item">
-        <!-- Content for the first flexbox container -->
-        <h2>Container 1</h2>
-        <div>
-          <button id="addRowBtn">Add Row</button>
-          <button id="addColumnBtn">Add Column</button>
-          <button id="addNumericalRowBtn">Add Numerical Row</button>
-          <button id="getResultsBtn">Get Results</button>
-        </div>
-        <table id="data-table-filter">
-          <thead>
-            <tr>
-              <th>Topic</th>
-              <th>Group 1</th>
-              <th>Group 2</th>
-            </tr>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-    
-      <div class="flex-item">
-        <h2>Container 2</h2>
-        <p>Your content goes here.</p>
-      </div>
+    <div class="container">
+      <select name="features" id="features">
+        <option value="gender">gender</option>
+        <option value="self-made">self-made</option>
+        <option value="category">category</option>
+        <option value="countryOfCitizenship">country</option>
+      </select>
+      <div id="billionairesChart"></div>
+    <button id = "expandCountries">expand</button>
+    <button id = "resetCountries">reset</button>
     </div>
-
-    <!-- <div class="row">
-      <div class="data-div" id="div3">
-        <h3>Filter Div 3</h3>
-        <div id="filterDiv3"></div>
-      </div>
-      <div class="data-div" id="div4">
-        <h3>Filter Div 4</h3>
-        <div id="filterDiv4"></div>
-      </div>
-      <div class="data-div" id="div5">
-        <h3>Comparison Div 5</h3>
-        <div id="comparisonDiv"></div>
-      </div>
-    </div> -->
   </div>
+
 </body>
 
 
