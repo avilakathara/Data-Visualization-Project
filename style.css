@@ -163,3 +163,32 @@ button {
   color: #555;
 }
 
+
+#scatter-plot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg {
+  border: 1px solid #ddd;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.legend div {
+  display: flex;
+  align-items: center;
+}
+
+.legend div span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
+

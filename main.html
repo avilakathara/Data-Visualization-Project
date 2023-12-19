@@ -17,6 +17,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="script.js"></script>
   <script src="piechart.js" type="module"></script>
+  <script src="scatter.js" type="module"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
@@ -46,10 +47,36 @@
         <option value="countryOfCitizenship">country</option>
       </select>
       <div id="billionairesChart"></div>
-    <button id = "expandCountries">expand</button>
-    <button id = "resetCountries">reset</button>
+      <button id="expandCountries">expand</button>
+      <button id="resetCountries">reset</button>
     </div>
   </div>
+
+  <div class="container">
+    <label for="x-axis">X-Axis:</label>
+    <select id="x-axis">
+      <option value="gdp">GDP</option>
+      <option value="numBillionaires">Number of Billionaires</option>
+      <option value="totalWealth">Total Wealth</option>
+      <option value="totalTaxRate">Total Tax Rate</option>
+    </select>
+    
+    <label for="y-axis">Y-Axis:</label>
+    <select id="y-axis">
+      <option value="gdp">GDP</option>
+      <option value="numBillionaires">Number of Billionaires</option>
+      <option value="totalWealth">Total Wealth</option>
+      <option value="totalTaxRate">Total Tax Rate</option>
+    </select>
+    
+    <div id="scatter-plot-container">
+      <svg id="scatter-plot"></svg>
+      <!-- <div id="legend"></div> -->
+    </div>
+  </div>
+
+  <!-- Container for the brushed scatter plot -->
+  <div id="brushed-scatter-plot-container"></div>
 
 </body>
 
