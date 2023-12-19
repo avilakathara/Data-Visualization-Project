@@ -1,5 +1,6 @@
 // Sample data (replace this with your actual data)
 import { onDataReady } from "./dataloader.js";
+import { createTable } from "./searchlist.js";
 
 var data = null;
 var numberOfRows = 5;
@@ -8,6 +9,8 @@ var selected = null;
 document.getElementById("features").addEventListener("change", function () {
     numberOfRows = 5;
     selected = this.value;
+    document.getElementById("expandCountries").style.display = "none"
+    document.getElementById("resetCountries").style.display = "none"
     switch (selected) {
         case "gender":
             createChart("gender", data, distributeByGender);
@@ -17,6 +20,8 @@ document.getElementById("features").addEventListener("change", function () {
             break;
         case "category":
         case "countryOfCitizenship":
+            document.getElementById("expandCountries").style.display = ""
+            document.getElementById("resetCountries").style.display = ""
             createBarChart(selected);
             break;
     }
@@ -32,12 +37,17 @@ document.getElementById("resetCountries").addEventListener("click", function () 
     createBarChart(selected);
 });
 
-document.addEventListener("DOMContentLoaded", renderPieChartGender);
-
-function renderPieChartGender() {
+document.addEventListener("DOMContentLoaded", function () {
     onDataReady((loadedData, headers) => {
         data = loadedData;
+        createTable();
+        renderButtons();
     });
+});
+
+function renderButtons() {
+    document.getElementById("expandCountries").style.display = "none"
+    document.getElementById("resetCountries").style.display = "none"
 }
 
 function createChart(title, data, distributionFunction) {
@@ -71,9 +81,6 @@ function createBarChart(feature) {
 }
 
 function distributeByFeature(data, feature) {
-    for(let i = 0; i < data.length; i++) {
-        console.log(data[i]["country"])
-    }
     return data.reduce((acc, item) => {
         const key = item[feature];
         acc[key] = (acc[key] || 0) + 1;
