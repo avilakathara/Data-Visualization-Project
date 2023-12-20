@@ -1,7 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@4/+esm";
 
-var width = 1300,
-    height = 920;
+var width = self.innerWidth * 0.6
+var height = self.innerHeight * 0.95;
 
 var format = d3.format(",d");
 
