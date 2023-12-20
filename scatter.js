@@ -30,10 +30,12 @@ d3.csv("data/Parsed.csv", function (d) {
         const xScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[xAxisVar])])
             .range([100, width]);
-
+        svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale));
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[yAxisVar])])
             .range([height - 100, 0]);
+            svg.append("g").call(d3.axisLeft(yScale));
+
 
         // Define color scale for countries
         const colorScale = d3.scaleOrdinal()

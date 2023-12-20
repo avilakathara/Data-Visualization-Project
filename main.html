@@ -26,7 +26,17 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="data-div" id="div1"></div>
+      <div class="data-div" id="div1">
+        <select name="piechartFeatures" id="piechartFeatures">
+          <option value="gender">gender</option>
+          <option value="self-made">self-made</option>
+        </select>
+        <div id="billionairesPieChart"></div>
+        <select name="barchartFeatures" id="barchartFeatures">
+          <option value="category">category</option>
+          <option value="countryOfCitizenship">country</option>
+        </select>
+      </div>
       <div class="data-div" id="div2">
         <div class="search-bar">
           <label for="searchInput">Search:</label>
@@ -42,13 +52,8 @@
     </div>
 
     <div class="container">
-      <select name="features" id="features">
-        <option value="gender">gender</option>
-        <option value="self-made">self-made</option>
-        <option value="category">category</option>
-        <option value="countryOfCitizenship">country</option>
-      </select>
-      <div id="billionairesChart"></div>
+      <div id="billionairesBarChart"></div>
+
       <button id="expandCountries">expand</button>
       <button id="resetCountries">reset</button>
     </div>

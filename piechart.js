@@ -6,11 +6,8 @@ var data = null;
 var numberOfRows = 5;
 var selected = null;
 
-document.getElementById("features").addEventListener("change", function () {
-    numberOfRows = 5;
+document.getElementById("piechartFeatures").addEventListener("change", function () {
     selected = this.value;
-    document.getElementById("expandCountries").style.display = "none"
-    document.getElementById("resetCountries").style.display = "none"
     switch (selected) {
         case "gender":
             createChart("gender", data, distributeByGender);
@@ -18,10 +15,15 @@ document.getElementById("features").addEventListener("change", function () {
         case "self-made":
             createChart("self-made", data, distributeBySelfmade);
             break;
+    }
+});
+
+document.getElementById("barchartFeatures").addEventListener("change", function () {
+    numberOfRows = 5;
+    selected = this.value;
+    switch (selected) {
         case "category":
         case "countryOfCitizenship":
-            document.getElementById("expandCountries").style.display = ""
-            document.getElementById("resetCountries").style.display = ""
             createBarChart(selected);
             break;
     }
@@ -29,26 +31,30 @@ document.getElementById("features").addEventListener("change", function () {
 
 document.getElementById("expandCountries").addEventListener("click", function () {
     numberOfRows += 5;
-    createBarChart(selected);
+    if (selected == null) {
+        createBarChart("category")
+    } else {
+        createBarChart(selected);
+    }
 });
 
 document.getElementById("resetCountries").addEventListener("click", function () {
     numberOfRows = 5;
-    createBarChart(selected);
+    if (selected == null) {
+        createBarChart("category")
+    } else {
+        createBarChart(selected);
+    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
     onDataReady((loadedData, headers) => {
         data = loadedData;
         createTable();
-        renderButtons();
+        createChart("gender", data, distributeByGender);
+        createBarChart("category");
     });
 });
-
-function renderButtons() {
-    document.getElementById("expandCountries").style.display = "none"
-    document.getElementById("resetCountries").style.display = "none"
-}
 
 function createChart(title, data, distributionFunction) {
     const distribution = distributionFunction(data);
@@ -76,7 +82,7 @@ function distributeBySelfmade(data) {
 
 function createBarChart(feature) {
     const distribution = distributeByFeature(data, feature);
-    const sortedData = sortAndSliceData(distribution, numberOfRows);
+    const sortedData = sortAndSliceData(distribution, numberOfRows, feature);
     renderBarChart(sortedData, feature);
 }
 
@@ -88,11 +94,12 @@ function distributeByFeature(data, feature) {
     }, {});
 }
 
-function sortAndSliceData(data, numberOfRows) {
-    return Object.entries(data)
+function sortAndSliceData(data, numberOfRows, feature) {
+    let res = Object.entries(data)
         .sort((a, b) => b[1] - a[1])
         .slice(0, numberOfRows)
-        .map(([key, count]) => ({ [selected]: key, count }));
+        .map(([key, count]) => ({ [feature]: key, count }));
+    return res;
 }
 
 function renderPieChart(title, distribution) {
@@ -102,7 +109,7 @@ function renderPieChart(title, distribution) {
     const radius = Math.min(width, height) / 2;
 
     // Create an SVG element
-    const svg = d3.select('#billionairesChart')
+    const svg = d3.select('#billionairesPieChart')
         .html("")
         .append('svg')
         .attr('width', width + 100)
@@ -173,7 +180,7 @@ function renderBarChart(data, feature) {
         width = 1600 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
-    var svg = d3.select("#billionairesChart")
+    var svg = d3.select("#billionairesBarChart")
         .html("") // Clear the existing content
         .append("svg")
         .attr("width", width + margin.left + margin.right)
