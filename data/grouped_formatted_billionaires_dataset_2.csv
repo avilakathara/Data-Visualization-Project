@@ -1,0 +1,455 @@
+id,value,gdp_country,tax_rate_country,amount_of_billionaires,percentage
+category,,,,,
+category;Fashion & Retail,,,,,
+category;Fashion & Retail;France,338100,"$2,715,518,274,227 ",60.7,5.0,0.1990228396515187
+category;Fashion & Retail;Spain,95800,"$1,394,116,310,769 ",47.0,7.0,0.056392747821991995
+category;Fashion & Retail;United States,557600,"$21,427,700,000,000 ",36.6,63.0,0.3282316929597363
+category;Fashion & Retail;Germany,144900,"$3,845,630,030,824 ",48.8,22.0,0.08529550270779374
+category;Fashion & Retail;Japan,56200,"$5,081,769,542,380 ",46.7,9.0,0.0330821756534024
+category;Fashion & Retail;Sweden,22700,"$530,832,908,738 ",49.1,5.0,0.013362373440075348
+category;Fashion & Retail;India,37300,"$2,611,000,000,000 ",49.7,10.0,0.021956675300211913
+category;Fashion & Retail;Italy,75400,"$2,001,244,392,042 ",59.1,24.0,0.04438427125029432
+category;Fashion & Retail;South Africa,11100,"$351,431,649,241 ",29.2,1.0,0.006534024016953143
+category;Fashion & Retail;Mexico,10900,"$1,258,286,717,125 ",55.1,1.0,0.006416293854485519
+category;Fashion & Retail;China,101600,"$19,910,000,000,000 ",59.2,37.0,0.059806922533553096
+category;Fashion & Retail;Switzerland,21900,"$703,082,435,360 ",28.8,6.0,0.01289145279020485
+category;Fashion & Retail;Russia,19200,"$1,699,876,578,871 ",46.2,5.0,0.011302095596891923
+category;Fashion & Retail;Monaco,11800,"$7,184,844,193 ",,2.0,0.006946079585589828
+category;Fashion & Retail;Taiwan,10800,,,2.0,0.0063574287732517075
+category;Fashion & Retail;Denmark,7300,"$348,078,018,464 ",23.8,1.0,0.004297150930068283
+category;Fashion & Retail;Eswatini (Swaziland),6500,,,1.0,0.0038262302801977868
+category;Fashion & Retail;Canada,19500,"$1,736,425,629,520 ",24.5,6.0,0.01147869084059336
+category;Fashion & Retail;Austria,12400,"$446,314,739,528 ",51.4,3.0,0.0072992700729927005
+category;Fashion & Retail;United Arab Emirates,10500,"$421,142,267,938 ",15.9,2.0,0.006180833529550271
+category;Fashion & Retail;United Kingdom,22700,"$2,827,113,184,696 ",30.6,11.0,0.013362373440075348
+category;Fashion & Retail;Poland,4800,"$592,164,400,688 ",40.8,1.0,0.0028255238992229807
+category;Fashion & Retail;Norway,7600,"$403,336,363,636 ",36.2,3.0,0.00447374617376972
+category;Fashion & Retail;Indonesia,4200,"$1,119,190,780,753 ",30.1,1.0,0.002472333411820108
+category;Fashion & Retail;Chile,3700,"$282,318,159,745 ",34.0,1.0,0.0021780080056510477
+category;Fashion & Retail;Luxembourg,3500,"$71,104,919,108 ",20.4,1.0,0.002060277843183424
+category;Fashion & Retail;Singapore,4800,"$372,062,527,489 ",21.0,2.0,0.0028255238992229807
+category;Fashion & Retail;Brazil,12100,"$1,839,758,040,766 ",65.1,5.0,0.007122674829291265
+category;Fashion & Retail;Hong Kong,9000,,,4.0,0.005297857311043089
+category;Fashion & Retail;Bahamas,2200,,,1.0,0.0012950317871438662
+category;Fashion & Retail;Australia,10100,"$1,392,680,589,329 ",47.4,6.0,0.005945373204615022
+category;Fashion & Retail;Cyprus,4200,"$24,564,647,935 ",22.4,2.0,0.002472333411820108
+category;Fashion & Retail;South Korea,6700,"$2,029,000,000,000 ",33.2,5.0,0.003943960442665411
+category;Fashion & Retail;Turkey,2900,"$754,411,708,203 ",42.3,2.0,0.001707087355780551
+category;Fashion & Retail;Romania,2800,"$250,077,444,017 ",20.0,2.0,0.0016482222745467388
+category;Fashion & Retail;Cayman Islands,1300,,,1.0,0.0007652460560395574
+category;Fashion & Retail;Malaysia,1100,"$364,701,517,788 ",38.7,1.0,0.0006475158935719331
+category;Automotive,,,,,
+category;Automotive;United States,225900,"$21,427,700,000,000 ",36.6,12.0,0.4300399771559109
+category;Automotive;China,156400,"$19,910,000,000,000 ",59.2,22.0,0.2977346278317152
+category;Automotive;Germany,71600,"$3,845,630,030,824 ",48.8,8.0,0.13630306491528651
+category;Automotive;India,29500,"$2,611,000,000,000 ",49.7,13.0,0.056158385684370836
+category;Automotive;Italy,8400,"$2,001,244,392,042 ",59.1,2.0,0.01599086236436322
+category;Automotive;South Korea,6700,"$2,029,000,000,000 ",33.2,2.0,0.012754616409670664
+category;Automotive;Switzerland,6900,"$703,082,435,360 ",28.8,2.0,0.013135351227869789
+category;Automotive;United Arab Emirates,2400,"$421,142,267,938 ",15.9,1.0,0.004568817818389492
+category;Automotive;Israel,5000,"$395,098,666,122 ",25.3,3.0,0.009518370454978107
+category;Automotive;France,1700,"$2,715,518,274,227 ",60.7,1.0,0.003236245954692557
+category;Automotive;Austria,1600,"$446,314,739,528 ",51.4,1.0,0.0030458785455929945
+category;Automotive;Vietnam,1500,"$261,921,244,843 ",37.6,1.0,0.0028555111364934323
+category;Automotive;Taiwan,1300,,,1.0,0.002474776318294308
+category;Automotive;Japan,1100,"$5,081,769,542,380 ",46.7,1.0,0.0020940415000951836
+category;Automotive;Singapore,1100,"$372,062,527,489 ",21.0,1.0,0.0020940415000951836
+category;Technology,,,,,
+category;Technology;United States,1197400,"$21,427,700,000,000 ",36.6,141.0,0.6376271366952447
+category;Technology;China,361700,"$19,910,000,000,000 ",59.2,78.0,0.19260876510996325
+category;Technology;India,58400,"$2,611,000,000,000 ",49.7,12.0,0.031098567548857765
+category;Technology;United Arab Emirates,11500,"$421,142,267,938 ",15.9,1.0,0.006123861760477129
+category;Technology;Australia,37200,"$1,392,680,589,329 ",47.4,8.0,0.019809361520847755
+category;Technology;Singapore,18300,"$372,062,527,489 ",21.0,4.0,0.00974492784493317
+category;Technology;Germany,31300,"$3,845,630,030,824 ",48.8,9.0,0.016667554182863836
+category;Technology;South Korea,31200,"$2,029,000,000,000 ",33.2,10.0,0.0166143032110336
+category;Technology;Hong Kong,15700,,,3.0,0.008360402577347036
+category;Technology;Taiwan,34900,,,11.0,0.01858458916875233
+category;Technology;Switzerland,8000,"$703,082,435,360 ",28.8,2.0,0.004260077746418872
+category;Technology;Argentina,4900,"$449,663,446,954 ",106.3,1.0,0.002609297619681559
+category;Technology;Canada,13100,"$1,736,425,629,520 ",24.5,5.0,0.006975877309760903
+category;Technology;Japan,11400,"$5,081,769,542,380 ",46.7,6.0,0.006070610788646893
+category;Technology;Israel,11700,"$395,098,666,122 ",25.3,6.0,0.006230363704137601
+category;Technology;Sweden,5200,"$530,832,908,738 ",49.1,2.0,0.002769050535172267
+category;Technology;Cyprus,4300,"$24,564,647,935 ",22.4,2.0,0.0022897917887001436
+category;Technology;Netherlands,6000,"$909,070,395,161 ",41.2,3.0,0.003195058309814154
+category;Technology;Russia,2100,"$1,699,876,578,871 ",46.2,1.0,0.001118270408434954
+category;Technology;United Kingdom,5100,"$2,827,113,184,696 ",30.6,3.0,0.002715799563342031
+category;Technology;Czech Republic,3300,"$246,489,245,495 ",46.1,2.0,0.0017572820703977848
+category;Technology;Indonesia,3100,"$1,119,190,780,753 ",30.1,2.0,0.001650780126737313
+category;Technology;Italy,1000,"$2,001,244,392,042 ",59.1,1.0,0.000532509718302359
+category;Finance & Investments,,,,,
+category;Finance & Investments;United States,1003500,"$21,427,700,000,000 ",36.6,190.0,0.6251946919195066
+category;Finance & Investments;Indonesia,26100,"$1,119,190,780,753 ",30.1,2.0,0.016260669117188962
+category;Finance & Investments;Switzerland,78300,"$703,082,435,360 ",28.8,15.0,0.04878200735156688
+category;Finance & Investments;Czech Republic,18200,"$246,489,245,495 ",46.1,2.0,0.0113388573920628
+category;Finance & Investments;India,25500,"$2,611,000,000,000 ",49.7,7.0,0.01588686063173634
+category;Finance & Investments;Hong Kong,24400,,,6.0,0.015201545075073205
+category;Finance & Investments;Russia,22200,"$1,699,876,578,871 ",46.2,8.0,0.013830913961746932
+category;Finance & Investments;United Arab Emirates,19800,"$421,142,267,938 ",15.9,3.0,0.012335680019936452
+category;Finance & Investments;Sweden,18500,"$530,832,908,738 ",49.1,4.0,0.011525761634789109
+category;Finance & Investments;South Korea,13100,"$2,029,000,000,000 ",33.2,2.0,0.008161485265715532
+category;Finance & Investments;France,16800,"$2,715,518,274,227 ",60.7,4.0,0.010466637592673354
+category;Finance & Investments;New Zealand,8600,"$206,928,765,544 ",34.6,1.0,0.005357921624820883
+category;Finance & Investments;Monaco,9800,"$7,184,844,193 ",,2.0,0.006105538595726123
+category;Finance & Investments;Singapore,14300,"$372,062,527,489 ",21.0,4.0,0.008909102236620772
+category;Finance & Investments;United Kingdom,54100,"$2,827,113,184,696 ",30.6,21.0,0.03370506510497788
+category;Finance & Investments;Germany,23300,"$3,845,630,030,824 ",48.8,9.0,0.014516229518410069
+category;Finance & Investments;Colombia,6400,"$323,802,808,108 ",71.2,1.0,0.003987290511494611
+category;Finance & Investments;Poland,6200,"$592,164,400,688 ",40.8,1.0,0.0038626876830104044
+category;Finance & Investments;Bahamas,6000,,,1.0,0.0037380848545261977
+category;Finance & Investments;Israel,12600,"$395,098,666,122 ",25.3,5.0,0.007849978194505015
+category;Finance & Investments;Georgia,4900,"$17,743,195,770 ",9.9,1.0,0.0030527692978630614
+category;Finance & Investments;China,25500,"$19,910,000,000,000 ",59.2,8.0,0.01588686063173634
+category;Finance & Investments;Brazil,27500,"$1,839,758,040,766 ",65.1,11.0,0.017132888916578406
+category;Finance & Investments;Taiwan,26200,,,8.0,0.016322970531431065
+category;Finance & Investments;Spain,12300,"$1,394,116,310,769 ",47.0,5.0,0.007663073951778706
+category;Finance & Investments;Kazakhstan,19000,"$180,161,741,180 ",28.4,5.0,0.011837268705999627
+category;Finance & Investments;Latvia,4200,"$34,117,202,555 ",38.1,1.0,0.0026166593981683385
+category;Finance & Investments;Thailand,8400,"$543,649,976,166 ",29.5,4.0,0.005233318796336677
+category;Finance & Investments;Cayman Islands,3900,,,1.0,0.0024297551554420286
+category;Finance & Investments;Italy,9100,"$2,001,244,392,042 ",59.1,5.0,0.0056694286960314
+category;Finance & Investments;Canada,14700,"$1,736,425,629,520 ",24.5,9.0,0.009158307893589184
+category;Finance & Investments;Chile,2900,"$282,318,159,745 ",34.0,1.0,0.0018067410130209955
+category;Finance & Investments;Netherlands,2600,"$909,070,395,161 ",41.2,1.0,0.0016198367702946856
+category;Finance & Investments;Guernsey,2300,,,1.0,0.0014329325275683757
+category;Finance & Investments;Ireland,2200,,,1.0,0.0013706311133262726
+category;Finance & Investments;Turks and Caicos Islands,2000,,,1.0,0.0012460282848420659
+category;Finance & Investments;Romania,2000,"$250,077,444,017 ",20.0,1.0,0.0012460282848420659
+category;Finance & Investments;Mexico,3300,"$1,258,286,717,125 ",55.1,2.0,0.002055946669989409
+category;Finance & Investments;Slovakia,1500,"$105,422,304,976 ",49.7,1.0,0.0009345212136315494
+category;Finance & Investments;Vietnam,1500,"$261,921,244,843 ",37.6,1.0,0.0009345212136315494
+category;Finance & Investments;Peru,1500,"$226,848,050,820 ",36.8,1.0,0.0009345212136315494
+category;Finance & Investments;Australia,2600,"$1,392,680,589,329 ",47.4,2.0,0.0016198367702946856
+category;Finance & Investments;Morocco,1300,"$118,725,279,596 ",45.8,1.0,0.0008099183851473428
+category;Finance & Investments;Qatar,1200,"$183,466,208,791 ",11.3,1.0,0.0007476169709052396
+category;Finance & Investments;Armenia,1200,"$13,672,802,158 ",22.6,1.0,0.0007476169709052396
+category;Finance & Investments;Belgium,1100,"$529,606,710,418 ",55.4,1.0,0.0006853155566631363
+category;Finance & Investments;South Africa,1000,"$351,431,649,241 ",29.2,1.0,0.0006230141424210329
+category;Media & Entertainment,,,,,
+category;Media & Entertainment;United States,246400,"$21,427,700,000,000 ",36.6,37.0,0.576374269005848
+category;Media & Entertainment;Canada,57400,"$1,736,425,629,520 ",24.5,3.0,0.1342690058479532
+category;Media & Entertainment;Australia,8400,"$1,392,680,589,329 ",47.4,1.0,0.019649122807017545
+category;Media & Entertainment;United Kingdom,15200,"$2,827,113,184,696 ",30.6,3.0,0.035555555555555556
+category;Media & Entertainment;Cayman Islands,5700,,,1.0,0.013333333333333334
+category;Media & Entertainment;South Korea,11300,"$2,029,000,000,000 ",33.2,4.0,0.026432748538011697
+category;Media & Entertainment;Singapore,8700,"$372,062,527,489 ",21.0,3.0,0.020350877192982456
+category;Media & Entertainment;Germany,14400,"$3,845,630,030,824 ",48.8,5.0,0.03368421052631579
+category;Media & Entertainment;China,20600,"$19,910,000,000,000 ",59.2,11.0,0.04818713450292398
+category;Media & Entertainment;Israel,3300,"$395,098,666,122 ",25.3,1.0,0.0077192982456140355
+category;Media & Entertainment;South Africa,2400,"$351,431,649,241 ",29.2,1.0,0.005614035087719298
+category;Media & Entertainment;India,2400,"$2,611,000,000,000 ",49.7,1.0,0.005614035087719298
+category;Media & Entertainment;Poland,2000,"$592,164,400,688 ",40.8,1.0,0.004678362573099415
+category;Media & Entertainment;Netherlands,3000,"$909,070,395,161 ",41.2,2.0,0.007017543859649123
+category;Media & Entertainment;Brazil,5400,"$1,839,758,040,766 ",65.1,3.0,0.01263157894736842
+category;Media & Entertainment;Thailand,1800,"$543,649,976,166 ",29.5,1.0,0.004210526315789474
+category;Media & Entertainment;Japan,5300,"$5,081,769,542,380 ",46.7,4.0,0.01239766081871345
+category;Media & Entertainment;New Zealand,1500,"$206,928,765,544 ",34.6,1.0,0.0035087719298245615
+category;Media & Entertainment;Turkey,1300,"$754,411,708,203 ",42.3,1.0,0.0030409356725146198
+category;Media & Entertainment;Sweden,2300,"$530,832,908,738 ",49.1,2.0,0.005380116959064328
+category;Media & Entertainment;Indonesia,1000,"$1,119,190,780,753 ",30.1,1.0,0.0023391812865497076
+category;Telecom,,,,,
+category;Telecom;Mexico,93000,"$1,258,286,717,125 ",55.1,1.0,0.457002457002457
+category;Telecom;Japan,26200,"$5,081,769,542,380 ",46.7,2.0,0.12874692874692875
+category;Telecom;United States,17600,"$21,427,700,000,000 ",36.6,5.0,0.08648648648648649
+category;Telecom;France,6700,"$2,715,518,274,227 ",60.7,1.0,0.03292383292383293
+category;Telecom;Malaysia,5200,"$364,701,517,788 ",38.7,1.0,0.025552825552825554
+category;Telecom;Hong Kong,4600,,,1.0,0.022604422604422605
+category;Telecom;Switzerland,4300,"$703,082,435,360 ",28.8,1.0,0.02113022113022113
+category;Telecom;India,8000,"$2,611,000,000,000 ",49.7,2.0,0.03931203931203931
+category;Telecom;Italy,4000,"$2,001,244,392,042 ",59.1,1.0,0.019656019656019656
+category;Telecom;Egypt,3300,"$303,175,127,598 ",44.4,1.0,0.016216216216216217
+category;Telecom;United Kingdom,6000,"$2,827,113,184,696 ",30.6,3.0,0.029484029484029485
+category;Telecom;Lebanon,5600,"$53,367,042,272 ",32.2,2.0,0.027518427518427518
+category;Telecom;Ireland,2700,,,1.0,0.013267813267813268
+category;Telecom;Russia,1700,"$1,699,876,578,871 ",46.2,1.0,0.008353808353808353
+category;Telecom;Canada,1600,"$1,736,425,629,520 ",24.5,1.0,0.007862407862407862
+category;Telecom;Australia,1500,"$1,392,680,589,329 ",47.4,1.0,0.007371007371007371
+category;Telecom;Cyprus,1100,"$24,564,647,935 ",22.4,1.0,0.005405405405405406
+category;Telecom;China,3300,"$19,910,000,000,000 ",59.2,3.0,0.016216216216216217
+category;Telecom;Turkey,1000,"$754,411,708,203 ",42.3,1.0,0.004914004914004914
+category;Diversified,,,,,
+category;Diversified;India,201900,"$2,611,000,000,000 ",49.7,22.0,0.22304463102076888
+category;Diversified;United States,143800,"$21,427,700,000,000 ",36.6,13.0,0.15885992045956696
+category;Diversified;Hong Kong,49800,,,2.0,0.05501546619531595
+category;Diversified;United Kingdom,60900,"$2,827,113,184,696 ",30.6,9.0,0.0672779496243924
+category;Diversified;Monaco,28500,"$7,184,844,193 ",,3.0,0.03148475475033142
+category;Diversified;Thailand,40600,"$543,649,976,166 ",29.5,9.0,0.0448519664162616
+category;Diversified;Malaysia,11800,"$364,701,517,788 ",38.7,2.0,0.013035793194874062
+category;Diversified;United Arab Emirates,12800,"$421,142,267,938 ",15.9,2.0,0.014140521431727796
+category;Diversified;Canada,19300,"$1,736,425,629,520 ",24.5,3.0,0.021321254971277067
+category;Diversified;Russia,24300,"$1,699,876,578,871 ",46.2,8.0,0.026844896155545736
+category;Diversified;Sweden,27200,"$530,832,908,738 ",49.1,7.0,0.030048608042421564
+category;Diversified;Nigeria,14300,"$448,120,428,859 ",34.8,2.0,0.015797613787008394
+category;Diversified;France,27100,"$2,715,518,274,227 ",60.7,4.0,0.02993813521873619
+category;Diversified;Austria,7900,"$446,314,739,528 ",51.4,1.0,0.008727353071144498
+category;Diversified;Mexico,9900,"$1,258,286,717,125 ",55.1,2.0,0.010936809544851966
+category;Diversified;Italy,9400,"$2,001,244,392,042 ",59.1,3.0,0.0103844454264251
+category;Diversified;China,47100,"$19,910,000,000,000 ",59.2,17.0,0.05203269995581087
+category;Diversified;Indonesia,20100,"$1,119,190,780,753 ",30.1,6.0,0.022205037560760053
+category;Diversified;Portugal,4700,"$237,686,075,635 ",39.8,1.0,0.00519222271321255
+category;Diversified;Taiwan,6600,,,2.0,0.007291206363234644
+category;Diversified;Vietnam,6500,"$261,921,244,843 ",37.6,2.0,0.007180733539549271
+category;Diversified;Brazil,18100,"$1,839,758,040,766 ",65.1,8.0,0.019995581087052586
+category;Diversified;Australia,4100,"$1,392,680,589,329 ",47.4,1.0,0.004529385771100309
+category;Diversified;British Virgin Islands,3400,,,1.0,0.0037560760053026955
+category;Diversified;Singapore,13700,"$372,062,527,489 ",21.0,6.0,0.015134776844896156
+category;Diversified;Turkey,26500,"$754,411,708,203 ",42.3,13.0,0.02927529827662395
+category;Diversified;Germany,2800,"$3,845,630,030,824 ",48.8,1.0,0.0030932390631904553
+category;Diversified;Oman,2700,"$76,983,094,928 ",27.4,1.0,0.0029827662395050815
+category;Diversified;Philippines,20900,"$376,795,508,680 ",43.1,10.0,0.02308882015024304
+category;Diversified;Chile,3400,"$282,318,159,745 ",34.0,2.0,0.0037560760053026955
+category;Diversified;Argentina,1900,"$449,663,446,954 ",106.3,1.0,0.0020989836500220948
+category;Diversified;Switzerland,4500,"$703,082,435,360 ",28.8,3.0,0.004971277065841803
+category;Diversified;Qatar,1800,"$183,466,208,791 ",11.3,1.0,0.001988510826336721
+category;Diversified;Nepal,1800,"$30,641,380,604 ",41.8,1.0,0.001988510826336721
+category;Diversified;South Korea,4700,"$2,029,000,000,000 ",33.2,3.0,0.00519222271321255
+category;Diversified;Greece,1600,"$209,852,761,469 ",51.9,1.0,0.0017675651789659744
+category;Diversified;Morocco,1500,"$118,725,279,596 ",45.8,1.0,0.001657092355280601
+category;Diversified;Norway,3000,"$403,336,363,636 ",36.2,2.0,0.003314184710561202
+category;Diversified;Israel,1500,"$395,098,666,122 ",25.3,1.0,0.001657092355280601
+category;Diversified;Hungary,2700,"$160,967,157,504 ",37.9,2.0,0.0029827662395050815
+category;Diversified;Tanzania,1500,"$63,177,068,175 ",43.8,1.0,0.001657092355280601
+category;Diversified;Egypt,2800,"$303,175,127,598 ",44.4,2.0,0.0030932390631904553
+category;Diversified;Finland,1400,"$268,761,201,365 ",36.6,1.0,0.0015466195315952276
+category;Diversified;Poland,1300,"$592,164,400,688 ",40.8,1.0,0.0014361467079098541
+category;Diversified;Ukraine,2100,"$153,781,069,118 ",45.2,2.0,0.0023199292973928413
+category;Diversified;Peru,1000,"$226,848,050,820 ",36.8,1.0,0.001104728236853734
+category;Food & Beverage,,,,,
+category;Food & Beverage;China,214800,"$19,910,000,000,000 ",59.2,46.0,0.22440451316339324
+category;Food & Beverage;Belgium,38900,"$529,606,710,418 ",55.4,1.0,0.04063936481404095
+category;Food & Beverage;United States,336300,"$21,427,700,000,000 ",36.6,74.0,0.3513372335979941
+category;Food & Beverage;Austria,34700,"$446,314,739,528 ",51.4,1.0,0.03625156707062265
+category;Food & Beverage;France,43000,"$2,715,518,274,227 ",60.7,5.0,0.044922691182615965
+category;Food & Beverage;Switzerland,42000,"$703,082,435,360 ",28.8,8.0,0.043877977434183035
+category;Food & Beverage;Thailand,18900,"$543,649,976,166 ",29.5,3.0,0.019745089845382365
+category;Food & Beverage;United Kingdom,41400,"$2,827,113,184,696 ",30.6,4.0,0.043251149185123273
+category;Food & Beverage;Brazil,22900,"$1,839,758,040,766 ",65.1,7.0,0.023923944839114083
+category;Food & Beverage;Canada,16500,"$1,736,425,629,520 ",24.5,4.0,0.017237776849143335
+category;Food & Beverage;India,32600,"$2,611,000,000,000 ",49.7,12.0,0.034057668198913496
+category;Food & Beverage;Singapore,12600,"$372,062,527,489 ",21.0,3.0,0.01316339323025491
+category;Food & Beverage;Mexico,10700,"$1,258,286,717,125 ",55.1,2.0,0.011178437108232344
+category;Food & Beverage;Germany,13000,"$3,845,630,030,824 ",48.8,6.0,0.013581278729628082
+category;Food & Beverage;Turkey,5000,"$754,411,708,203 ",42.3,1.0,0.005223568742164647
+category;Food & Beverage;Algeria,4600,"$169,988,236,398 ",66.1,1.0,0.004805683242791475
+category;Food & Beverage;Czech Republic,4100,"$246,489,245,495 ",46.1,1.0,0.00428332636857501
+category;Food & Beverage;Italy,9700,"$2,001,244,392,042 ",59.1,4.0,0.010133723359799415
+category;Food & Beverage;Bermuda,4600,,,2.0,0.004805683242791475
+category;Food & Beverage;Philippines,4600,"$376,795,508,680 ",43.1,2.0,0.004805683242791475
+category;Food & Beverage;Australia,4000,"$1,392,680,589,329 ",47.4,2.0,0.004178854993731718
+category;Food & Beverage;Norway,2700,"$403,336,363,636 ",36.2,1.0,0.0028207271207689095
+category;Food & Beverage;Ireland,2600,,,1.0,0.0027162557459256163
+category;Food & Beverage;Russia,5600,"$1,699,876,578,871 ",46.2,3.0,0.0058503969912244045
+category;Food & Beverage;Israel,3400,"$395,098,666,122 ",25.3,2.0,0.0035520267446719597
+category;Food & Beverage;Taiwan,6500,,,4.0,0.006790639364814041
+category;Food & Beverage;Monaco,2000,"$7,184,844,193 ",,1.0,0.002089427496865859
+category;Food & Beverage;Spain,3000,"$1,394,116,310,769 ",47.0,2.0,0.0031341412452987882
+category;Food & Beverage;Japan,3200,"$5,081,769,542,380 ",46.7,2.0,0.003343083994985374
+category;Food & Beverage;Indonesia,1800,"$1,119,190,780,753 ",30.1,1.0,0.0018804847471792729
+category;Food & Beverage;United Arab Emirates,1500,"$421,142,267,938 ",15.9,1.0,0.0015670706226493941
+category;Food & Beverage;Vietnam,1300,"$261,921,244,843 ",37.6,1.0,0.0013581278729628081
+category;Food & Beverage;Hong Kong,1000,,,1.0,0.0010447137484329294
+category;Logistics,,,,,
+category;Logistics;Switzerland,102800,"$703,082,435,360 ",28.8,4.0,0.4292275574112735
+category;Logistics;United Kingdom,13700,"$2,827,113,184,696 ",30.6,1.0,0.05720250521920668
+category;Logistics;France,31000,"$2,715,518,274,227 ",60.7,4.0,0.12943632567849686
+category;Logistics;Philippines,7300,"$376,795,508,680 ",43.1,1.0,0.030480167014613778
+category;Logistics;United States,20500,"$21,427,700,000,000 ",36.6,5.0,0.08559498956158663
+category;Logistics;Hong Kong,13900,,,4.0,0.05803757828810021
+category;Logistics;Greece,5600,"$209,852,761,469 ",51.9,1.0,0.02338204592901879
+category;Logistics;China,18700,"$19,910,000,000,000 ",59.2,8.0,0.07807933194154489
+category;Logistics;Norway,5100,"$403,336,363,636 ",36.2,1.0,0.02129436325678497
+category;Logistics;Australia,3200,"$1,392,680,589,329 ",47.4,1.0,0.013361169102296452
+category;Logistics;Russia,8500,"$1,699,876,578,871 ",46.2,3.0,0.03549060542797495
+category;Logistics;Japan,1600,"$5,081,769,542,380 ",46.7,1.0,0.006680584551148226
+category;Logistics;Taiwan,2500,,,2.0,0.010438413361169102
+category;Logistics;Malaysia,1500,"$364,701,517,788 ",38.7,1.0,0.006263048016701462
+category;Logistics;Indonesia,1300,"$1,119,190,780,753 ",30.1,1.0,0.005427974947807933
+category;Logistics;India,1300,"$2,611,000,000,000 ",49.7,1.0,0.005427974947807933
+category;Gambling & Casinos,,,,,
+category;Gambling & Casinos;United States,49500,"$21,427,700,000,000 ",36.6,6.0,0.4107883817427386
+category;Gambling & Casinos;Hong Kong,18700,,,3.0,0.15518672199170125
+category;Gambling & Casinos;Switzerland,8100,"$703,082,435,360 ",28.8,1.0,0.06721991701244813
+category;Gambling & Casinos;Austria,7100,"$446,314,739,528 ",51.4,1.0,0.05892116182572614
+category;Gambling & Casinos;United Kingdom,15100,"$2,827,113,184,696 ",30.6,3.0,0.12531120331950207
+category;Gambling & Casinos;Israel,5600,"$395,098,666,122 ",25.3,1.0,0.046473029045643155
+category;Gambling & Casinos;Cambodia,2800,"$27,089,389,787 ",23.1,1.0,0.023236514522821577
+category;Gambling & Casinos;Germany,2400,"$3,845,630,030,824 ",48.8,1.0,0.01991701244813278
+category;Gambling & Casinos;Malaysia,2300,"$364,701,517,788 ",38.7,1.0,0.019087136929460582
+category;Gambling & Casinos;Sweden,3100,"$530,832,908,738 ",49.1,2.0,0.025726141078838173
+category;Gambling & Casinos;Japan,4700,"$5,081,769,542,380 ",46.7,4.0,0.03900414937759336
+category;Gambling & Casinos;Spain,1100,"$1,394,116,310,769 ",47.0,1.0,0.009128630705394191
+category;Manufacturing,,,,,
+category;Manufacturing;Germany,72800,"$3,845,630,030,824 ",48.8,18.0,0.07144259077526988
+category;Manufacturing;China,373200,"$19,910,000,000,000 ",59.2,143.0,0.3662414131501472
+category;Manufacturing;Indonesia,27000,"$1,119,190,780,753 ",30.1,4.0,0.02649656526005888
+category;Manufacturing;United Kingdom,56200,"$2,827,113,184,696 ",30.6,6.0,0.05515210991167811
+category;Manufacturing;Japan,24700,"$5,081,769,542,380 ",46.7,2.0,0.024239450441609422
+category;Manufacturing;Singapore,21500,"$372,062,527,489 ",21.0,4.0,0.021099116781157997
+category;Manufacturing;Nigeria,14200,"$448,120,428,859 ",34.8,1.0,0.01393523061825319
+category;Manufacturing;Israel,17600,"$395,098,666,122 ",25.3,2.0,0.017271835132482826
+category;Manufacturing;Australia,17200,"$1,392,680,589,329 ",47.4,4.0,0.0168792934249264
+category;Manufacturing;Russia,31300,"$1,699,876,578,871 ",46.2,7.0,0.03071638861629048
+category;Manufacturing;Taiwan,19300,,,8.0,0.018940137389597645
+category;Manufacturing;United States,90700,"$21,427,700,000,000 ",36.6,28.0,0.08900883218842003
+category;Manufacturing;India,76200,"$2,611,000,000,000 ",49.7,32.0,0.07477919528949951
+category;Manufacturing;Denmark,26800,"$348,078,018,464 ",23.8,4.0,0.026300294406280667
+category;Manufacturing;Switzerland,30200,"$703,082,435,360 ",28.8,7.0,0.029636898920510305
+category;Manufacturing;Monaco,6400,"$7,184,844,193 ",,1.0,0.006280667320902846
+category;Manufacturing;Turkey,10000,"$754,411,708,203 ",42.3,2.0,0.009813542688910697
+category;Manufacturing;Hong Kong,29100,,,12.0,0.02855740922473013
+category;Manufacturing;Finland,8700,"$268,761,201,365 ",36.6,4.0,0.008537782139352306
+category;Manufacturing;Malaysia,4000,"$364,701,517,788 ",38.7,1.0,0.003925417075564278
+category;Manufacturing;Italy,13700,"$2,001,244,392,042 ",59.1,6.0,0.013444553483807655
+category;Manufacturing;Netherlands,5200,"$909,070,395,161 ",41.2,2.0,0.005103042198233563
+category;Manufacturing;Canada,5700,"$1,736,425,629,520 ",24.5,2.0,0.005593719332679097
+category;Manufacturing;Mexico,3200,"$1,258,286,717,125 ",55.1,1.0,0.003140333660451423
+category;Manufacturing;France,3100,"$2,715,518,274,227 ",60.7,1.0,0.003042198233562316
+category;Manufacturing;Ireland,2100,,,1.0,0.0020608439646712462
+category;Manufacturing;Thailand,4600,"$543,649,976,166 ",29.5,3.0,0.004514229636898921
+category;Manufacturing;Vietnam,1800,"$261,921,244,843 ",37.6,1.0,0.0017664376840039254
+category;Manufacturing;Austria,3200,"$446,314,739,528 ",51.4,2.0,0.003140333660451423
+category;Manufacturing;Spain,1600,"$1,394,116,310,769 ",47.0,1.0,0.0015701668302257115
+category;Manufacturing;Andorra,1500,"$3,154,057,987 ",,1.0,0.0014720314033366045
+category;Manufacturing;Sweden,1400,"$530,832,908,738 ",49.1,1.0,0.0013738959764474975
+category;Manufacturing;Brazil,4800,"$1,839,758,040,766 ",65.1,4.0,0.004710500490677135
+category;Manufacturing;Hungary,1200,"$160,967,157,504 ",37.9,1.0,0.0011776251226692837
+category;Manufacturing;Belgium,1200,"$529,606,710,418 ",55.4,1.0,0.0011776251226692837
+category;Manufacturing;South Korea,1000,"$2,029,000,000,000 ",33.2,1.0,0.0009813542688910696
+category;Real Estate,,,,,
+category;Real Estate;Hong Kong,131500,,,24.0,0.20003042287800427
+category;Real Estate;United States,191900,"$21,427,700,000,000 ",36.6,51.0,0.29190751445086704
+category;Real Estate;Australia,26300,"$1,392,680,589,329 ",47.4,8.0,0.04000608457560085
+category;Real Estate;China,89200,"$19,910,000,000,000 ",59.2,31.0,0.13568603589899605
+category;Real Estate;Germany,14000,"$3,845,630,030,824 ",48.8,2.0,0.02129601460298144
+category;Real Estate;Philippines,8600,"$376,795,508,680 ",43.1,1.0,0.013081837541831457
+category;Real Estate;India,28400,"$2,611,000,000,000 ",49.7,10.0,0.04320048676604807
+category;Real Estate;Norway,7700,"$403,336,363,636 ",36.2,1.0,0.011712808031639793
+category;Real Estate;Singapore,33300,"$372,062,527,489 ",21.0,14.0,0.05065409187709157
+category;Real Estate;United Kingdom,12900,"$2,827,113,184,696 ",30.6,3.0,0.019622756312747187
+category;Real Estate;Switzerland,9700,"$703,082,435,360 ",28.8,3.0,0.014755095832065714
+category;Real Estate;Austria,6000,"$446,314,739,528 ",51.4,1.0,0.009126863401277762
+category;Real Estate;Sweden,10500,"$530,832,908,738 ",49.1,3.0,0.01597201095223608
+category;Real Estate;Canada,15100,"$1,736,425,629,520 ",24.5,6.0,0.022969272893215698
+category;Real Estate;United Arab Emirates,6100,"$421,142,267,938 ",15.9,2.0,0.009278977791299057
+category;Real Estate;Israel,4900,"$395,098,666,122 ",25.3,2.0,0.0074536051110435046
+category;Real Estate;Russia,11200,"$1,699,876,578,871 ",46.2,5.0,0.017036811682385154
+category;Real Estate;Malaysia,5600,"$364,701,517,788 ",38.7,3.0,0.008518405841192577
+category;Real Estate;Japan,8200,"$5,081,769,542,380 ",46.7,4.0,0.012473379981746273
+category;Real Estate;Taiwan,9800,,,5.0,0.014907210222087009
+category;Real Estate;Spain,2500,"$1,394,116,310,769 ",47.0,1.0,0.0038028597505324006
+category;Real Estate;Netherlands,1700,"$909,070,395,161 ",41.2,1.0,0.0025859446303620323
+category;Real Estate;Thailand,5900,"$543,649,976,166 ",29.5,4.0,0.008974749011256465
+category;Real Estate;France,1700,"$2,715,518,274,227 ",60.7,1.0,0.0025859446303620323
+category;Real Estate;Slovakia,1600,"$105,422,304,976 ",49.7,1.0,0.002433830240340736
+category;Real Estate;Argentina,1300,"$449,663,446,954 ",106.3,1.0,0.001977487070276848
+category;Real Estate;Brazil,1200,"$1,839,758,040,766 ",65.1,1.0,0.0018253726802555522
+category;Real Estate;Monaco,2000,"$7,184,844,193 ",,2.0,0.0030422878004259203
+category;Metals & Mining,,,,,
+category;Metals & Mining;Australia,57300,"$1,392,680,589,329 ",47.4,8.0,0.12824529991047448
+category;Metals & Mining;Mexico,30600,"$1,258,286,717,125 ",55.1,2.0,0.0684870188003581
+category;Metals & Mining;United Arab Emirates,25200,"$421,142,267,938 ",15.9,1.0,0.05640107430617726
+category;Metals & Mining;Russia,111400,"$1,699,876,578,871 ",46.2,15.0,0.2493285586392122
+category;Metals & Mining;Chile,26400,"$282,318,159,745 ",34.0,2.0,0.05908683974932856
+category;Metals & Mining;China,58400,"$19,910,000,000,000 ",59.2,14.0,0.13070725156669652
+category;Metals & Mining;United Kingdom,23400,"$2,827,113,184,696 ",30.6,4.0,0.052372426141450316
+category;Metals & Mining;India,17500,"$2,611,000,000,000 ",49.7,1.0,0.0391674127126231
+category;Metals & Mining;Uzbekistan,14400,"$57,921,286,440 ",31.6,1.0,0.03222918531781558
+category;Metals & Mining;Switzerland,22100,"$703,082,435,360 ",28.8,7.0,0.04946284691136974
+category;Metals & Mining;South Africa,11100,"$351,431,649,241 ",29.2,2.0,0.024843330349149508
+category;Metals & Mining;Czech Republic,8000,"$246,489,245,495 ",46.1,1.0,0.017905102954341987
+category;Metals & Mining;Ukraine,10500,"$153,781,069,118 ",45.2,4.0,0.023500447627573858
+category;Metals & Mining;Indonesia,6100,"$1,119,190,780,753 ",30.1,2.0,0.013652641002685765
+category;Metals & Mining;Kazakhstan,7300,"$180,161,741,180 ",28.4,2.0,0.016338406445837065
+category;Metals & Mining;Singapore,5200,"$372,062,527,489 ",21.0,2.0,0.011638316920322292
+category;Metals & Mining;United States,2000,"$21,427,700,000,000 ",36.6,1.0,0.004476275738585497
+category;Metals & Mining;Italy,1700,"$2,001,244,392,042 ",59.1,1.0,0.0038048343777976725
+category;Metals & Mining;Spain,1600,"$1,394,116,310,769 ",47.0,1.0,0.0035810205908683975
+category;Metals & Mining;Israel,1200,"$395,098,666,122 ",25.3,1.0,0.0026857654431512983
+category;Energy,,,,,
+category;Energy;Indonesia,33200,"$1,119,190,780,753 ",30.1,5.0,0.07320837927232635
+category;Energy;Russia,93200,"$1,699,876,578,871 ",46.2,15.0,0.20551267916207278
+category;Energy;United States,160300,"$21,427,700,000,000 ",36.6,35.0,0.35347298787210585
+category;Energy;United Kingdom,26900,"$2,827,113,184,696 ",30.6,5.0,0.059316427783902975
+category;Energy;Thailand,15700,"$543,649,976,166 ",29.5,2.0,0.03461962513781698
+category;Energy;China,63800,"$19,910,000,000,000 ",59.2,18.0,0.14068357221609704
+category;Energy;Czech Republic,9200,"$246,489,245,495 ",46.1,1.0,0.020286659316427785
+category;Energy;France,6400,"$2,715,518,274,227 ",60.7,1.0,0.014112458654906285
+category;Energy;Hong Kong,12300,,,4.0,0.027122381477398014
+category;Energy;Canada,5700,"$1,736,425,629,520 ",24.5,1.0,0.01256890848952591
+category;Energy;Switzerland,4000,"$703,082,435,360 ",28.8,1.0,0.008820286659316428
+category;Energy;Argentina,2900,"$449,663,446,954 ",106.3,1.0,0.00639470782800441
+category;Energy;Brazil,4000,"$1,839,758,040,766 ",65.1,2.0,0.008820286659316428
+category;Energy;Turkey,3600,"$754,411,708,203 ",42.3,2.0,0.007938257993384785
+category;Energy;Singapore,3500,"$372,062,527,489 ",21.0,2.0,0.007717750826901874
+category;Energy;Finland,1900,"$268,761,201,365 ",36.6,1.0,0.004189636163175303
+category;Energy;Greece,1900,"$209,852,761,469 ",51.9,1.0,0.004189636163175303
+category;Energy;Uruguay,1800,"$56,045,912,952 ",41.8,1.0,0.003969128996692392
+category;Energy;Italy,1600,"$2,001,244,392,042 ",59.1,1.0,0.0035281146637265713
+category;Energy;Australia,1600,"$1,392,680,589,329 ",47.4,1.0,0.0035281146637265713
+category;Healthcare,,,,,
+category;Healthcare;India,97000,"$2,611,000,000,000 ",49.7,29.0,0.15080845771144277
+category;Healthcare;United States,116200,"$21,427,700,000,000 ",36.6,34.0,0.1806592039800995
+category;Healthcare;China,211800,"$19,910,000,000,000 ",59.2,72.0,0.3292910447761194
+category;Healthcare;Germany,68400,"$3,845,630,030,824 ",48.8,20.0,0.10634328358208955
+category;Healthcare;Switzerland,50300,"$703,082,435,360 ",28.8,12.0,0.07820273631840796
+category;Healthcare;Italy,15400,"$2,001,244,392,042 ",59.1,3.0,0.02394278606965174
+category;Healthcare;France,13000,"$2,715,518,274,227 ",60.7,4.0,0.020211442786069653
+category;Healthcare;Denmark,6800,"$348,078,018,464 ",23.8,2.0,0.010572139303482588
+category;Healthcare;South Korea,5600,"$2,029,000,000,000 ",33.2,1.0,0.008706467661691543
+category;Healthcare;Hong Kong,10200,,,3.0,0.01585820895522388
+category;Healthcare;Russia,9100,"$1,699,876,578,871 ",46.2,3.0,0.014148009950248756
+category;Healthcare;Poland,4000,"$592,164,400,688 ",40.8,1.0,0.006218905472636816
+category;Healthcare;Brazil,8800,"$1,839,758,040,766 ",65.1,3.0,0.013681592039800995
+category;Healthcare;Thailand,4800,"$543,649,976,166 ",29.5,2.0,0.007462686567164179
+category;Healthcare;United Kingdom,5400,"$2,827,113,184,696 ",30.6,2.0,0.008395522388059701
+category;Healthcare;Liechtenstein,2300,"$6,552,858,739 ",21.6,1.0,0.0035758706467661694
+category;Healthcare;United Arab Emirates,2200,"$421,142,267,938 ",15.9,1.0,0.003420398009950249
+category;Healthcare;Monaco,2000,"$7,184,844,193 ",,1.0,0.003109452736318408
+category;Healthcare;Finland,2000,"$268,761,201,365 ",36.6,1.0,0.003109452736318408
+category;Healthcare;Japan,3100,"$5,081,769,542,380 ",46.7,2.0,0.004819651741293532
+category;Healthcare;Israel,1500,"$395,098,666,122 ",25.3,1.0,0.0023320895522388058
+category;Healthcare;Turkey,1200,"$754,411,708,203 ",42.3,1.0,0.0018656716417910447
+category;Healthcare;Singapore,1000,"$372,062,527,489 ",21.0,1.0,0.001554726368159204
+category;Service,,,,,
+category;Service;China,52400,"$19,910,000,000,000 ",59.2,11.0,0.3021914648212226
+category;Service;United States,67100,"$21,427,700,000,000 ",36.6,19.0,0.38696655132641294
+category;Service;Netherlands,6200,"$909,070,395,161 ",41.2,1.0,0.03575547866205306
+category;Service;Israel,4200,"$395,098,666,122 ",25.3,1.0,0.02422145328719723
+category;Service;France,4100,"$2,715,518,274,227 ",60.7,1.0,0.02364475201845444
+category;Service;India,6600,"$2,611,000,000,000 ",49.7,2.0,0.03806228373702422
+category;Service;Germany,3200,"$3,845,630,030,824 ",48.8,1.0,0.01845444059976932
+category;Service;Switzerland,7100,"$703,082,435,360 ",28.8,3.0,0.040945790080738176
+category;Service;United Arab Emirates,3000,"$421,142,267,938 ",15.9,1.0,0.01730103806228374
+category;Service;Spain,4900,"$1,394,116,310,769 ",47.0,3.0,0.02825836216839677
+category;Service;Mexico,2600,"$1,258,286,717,125 ",55.1,1.0,0.014994232987312572
+category;Service;Russia,2600,"$1,699,876,578,871 ",46.2,1.0,0.014994232987312572
+category;Service;Bahrain,1500,"$38,574,069,149 ",13.8,1.0,0.00865051903114187
+category;Service;Monaco,4500,"$7,184,844,193 ",,4.0,0.025951557093425604
+category;Service;Hong Kong,1300,,,1.0,0.007497116493656286
+category;Service;Japan,1100,"$5,081,769,542,380 ",46.7,1.0,0.006343713956170703
+category;Service;Norway,1000,"$403,336,363,636 ",36.2,1.0,0.0057670126874279125
+category;Construction & Engineering,,,,,
+category;Construction & Engineering;United States,20900,"$21,427,700,000,000 ",36.6,5.0,0.17637130801687764
+category;Construction & Engineering;Egypt,7400,"$303,175,127,598 ",44.4,1.0,0.06244725738396625
+category;Construction & Engineering;United Kingdom,8800,"$2,827,113,184,696 ",30.6,3.0,0.07426160337552742
+category;Construction & Engineering;Switzerland,8600,"$703,082,435,360 ",28.8,2.0,0.07257383966244725
+category;Construction & Engineering;Spain,10900,"$1,394,116,310,769 ",47.0,4.0,0.0919831223628692
+category;Construction & Engineering;Italy,7500,"$2,001,244,392,042 ",59.1,4.0,0.06329113924050633
+category;Construction & Engineering;Russia,8600,"$1,699,876,578,871 ",46.2,4.0,0.07257383966244725
+category;Construction & Engineering;France,6800,"$2,715,518,274,227 ",60.7,3.0,0.05738396624472574
+category;Construction & Engineering;Canada,3300,"$1,736,425,629,520 ",24.5,1.0,0.027848101265822784
+category;Construction & Engineering;United Arab Emirates,4400,"$421,142,267,938 ",15.9,2.0,0.03713080168776371
+category;Construction & Engineering;China,7000,"$19,910,000,000,000 ",59.2,4.0,0.05907172995780591
+category;Construction & Engineering;Austria,2500,"$446,314,739,528 ",51.4,1.0,0.02109704641350211
+category;Construction & Engineering;Turkey,4200,"$754,411,708,203 ",42.3,2.0,0.035443037974683546
+category;Construction & Engineering;India,6100,"$2,611,000,000,000 ",49.7,3.0,0.05147679324894515
+category;Construction & Engineering;Malaysia,1600,"$364,701,517,788 ",38.7,1.0,0.01350210970464135
+category;Construction & Engineering;Mexico,1500,"$1,258,286,717,125 ",55.1,1.0,0.012658227848101266
+category;Construction & Engineering;South Korea,1100,"$2,029,000,000,000 ",33.2,1.0,0.009282700421940928
+category;Sports,,,,,
+category;Sports;United States,127500,"$21,427,700,000,000 ",36.6,35.0,0.9479553903345725
+category;Sports;United Kingdom,2900,"$2,827,113,184,696 ",30.6,1.0,0.021561338289962824
+category;Sports;Canada,2000,"$1,736,425,629,520 ",24.5,1.0,0.01486988847583643
+category;Sports;Switzerland,1100,"$703,082,435,360 ",28.8,1.0,0.008178438661710037
+category;Sports;Monaco,1000,"$7,184,844,193 ",,1.0,0.007434944237918215
