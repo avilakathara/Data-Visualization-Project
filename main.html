@@ -24,19 +24,20 @@
 </head>
 
 <body>
+
+  <div class="banner">
+    <h1>Billionaire Statistics</h1>
+  </div>
+
   <div class="container">
     <div class="row">
-      <div class="data-div" id="div1">
+      <!-- <div class="data-div" id="div1">
         <select name="piechartFeatures" id="piechartFeatures">
           <option value="gender">gender</option>
           <option value="self-made">self-made</option>
         </select>
-        <div id="billionairesPieChart"></div>
-        <select name="barchartFeatures" id="barchartFeatures">
-          <option value="category">category</option>
-          <option value="countryOfCitizenship">country</option>
-        </select>
-      </div>
+        <div id="billionairesPieChart"></div>      
+      </div> -->
       <div class="data-div" id="div2">
         <div class="search-bar">
           <label for="searchInput">Search:</label>
@@ -51,12 +52,26 @@
       </div>
     </div>
 
-    <div class="container">
-      <div id="billionairesBarChart"></div>
-
-      <button id="expandCountries">expand</button>
-      <button id="resetCountries">reset</button>
+    <div class="flex-containerd">
+      <div class="flex-itemd">
+        <select name="piechartFeatures" id="piechartFeatures">
+          <option value="gender">gender</option>
+          <option value="self-made">self-made</option>
+        </select>
+        <div id="billionairesPieChart"></div>
+      </div>
+    
+      <div class="flex-itemd">
+          <select name="barchartFeatures" id="barchartFeatures">
+            <option value="category">category</option>
+            <option value="countryOfCitizenship">country</option>
+          </select>
+          <div id="billionairesBarChart"></div>
+          <button id="expandCountries">expand</button>
+          <button id="resetCountries">reset</button>
+      </div>
     </div>
+
   </div>
 
   <div class="container">
