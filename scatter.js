@@ -1,5 +1,4 @@
 d3.csv("data/Parsed.csv", function (d) {
-    // Convert GDP values to numeric format (remove commas)
     d.gdp = +d.gdp.replace(/\D/g, '');
     return d;
 }).then(function (data) {
@@ -30,11 +29,12 @@ d3.csv("data/Parsed.csv", function (d) {
         const xScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[xAxisVar])])
             .range([0, width]);
-        svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale));
+        svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale).tickFormat(d3.format(".2s"))); // Use .2s format for billions
+
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[yAxisVar])])
             .range([height, 0]);
-            svg.append("g").call(d3.axisLeft(yScale));
+        svg.append("g").call(d3.axisLeft(yScale).tickFormat(d3.format(".2s"))); // Use .2s format for billions
 
 
         // Define color scale for countries
@@ -52,28 +52,27 @@ d3.csv("data/Parsed.csv", function (d) {
             .attr("r", 8)
             .attr("fill", d => colorScale(d.country))
             .attr("opacity", 0.7)
-            .on("mouseover", function (event, d) {
-                // Show tooltip with country name and values
-                const tooltip = d3.select("#scatter-plot-container")
-                    .append("div")
-                    .style("position", "absolute")
-                    .style("background", "#f4f4f4")
-                    .style("padding", "5px")
-                    .style("border", "1px solid #ddd")
-                    .style("border-radius", "5px")
-                    .style("pointer-events", "none")
-                    .html(`<strong>${d.country}</strong><br>${xAxisVar}: ${d[xAxisVar]}<br>${yAxisVar}: ${d[yAxisVar]}`)
-                    .style("left", event.pageX + 10 + "px")
-                    .style("top", event.pageY - 10 + "px");
+            .on("mouseover", function (_, d) {
+                // Show tooltip information in the div inside axis-description
+                const tooltipDiv = d3.select("#tooltip-info");
 
-                // Highlight the circle
+                tooltipDiv.html(`<strong>${d.country}</strong><br>${xAxisVar}: ${d[xAxisVar]}<br>${yAxisVar}: ${d[yAxisVar]}`);
+
+                const circleColor = d3.select(this).attr("fill");
+
+                tooltipDiv.style("display", "block");
+                tooltipDiv.style("background-color", circleColor)
+                    .style("border", "2px solid black")  
+                    .style("border-radius", "8px")
+                    .style("padding", "10px");
+
                 d3.select(this).attr("stroke", "#333").attr("stroke-width", 2);
             })
             .on("mouseout", function (_, d) {
-                // Remove tooltip and reset circle style
-                d3.select("#scatter-plot-container").select("div").remove();
+                //d3.select("#tooltip-info").style("display", "none");
                 d3.select(this).attr("stroke", "none");
             });
+
 
         // Add labels for x and y axes
         svg.append("text")

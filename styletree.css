@@ -1,0 +1,158 @@
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+body {
+padding: 100px;
+width: 100%;
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.remi-content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+#info {
+position: absolute;
+top: 20px;
+right: 20px;
+}
+
+/* #first {
+position: absolute;
+top: 60px;
+right: 20px;
+}
+
+#second {
+position: absolute;
+top: 80px;
+right: 20px;
+} */
+#main {
+position: absolute;
+top: 20px;
+right: 20px;
+width: 35%;
+height: 95%;
+border: 1px solid black;
+flex: 1;
+flex-direction: column;
+display: flex;
+justify-content: right;
+align-items: center;
+padding-top: 50px;
+padding-left: 20px;
+padding-right: 20px;
+}
+
+.node {
+margin: 20px;
+box-sizing: border-box;
+position: fixed;
+overflow: hidden;
+}
+
+
+.node-label {
+padding: 4px;
+line-height: 1em;
+white-space: pre;
+}
+
+.node-value {
+color: rgba(0,0,0,0.8);
+font-size: 9px;
+margin-top: 1px;
+}
+
+#title {
+width: 100%;
+
+
+font-size: 1vw;
+text-align: center;
+/* flex: 1; */
+flex-direction: row;
+display: flex;
+justify-content: center;
+/* align-items: center; */
+/* background-color: red; */
+padding-bottom: 10px;
+
+}
+
+
+
+.item {
+padding-left: 5px;
+padding-right: 5px;
+width: 320px;
+}
+
+.barchart {
+padding-top: 5px;
+width: 100%;
+height: 100%;
+/* background-color: blue; */
+/* flex: 1; */
+flex-direction: row;
+display: flex;
+justify-content: center;
+align-items: center;
+/* background-color: red; */
+}
+
+.firstpart {
+width: 22px;
+height: 100%;
+background-color: rgb(183, 216, 183);
+border-right: 2px solid black;
+}
+
+.secondpart {
+width: 78px;
+height: 100%;
+background-color: rgb(143, 143, 207);
+
+}
+
+.box {
+margin-top: 50px;
+width: 100%;
+height: 50px;
+/* background-color: blue; */
+/* flex: 1; */
+flex-direction: column;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 0.8vw;
+/* background-color: red; */
+}
+
+#first{
+border-right: 2px solid black;
+}
+
+.firstnum {
+padding-right: 5px;
+width: 70px;
+text-align: right;
+font-size: 0.7vw;
+}
+
+.secondnum {
+padding-left: 5px;
+width: 70px;
+font-size: 0.7vw;
+}
+/* #my_dataviz {
+position: relative;
+} */

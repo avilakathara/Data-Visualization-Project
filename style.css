@@ -51,7 +51,7 @@ body {
 }
 
 #div2 {
-  height: 300px;
+  height: 700px;
   width: 60%;
   position: relative;
 }
@@ -215,7 +215,7 @@ svg {
 .flex-containerd {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 0px;
   background-color: #f0f0f0;
 }
 
@@ -247,4 +247,68 @@ svg {
   margin: 10px 0 0;
   font-size: 18px;
   /* Increase the font size for the paragraph */
+}
+
+.wrapper {
+  max-width: 50%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.wrapper2 {
+  max-width: 100%;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}
+
+.intro-text {
+  background-color: #f0f0f000;
+  padding: 20px;
+  width: 90%;
+  margin: auto;
+}
+
+.intro {
+  color: white;
+}
+
+
+.scatter-container {
+  display: flex;
+}
+
+.scatter-plot-container {
+  flex: 0.7;
+  /* Adjust the flex property to make it smaller or larger */
+  margin-right: 20px;
+  /* Add margin for separation */
+}
+
+.axis-description {
+  width: 200px;
+  padding: 20px;
+  background-color: #8a4762;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+#scatter-plot {
+  width: 100%;
+  border: 1px solid black;
+  background-color: whitesmoke;
+}
+
+#x-axis,
+#y-axis {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.remi {
+  background-color: rgba(255, 0, 0, 0);
+  border: green;
+  border-width: 0px;
+  height: fit-content;
 }

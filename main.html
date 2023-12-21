@@ -31,7 +31,42 @@
     <h1>Billionaire Statistics</h1>
   </div>
 
+
   <div class="container">
+    
+    <div class="wrapper">
+      <div class="intro-text">
+        <h1 class="intro2"> intro </h1>
+        <p class="intro">Certainty listening no no behaviour existence assurance situation is. Because add why not esteems
+          amiable him.
+          Interested the unaffected mrs law friendship add principles. Indeed on people do merits to. Court heard which up
+          above
+          hoped grave do. Answer living law things either sir bed length. Looked before we an on merely. These no death he
+          at
+          share alone. Yet outward the him compass hearted are tedious.
+    
+          Be me shall purse my ought times. Joy years doors all would again rooms these. Solicitude announcing as to
+          sufficient
+          my. No my reached suppose proceed pressed perhaps he. Eagerness it delighted pronounce repulsive furniture no.
+          Excuse
+          few the remain highly feebly add people manner say. It high at my mind by roof. No wonder worthy in dinner.
+    
+          Endeavor bachelor but add eat pleasure doubtful sociable. Age forming covered you entered the examine. Blessing
+          scarcely
+          confined her contempt wondered shy. Dashwoods contented sportsmen at up no convinced cordially affection. Am so
+          continued resembled frankness disposing engrossed dashwoods. Earnest greater on no observe fortune norland. Hunted
+          mrs
+          ham wishes stairs. Continued he as so breakfast shameless. All men drew its post knew. Of talking of calling
+          however
+          civilly wishing resolve.</p>
+      </div>
+    </div>
+
+
+    <div class="remi">
+      <iframe src="treemap.html" width="100%" height="500px"></iframe>
+    </div>
+
     <div class="row">
       <!-- <div class="data-div" id="div1">
         <select name="piechartFeatures" id="piechartFeatures">
@@ -54,6 +89,8 @@
       </div>
     </div>
 
+
+    
     <div class="flex-containerd">
       <div class="flex-itemd">
         <select name="piechartFeatures" id="piechartFeatures">
@@ -75,37 +112,37 @@
   </div>
 
   <div class="container">
-    <label for="x-axis">X-Axis:</label>
-    <select id="x-axis">
-      <option value="gdp">GDP</option>
-      <option value="numBillionaires">Number of Billionaires</option>
-      <option value="totalWealth">Total Wealth</option>
-      <option value="totalTaxRate">Total Tax Rate</option>
-    </select>
-    
-    <label for="y-axis">Y-Axis:</label>
-    <select id="y-axis">
-      <option value="gdp">GDP</option>
-      <option value="numBillionaires">Number of Billionaires</option>
-      <option value="totalWealth">Total Wealth</option>
-      <option value="totalTaxRate">Total Tax Rate</option>
-    </select>
-    
-    <div id="scatter-plot-container">
-      <svg id="scatter-plot"></svg>
-      <!-- <div id="legend"></div> -->
+    <div class="scatter-container">
+      <div class="scatter-plot-container">
+        <svg id="scatter-plot"></svg>
+      </div>
+      <div class="axis-description">
+        <p>Here you can choose to compare differnt statistics and see how they look on a scatter plot</p>
+        <label for="x-axis">X-Axis:</label>
+        <select id="x-axis">
+          <option value="gdp">GDP</option>
+          <option value="numBillionaires">Number of Billionaires</option>
+          <option value="totalWealth">Total Wealth</option>
+          <option value="totalTaxRate">Total Tax Rate</option>
+        </select>
+  
+        <label for="y-axis">Y-Axis:</label>
+        <select id="y-axis">
+          <option value="gdp">GDP</option>
+          <option value="numBillionaires">Number of Billionaires</option>
+          <option value="totalWealth">Total Wealth</option>
+          <option value="totalTaxRate">Total Tax Rate</option>
+        </select>
+        <p>Hover over a datapoint to see its details:</p>
+        <div id="tooltip-info"></div>
+      </div>
     </div>
+  </div>
 
-    <div id="scatter-plot"></div>
     <!-- <div id="sliderXmin">X min</div>
     <div id="sliderXmax">x max</div>
     <div id="sliderYmin">y min</div>
     <div id="sliderYmax">Y max</div> -->
-  </div>
-
-  <!-- Container for the brushed scatter plot -->
-  <div id="brushed-scatter-plot-container"></div>
-
 </body>
 
 
