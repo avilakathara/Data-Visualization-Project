@@ -2,7 +2,7 @@ import { onDataReady } from "./dataloader.js";
 
 function createTable() {
       onDataReady((loadedData, headers) => {
-        const defaultHeaders = ["rank", "net_worth", "category", "name", "age", "country", "city", "source", "organization"];
+        const defaultHeaders = ["country", "numberOfBillionaires", "topCategories", "GDP", "totalTaxRate"];
   
         function createArrowIcon() {
           const arrowIcon = document.createElement("span");
@@ -21,10 +21,10 @@ function createTable() {
             th.classList.add("arrow-down", "selectedheader");
           }
         }
-        const data = loadedData;
+        var data = loadedData;
   
         const tsearch = document.getElementById("myInput");
-        tsearch.addEventListener("keydown", (e) => searchTable(e))
+        tsearch.addEventListener("keydown", searchTable)
         const thead = document.getElementById("data-table").getElementsByTagName("thead")[0];
         const tbody = document.getElementById("data-table").getElementsByTagName("tbody")[0];
   
@@ -32,6 +32,8 @@ function createTable() {
         thead.innerHTML = "";
         tbody.innerHTML = "";
   
+        data = createNewDataset(data);
+        
         defaultHeaders.forEach(headerText => {
           const th = document.createElement("th");
           th.textContent = headerText;
@@ -43,15 +45,13 @@ function createTable() {
           });
           thead.appendChild(th);
         });
-  
+
         // Populate table with data
         data.forEach(rowData => {
           const row = tbody.insertRow();
-          headers.forEach(headerText => {
-            if(defaultHeaders.includes(headerText)) {
+          defaultHeaders.forEach(headerText => {
               const cell = row.insertCell();
               cell.textContent = rowData[headerText];
-            }
           });
         });
   
@@ -61,13 +61,26 @@ function createTable() {
   
         // Add a click event listener to the table
         for (let i = 0; i < rows.length; i++) {
-          rows[i].addEventListener("click", function(e) {
-            // Toggle the "selected" class on the parent row
+          rows[i].addEventListener("click", function (e) {
+            // Remove the "selected" class from all rows
+            for (let j = 0; j < rows.length; j++) {
+              if (i !== j) {
+                rows[j].classList.remove("selected");
+              }
+            }
+
+            // Toggle the "selected" class on the clicked row
             rows[i].classList.toggle("selected");
-  
-            // Get all selected rows
-            var selectedRows = table.querySelectorAll(".selected");
-  
+
+            // Get the selected row
+            const selectedRow = table.querySelector(".selected");
+
+            // Do something with the selected row, for example:
+            if (selectedRow) {
+              console.log("Selected Row Index:", selectedRow.rowIndex);
+            } else {
+              console.log("No row selected");
+            }
           });
         }
       });
@@ -88,26 +101,24 @@ function createTable() {
       }
     }
   
-    function searchTable(event) {
-      if (event.key === 'Enter') {
-        const input = document.getElementById("myInput").value.toUpperCase();
-        const table = document.getElementById("data-table");
-        const rows = table.getElementsByTagName("tr");
-    
-        for (let i = 0; i < rows.length; i++) {
-          const cells = rows[i].getElementsByTagName("td");
-          let found = false;
-    
-          for (let j = 0; j < cells.length; j++) {
-            const cellText = cells[3].textContent.toUpperCase();
-            if (cellText.includes(input)) {
-              found = true;
-              break;
-            }
+    function searchTable() {
+      const input = document.getElementById("myInput").value.toUpperCase();
+      const table = document.getElementById("data-table");
+      const rows = table.getElementsByTagName("tr");
+  
+      for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName("td");
+        let found = false;
+  
+        for (let j = 0; j < cells.length; j++) {
+          const cellText = cells[0].textContent.toUpperCase();
+          if (cellText.includes(input)) {
+            found = true;
+            break;
           }
-
-          rows[i].style.display = found ? "" : "none";
         }
+
+        rows[i].style.display = found ? "" : "none";
       }
     }
     
@@ -146,6 +157,54 @@ function createTable() {
       } else {
         th.classList.add("arrow-down");
       }
+    }
+
+    function createNewDataset(dataset) {
+      const newDataset = [];
+    
+      const groupedData = {};
+    
+      dataset.forEach(entry => {
+        const country = entry.countryOfCitizenship;
+    
+        if (!groupedData[country]) {
+          groupedData[country] = {
+            count: 0,
+            GDP: entry.gdp_country,
+            totalTaxRate: entry.total_tax_rate_country,
+            topCategories: {},
+          };
+        }
+    
+        // Increment the count for the country
+        groupedData[country].count++;
+    
+        // Count the categories for the country
+        const category = entry.category;
+        if (!groupedData[country].topCategories[category]) {
+          groupedData[country].topCategories[category] = 1;
+        } else {
+          groupedData[country].topCategories[category]++;
+        }
+      });
+    
+      // Build the new dataset
+      for (const country in groupedData) {
+        const entry = {
+          country: country,
+          numberOfBillionaires: groupedData[country].count,
+          GDP: groupedData[country].GDP == "" ? "N/A" : groupedData[country].GDP,
+          totalTaxRate: groupedData[country].totalTaxRate == "" ? "N/A" : + groupedData[country].totalTaxRate + "%",
+          topCategories: Object.entries(groupedData[country].topCategories)
+            .sort((a, b) => b[1] - a[1]) // Sort by count in descending order
+            .slice(0, 3)
+            .map(([category, count]) => (category)),
+        };
+    
+        newDataset.push(entry);
+      }
+    
+      return newDataset;
     }
 
 export {createTable}

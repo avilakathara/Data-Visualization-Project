@@ -6,7 +6,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #2f384f;
+  background-color: #ffffff;
 }
 
 *::-webkit-scrollbar {
@@ -41,7 +41,7 @@ body {
   margin-right: 20px;
   margin-bottom: 20px;
   background-color: #3d5f7600;
-  color: #fff;
+  color: #000000;
   padding: 20px;
   box-sizing: border-box;
 }
@@ -51,8 +51,8 @@ body {
 }
 
 #div2 {
-  height: 700px;
-  width: 60%;
+  height: 430px;
+  width: 55%;
   position: relative;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 #data-table {
-  width: 100%;
+  width: 70%;
 }
 
 #data-table th, #data-table td {
@@ -138,7 +138,6 @@ body {
 
 #data-table-filter th,
 #data-table-filter td {
-  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
@@ -266,12 +265,12 @@ svg {
 .intro-text {
   background-color: #f0f0f000;
   padding: 20px;
-  width: 90%;
+  width: 30%;
   margin: auto;
 }
 
 .intro {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 
@@ -308,7 +307,5 @@ svg {
 
 .remi {
   background-color: rgba(255, 0, 0, 0);
-  border: green;
-  border-width: 0px;
   height: fit-content;
 }

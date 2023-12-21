@@ -146,7 +146,7 @@ function renderPieChart(title, distribution) {
         .style('fill', d => color(d));
 
     legend.append('text')
-        .attr('x', width / 2) // Adjust the x-coordinate to move labels to the right
+        .attr('x', width / 1.9) // Adjust the x-coordinate to move labels to the right
         .attr('y', 9)
         .attr('dy', '.35em')
         .style('text-anchor', 'end') // Adjust text-anchor to 'start'
@@ -167,21 +167,21 @@ function renderBarChart(data, feature) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    var selectedCountryBox = svg.append("rect")
-        .attr("class", "selected-country-box")
-        .attr("x", width / 3 - ((width - margin.left - margin.right) / 8))  // Adjusted x position for the selected country box
-        .attr("y", -margin.top / 2 + 20)  // Adjusted y position for the selected country box
-        .attr("width", (width - margin.left - margin.right) / 1.5)  // Adjusted width for the selected country box
-        .attr("height", 60)  // Adjusted height for the selected country box
-        .attr("fill", "white")
-        .attr("stroke", "black");
+    // var selectedCountryBox = svg.append("rect")
+    //     .attr("class", "selected-country-box")
+    //     .attr("x", width / 3 - ((width - margin.left - margin.right) / 8))  // Adjusted x position for the selected country box
+    //     .attr("y", -margin.top / 2 + 20)  // Adjusted y position for the selected country box
+    //     .attr("width", (width - margin.left - margin.right) / 1.5)  // Adjusted width for the selected country box
+    //     .attr("height", 60)  // Adjusted height for the selected country box
+    //     .attr("fill", "white")
+    //     .attr("stroke", "black");
 
-    var selectedCountryText = svg.append("text")
-        .attr("class", "selected-country-text")
-        .attr("x", width / 2)
-        .attr("y", -margin.top / 2 + 35)  // Adjusted y position for the selected country text
-        .attr("text-anchor", "middle")
-        .style("font-size", "16px");
+    // var selectedCountryText = svg.append("text")
+    //     .attr("class", "selected-country-text")
+    //     .attr("x", width / 2)
+    //     .attr("y", -margin.top / 2 + 35)  // Adjusted y position for the selected country text
+    //     .attr("text-anchor", "middle")
+    //     .style("font-size", "16px");
 
     svg.append("text")
         .attr("x", width / 2)
