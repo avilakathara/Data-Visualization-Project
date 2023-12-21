@@ -1,10 +1,8 @@
 import { onDataReady } from "./dataloader.js";
 
 function createTable() {
-    var selectedRows = [];
-
       onDataReady((loadedData, headers) => {
-        const defaultHeaders = ["rank", "net worth", "category", "name", "age", "country", "city", "source", "organization"];
+        const defaultHeaders = ["rank", "net_worth", "category", "name", "age", "country", "city", "source", "organization"];
   
         function createArrowIcon() {
           const arrowIcon = document.createElement("span");
@@ -64,19 +62,12 @@ function createTable() {
         // Add a click event listener to the table
         for (let i = 0; i < rows.length; i++) {
           rows[i].addEventListener("click", function(e) {
-            // Check if the clicked element is a checkbox with the class "row-checkbox"
-            console.log("clicked")
-  
             // Toggle the "selected" class on the parent row
             rows[i].classList.toggle("selected");
   
             // Get all selected rows
             var selectedRows = table.querySelectorAll(".selected");
   
-            // Compare values of the selected rows
-            if (selectedRows.length > 1) {
-              console.log(selectedRows)
-            }
           });
         }
       });
@@ -114,7 +105,7 @@ function createTable() {
               break;
             }
           }
-    
+
           rows[i].style.display = found ? "" : "none";
         }
       }

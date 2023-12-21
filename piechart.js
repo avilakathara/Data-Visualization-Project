@@ -3,7 +3,6 @@ import { onDataReady } from "./dataloader.js";
 import { createTable } from "./searchlist.js";
 
 var data = null;
-var numberOfRows = 5;
 var selected = null;
 
 document.getElementById("piechartFeatures").addEventListener("change", function () {
@@ -19,31 +18,12 @@ document.getElementById("piechartFeatures").addEventListener("change", function 
 });
 
 document.getElementById("barchartFeatures").addEventListener("change", function () {
-    numberOfRows = 5;
     selected = this.value;
     switch (selected) {
         case "category":
         case "countryOfCitizenship":
             createBarChart(selected);
             break;
-    }
-});
-
-document.getElementById("expandCountries").addEventListener("click", function () {
-    numberOfRows += 5;
-    if (selected == null) {
-        createBarChart("category")
-    } else {
-        createBarChart(selected);
-    }
-});
-
-document.getElementById("resetCountries").addEventListener("click", function () {
-    numberOfRows = 5;
-    if (selected == null) {
-        createBarChart("category")
-    } else {
-        createBarChart(selected);
     }
 });
 
@@ -82,7 +62,7 @@ function distributeBySelfmade(data) {
 
 function createBarChart(feature) {
     const distribution = distributeByFeature(data, feature);
-    const sortedData = sortAndSliceData(distribution, numberOfRows, feature);
+    const sortedData = sortAndSliceData(distribution,feature);
     renderBarChart(sortedData, feature);
 }
 
@@ -94,18 +74,17 @@ function distributeByFeature(data, feature) {
     }, {});
 }
 
-function sortAndSliceData(data, numberOfRows, feature) {
+function sortAndSliceData(data, feature) {
     let res = Object.entries(data)
         .sort((a, b) => b[1] - a[1])
-        .slice(0, numberOfRows)
         .map(([key, count]) => ({ [feature]: key, count }));
     return res;
 }
 
 function renderPieChart(title, distribution) {
     // Set up the chart dimensions
-    const width = 600;
-    const height = 300;
+    const width = 500;
+    const height = 400;
     const radius = Math.min(width, height) / 2;
 
     // Create an SVG element
@@ -113,7 +92,7 @@ function renderPieChart(title, distribution) {
         .html("")
         .append('svg')
         .attr('width', width + 100)
-        .attr('height', height + 100)
+        .attr('height', height + 200)
         .append('g')
         .attr('transform', 'translate(' + width / 2 + ',' + height / 1.25 + ')');
 
@@ -123,7 +102,7 @@ function renderPieChart(title, distribution) {
         .attr('y', -height / 1.5)
         .attr('text-anchor', 'middle')
         .style('font-size', '18px')
-        .text('Distribution of billionaires by ' + title); // Customize the title as needed
+        .text(title == "gender" ? 'Distribution of billionaires by ' + title : 'Distribution of billionaires by self-made vs. inherited wealth'); // Customize the title as needed
 
     // Create a color scale
     const color = d3.scaleOrdinal()
@@ -145,7 +124,7 @@ function renderPieChart(title, distribution) {
     // Add percentage labels to each slice
     arcs.append('text')
         .attr('transform', d => {
-            const pos = d3.arc().innerRadius(radius).outerRadius(radius + 35).centroid(d);
+            const pos = d3.arc().innerRadius(radius).outerRadius(radius + 50).centroid(d);
             return 'translate(' + pos + ')';
         })
         .attr('dy', '0.35em')
@@ -158,7 +137,7 @@ function renderPieChart(title, distribution) {
         .enter()
         .append('g')
         .attr('class', 'legend')
-        .attr('transform', (d, i) => 'translate(0,' + (i * 20) + ')');
+        .attr('transform', (d, i) => 'translate(60,' + (i * 20) + ')');
 
     legend.append('rect')
         .attr('x', width / 3)
@@ -176,8 +155,8 @@ function renderPieChart(title, distribution) {
 
 function renderBarChart(data, feature) {
     // set the dimensions and margins of the graph
-    var margin = { top: 40, right: 30, bottom: 100, left: 120 }, // Adjusted top margin for title
-        width = 1600 - margin.left - margin.right,
+    var margin = { top: 80, right: 100, bottom: 130, left: 60 }, // Adjusted top margin for title
+        width = 1200 - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     var svg = d3.select("#billionairesBarChart")
@@ -188,41 +167,58 @@ function renderBarChart(data, feature) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var selectedCountryBox = svg.append("rect")
+        .attr("class", "selected-country-box")
+        .attr("x", width / 3 - ((width - margin.left - margin.right) / 8))  // Adjusted x position for the selected country box
+        .attr("y", -margin.top / 2 + 20)  // Adjusted y position for the selected country box
+        .attr("width", (width - margin.left - margin.right) / 1.5)  // Adjusted width for the selected country box
+        .attr("height", 60)  // Adjusted height for the selected country box
+        .attr("fill", "white")
+        .attr("stroke", "black");
+
+    var selectedCountryText = svg.append("text")
+        .attr("class", "selected-country-text")
+        .attr("x", width / 2)
+        .attr("y", -margin.top / 2 + 35)  // Adjusted y position for the selected country text
+        .attr("text-anchor", "middle")
+        .style("font-size", "16px");
+
     svg.append("text")
         .attr("x", width / 2)
-        .attr("y", -margin.top / 2) 
+        .attr("y", -margin.top / 2)
         .attr("text-anchor", "middle")
         .style("font-size", "18px")
         .style("text-decoration", "underline")
         .text("Billionaires Distribution by " + (feature == "category" ? "Category" : "Country"));
 
-
     var x = d3.scaleBand()
         .range([0, width])
         .domain(data.map(function (d) { return feature == "category" ? d.category : d.countryOfCitizenship; }))
-        .padding(0.2); 
+        .padding(0.2);
 
-    svg.append("g")
+    var xAxis = svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
         .attr("transform", "translate(-10,0)rotate(-45)")
         .style("text-anchor", "end")
-        .style("font-size", "12px");
+        .style("font-size", "12px")
+        .on("click", function (event, d) {
+            // Update the text and show the selected country box
+            selectedCountryText.text(d + " has " + data.filter(x => x.countryOfCitizenship == d)[0].count + " billionaires.");
+            selectedCountryBox.style("visibility", "visible");
+        });
 
-    // Y axis
     var y = d3.scaleLinear()
         .domain([0, d3.max(data, function (d) { return d.count; })])
         .range([height, 0]);
 
     svg.append("g")
         .call(d3.axisLeft(y))
-        .style("font-size", "12px"); 
+        .style("font-size", "12px");
 
-    // Create a color scale
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-    // Create tooltip
     var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("position", "absolute")
@@ -241,9 +237,8 @@ function renderBarChart(data, feature) {
         .attr("y", function (d) { return y(d.count); })
         .attr("height", function (d) { return height - y(d.count); })
         .attr("fill", (d, i) => color(i))
-        // show tooltip
         .on("mouseover", function (event, d) {
-            tooltipDiv.html(`<div>Country: ${feature == "category" ? d.category : d.countryOfCitizenship}</div><div>Value: ${d.count}</div>`)
+            tooltipDiv.html(`<div>${feature == "category" ? "Category: " + d.category : "Country: " + d.countryOfCitizenship}</div><div>Billionaires: ${d.count}</div>`)
                 .style("visibility", "visible");
         })
         .on("mousemove", function (event) {
@@ -252,6 +247,14 @@ function renderBarChart(data, feature) {
         })
         .on("mouseout", function () {
             tooltipDiv.style("visibility", "hidden");
+        })
+        .on("click", function (event, d) {
+            // Update the text and show the selected country box
+            selectedCountryText.text("Selected Country: " + d.countryOfCitizenship);
+            selectedCountryBox.style("visibility", "visible");
         });
 }
+
+
+
 

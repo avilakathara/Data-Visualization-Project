@@ -62,7 +62,6 @@ body {
 
 #data-table {
   width: 100%;
-  border-collapse: collapse;
 }
 
 #data-table th, #data-table td {
@@ -110,7 +109,6 @@ body {
 .arrow-down::before {
   content: '\25BC'; /* Unicode character for downward arrow */
 }
-
 
 body {
   margin: 0;

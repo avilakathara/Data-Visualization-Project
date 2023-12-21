@@ -7,9 +7,11 @@
   <title>Data Visualization</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <!-- <script src="map.js" type="module"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
+
   <script src="dataloader.js" type="module"></script>
   <script src="searchlist.js" type="module"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js" defer></script>
@@ -67,8 +69,6 @@
             <option value="countryOfCitizenship">country</option>
           </select>
           <div id="billionairesBarChart"></div>
-          <button id="expandCountries">expand</button>
-          <button id="resetCountries">reset</button>
       </div>
     </div>
 
