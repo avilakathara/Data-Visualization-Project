@@ -30,7 +30,7 @@ var group = svg.append("g");
 // Add zoom
 
 var zoom = d3.zoom()
-    .scaleExtent([1, 10])
+    .scaleExtent([1, 100])
     .on("zoom", (event) => {
         group.attr('transform', event.transform);
     });
@@ -43,6 +43,11 @@ svg.call(zoom);
 
 // Load your data here
 d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) {
+
+    function calculateFontSize(d) {
+        var rectWidth = d.x1 - d.x0;
+        return (rectWidth / 10.0) + "px";
+    }
 
     var root = stratify(data)
         .sum(function(d) { return d.value; })
@@ -57,11 +62,14 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
     var first;
     var second;
 
-    var nodes = svg.selectAll(".node")
+    var nodes = group.selectAll(".node")
         .data(root.leaves())
         .enter().append("g")
         .attr("class", "node")
-        .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
+        .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; })
+        // add zoom
+        
+        ;
 
 
 
@@ -79,8 +87,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
     })
     .on("click", function(d) {
-
-
         var dd = d3.select(this)._groups[0][0].__data__;
 
         console.log(dd)
@@ -129,26 +135,25 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
 
     nodes.append("text")
-        .attr("x", 5) // padding-left
-        .attr("y", 20) // padding-top
+        .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
+        .attr("y", (d) => { return (d.x1 - d.x0) / 8; })
         .text(function(d) { 
-                if (d.value < top100)
-                    return "";
+                // if (d.value < top100)
+                //     return "";
     
-            return d.id.substring(d.id.lastIndexOf(";") + 1).split(/(?=[A-Z][^A-Z])/g).join("\n\n"); 
-        })
+            return d.id.substring(d.id.lastIndexOf(";") + 1).split(/(?=[A-Z][^A-Z])/g); 
+        }).style("font-size", calculateFontSize);
 
     nodes.append("text")
-    .attr("x", 5) // padding-left
-    .attr("y", 40) // padding-top
+    .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
+    .attr("y", (d) => { return (d.x1 - d.x0) / 4; })
     .text(function(d) { 
-            if (d.value < top100)
-                return "";
+            // if (d.value < top100)
+            //     return "";
 
         return format(d.value); 
-    })
+    }).style("font-size", calculateFontSize);
 
-    // ... [rest of your treemap code including the functions like reset, hover, etc.] ...
 });
 
 function reset(v) {
