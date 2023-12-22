@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+/* h1,
+h2,
+p {
+  font-family: 'Arial', sans-serif;
+} */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -9,7 +15,11 @@ body {
   background-color: #ffffff;
 }
 
-*::-webkit-scrollbar {
+iframe {
+  border: none;
+}
+
+/* *::-webkit-scrollbar {
   width: 1em;
 }
 
@@ -20,10 +30,12 @@ body {
 *::-webkit-scrollbar-thumb {
   background-color: #e15869;
   outline: 1px solid slategrey;
-}
+} */
 
 .container {
   /* max-width: 1800px; */
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
@@ -42,8 +54,10 @@ body {
   margin-bottom: 20px;
   background-color: #3d5f7600;
   color: #000000;
-  padding: 20px;
   box-sizing: border-box;
+  width: 100%;
+  padding-top: 4%;
+  padding-left: 15%;
 }
 
 .data-div:last-child {
@@ -73,15 +87,10 @@ body {
 }
 
 
-.table-container1 {
-  height: calc(100% - 40px); /* Subtract the height of the search bar from the container height */
-  overflow-y: auto;
-}
-
-
 .table-container {
   height: 430px;
   overflow-y: auto;
+  width: 65%;
 }
 
 #myInput {
@@ -94,7 +103,7 @@ body {
 #data-table thead {
   position: sticky;
   top: 0;
-  background-color: #8a4762;
+  background-color: rgb(58, 130, 174);
   outline: 1px solid black;
   color: #fff;
 }
@@ -132,7 +141,7 @@ body {
 .flex-item {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   box-sizing: border-box;
 }
 
@@ -151,6 +160,20 @@ body {
 #data-table-filter th {
   background-color: #4CAF50;
   color: white;
+}
+
+#billionairesPieChart {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(191, 224, 244);
+  border: none;
+}
+
+#billionairesBarChart {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(191, 224, 244);
+  border: none;
 }
 
 tr:hover {
@@ -190,7 +213,7 @@ button {
 }
 
 svg {
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
 }
 
 .legend {
@@ -221,25 +244,22 @@ svg {
   display: flex;
   justify-content: space-between;
   padding: 0px;
-  background-color: #f0f0f0;
+  background-color: rgb(191, 224, 244);
 }
 
 .flex-itemd {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: none;
   box-sizing: border-box;
+  background-color: rgb(191, 224, 244);
 }
 
 .banner {
-  background-color: #8a4762;
-  /* Set your desired background color */
+  background-color: rgb(58, 130, 174);
   color: #fff;
-  /* Set your desired text color */
   text-align: center;
   padding: 40px;
-  /* Increase the padding for a larger banner */
-  outline: 2px solid black;
 }
 
 .banner h1 {
@@ -295,15 +315,16 @@ svg {
 .axis-description {
   width: 200px;
   padding: 20px;
-  background-color: #8a4762;
+  background-color: white;
   box-sizing: border-box;
   text-align: left;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 
 #scatter-plot {
-  width: 100%;
-  border: 1px solid black;
-  background-color: whitesmoke;
+  width: 800px;
+  border: none;
+  background-color: white;
 }
 
 #x-axis,
@@ -322,16 +343,13 @@ svg {
   display: flex;
   justify-content: space-between;
   height: 700px;
+  border: none;
+  background-color: rgb(191, 224, 244);
 }
 
 .intro-text {
   padding-left: 10%;
   width: 800px;
   font-size: larger;
-}
-.data-div {
-  width: 100%;
-  padding-top: 4%;
-  padding-left: 10%;
-  /* padding: 10px; */
+  align-items: center;
 }

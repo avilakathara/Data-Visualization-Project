@@ -61,7 +61,7 @@ d3.csv("data/Parsed.csv", function (d) {
                 const circleColor = d3.select(this).attr("fill");
 
                 tooltipDiv.style("display", "block");
-                tooltipDiv.style("background-color", circleColor)
+                tooltipDiv.style("background-color", "white")
                     .style("border", "2px solid black")  
                     .style("border-radius", "8px")
                     .style("padding", "10px");
