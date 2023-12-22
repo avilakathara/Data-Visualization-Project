@@ -13,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  overflow-x: hidden;
 }
 
 iframe {
@@ -296,11 +297,6 @@ svg {
 
 }
 
-.intro {
-  color: rgb(0, 0, 0);
-}
-
-
 .scatter-container {
   display: flex;
 }
@@ -319,6 +315,13 @@ svg {
   box-sizing: border-box;
   text-align: left;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+}
+.axis-description-blue {
+  width: 200px;
+  padding-left: 1%;
+  background-color: rgb(191, 224, 244);
+  box-sizing: border-box;
+  text-align: left;
 }
 
 #scatter-plot {
@@ -350,6 +353,6 @@ svg {
 .intro-text {
   padding-left: 10%;
   width: 800px;
-  font-size: larger;
+  font-size: x-large;
   align-items: center;
 }

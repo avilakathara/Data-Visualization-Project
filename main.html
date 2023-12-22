@@ -34,7 +34,6 @@
 
   <div class="container-p">
     <div class="intro-text">
-      <h1 class="intro2"> Intro </h1>
       <p class="intro">Our interactive platform offers a dynamic view of billionaires across sectors and countries. Use this data to gain more insights on billionaires around the world, revealing wealth distribution patterns and trends.
 
         You can use our interactive map to discover geographical wealth hotspots, and search for specific countries in the table below using our search bar.
@@ -59,20 +58,25 @@
     </div>
      
     <div class="flex-containerd">
-      <div class="flex-itemd">
+      <div class="axis-description-blue">
+        <p>Here you can choose to compare gender and wealth accumulation method distribution using the dropdown selection box.</p>
         <select name="piechartFeatures" id="piechartFeatures">
           <option value="gender">gender</option>
           <option value="self-made">self-made</option>
         </select>
+      </div>
+      <div class="flex-itemd">
         <div id="billionairesPieChart"></div>
       </div>
-    
+      <div class="axis-description-blue">
+        <p>Here you can choose to group the data by industry or country using the dropdown selection box.</p>
+        <select name="barchartFeatures" id="barchartFeatures">
+          <option value="category">category</option>
+          <option value="countryOfCitizenship">country</option>
+        </select>
+      </div>
       <div class="flex-itemd">
-          <select name="barchartFeatures" id="barchartFeatures">
-            <option value="category">category</option>
-            <option value="countryOfCitizenship">country</option>
-          </select>
-          <div id="billionairesBarChart"></div>
+        <div id="billionairesBarChart"></div>
       </div>
     </div>
 
@@ -84,7 +88,7 @@
         <svg id="scatter-plot"></svg>
       </div>
       <div class="axis-description">
-        <p>Here you can choose to compare differnt statistics and see how they look on a scatter plot</p>
+        <p>Here you can choose to compare different statistics and see how they look on a scatter plot</p>
         <label for="x-axis">X-Axis:</label>
         <select id="x-axis">
           <option value="gdp">GDP</option>
