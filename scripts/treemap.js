@@ -126,7 +126,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
         .attr("y", (d) => { return (d.x1 - d.x0) / 8; })
         .text(function(d) { 
-            return d.id.substring(d.id.lastIndexOf(";") + 1).split(/(?=[A-Z][^A-Z])/g); 
+            return d.id.substring(d.id.lastIndexOf(";") + 1); 
         }).style("font-size", calculateFontSize);
     
     // Add the net worth to the rectangles
