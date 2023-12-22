@@ -20,19 +20,6 @@ iframe {
   border: none;
 }
 
-/* *::-webkit-scrollbar {
-  width: 1em;
-}
-
-*::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: #e15869;
-  outline: 1px solid slategrey;
-} */
-
 .container {
   /* max-width: 1800px; */
   display: flex;
@@ -58,7 +45,7 @@ iframe {
   box-sizing: border-box;
   width: 100%;
   padding-top: 4%;
-  padding-left: 15%;
+  padding-left: 13%;
 }
 
 .data-div:last-child {
@@ -91,7 +78,7 @@ iframe {
 .table-container {
   height: 430px;
   overflow-y: auto;
-  width: 65%;
+  width: 92%;
 }
 
 #myInput {
@@ -356,8 +343,8 @@ svg {
 }
 
 .intro-text {
-  padding-left: 10%;
-  width: 800px;
-  font-size: x-large;
+  padding-left: 7%;
+  width: 700px;
+  font-size: large;
   align-items: center;
 }
