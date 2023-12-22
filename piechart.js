@@ -5,6 +5,9 @@ import { createTable } from "./searchlist.js";
 var data = null;
 var selected = null;
 
+
+
+
 document.getElementById("piechartFeatures").addEventListener("change", function () {
     selected = this.value;
     switch (selected) {
@@ -92,26 +95,20 @@ function sortAndSliceData(data, feature) {
 
 function renderPieChart(title, distribution) {
     // Set up the chart dimensions
-    const width = window.innerWidth * 0.6;
-    const height = window.innerHeight * 0.6;
-    const radius = Math.min(width, height) / 3;
+    var margin = { top: 150, right: 100, bottom: 150, left: 100 }, // Adjusted top margin for title
+    width = window.innerWidth * 0.6,
+    height = window.innerHeight * 0.6,
+    radius = Math.min(width, height) / 2;
 
     // Create an SVG element
     const svg = d3.select('#billionairesPieChart')
         .html('')
         .append('svg')
-        .attr('viewBox', `0 0 ${width} ${height}`) // Use viewBox for responsiveness
+        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
         .append('g')
-        .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+        .attr('transform', 'translate(' + (width + margin.right + margin.left)/2 + ',' + (height + margin.top + margin.bottom)/2 +  ')');
 
-    // Add title to the pie chart
-    svg.append('text')
-        .attr('x', 0)
-        .attr('y', -height / 2.25)
-        .attr('text-anchor', 'middle')
-        .style("font-size", "30px")
-        .style("text-decoration", "underline")
-        .text(title == "gender" ? 'Distribution of billionaires by ' + title : 'Distribution of billionaires by self-made vs. inherited wealth'); // Customize the title as needed
+    document.getElementById('pieChartTitle').innerText = title == "gender" ? 'Distribution of billionaires by ' + title : 'Distribution of billionaires by self-made vs. inherited wealth';
 
     // Create a color scale
     const color = d3.scaleOrdinal()
@@ -146,7 +143,7 @@ function renderPieChart(title, distribution) {
         .enter()
         .append('g')
         .attr('class', 'legend')
-        .attr('transform', (d, i) => 'translate(60,' + (i * 20) + ')');
+        .attr('transform', (d, i) => 'translate(100,' + (i * 20) + ')');
 
     legend.append('rect')
         .attr('x', width * 0.26)
@@ -164,24 +161,18 @@ function renderPieChart(title, distribution) {
 
 function renderBarChart(data, feature) {
     // set the dimensions and margins of the graph
-    var margin = { top: 80, right: 100, bottom: 130, left: 30 }, // Adjusted top margin for title
+    var margin = { top: 150, right: 100, bottom: 150, left: 100 }, // Adjusted top margin for title
         width = window.innerWidth * 0.6, // Adjust the multiplier as needed
-        height = window.innerHeight * 0.6 - margin.bottom;
+        height = window.innerHeight * 0.6 ;
 
     var svg = d3.select('#billionairesBarChart')
         .html('') // Clear the existing content
         .append('svg')
-        .attr('viewBox', `0 0 ${width} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
+        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-    svg.append("text")
-        .attr("x", width / 2)
-        .attr("y", -margin.top / 2)
-        .attr("text-anchor", "middle")
-        .style("font-size", "30px")
-        .style("text-decoration", "underline")
-        .text("Billionaires Distribution by " + (feature == "category" ? "Category" : "Country"));
+    
+    document.getElementById('barChartTitle').innerText = "Billionaires Distribution by " + (feature == "category" ? "Category" : "Country");
 
     var x = d3.scaleBand()
         .range([0, width])
@@ -246,7 +237,6 @@ function renderBarChart(data, feature) {
             selectedCountryBox.style("visibility", "visible");
         });
 }
-
 
 
 

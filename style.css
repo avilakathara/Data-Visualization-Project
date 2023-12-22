@@ -128,6 +128,8 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  justify-items: center;
+  width: 100%;
   background-color: #f0f0f0;
 }
 
@@ -235,17 +237,20 @@ svg {
 
 .flex-containerd {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0px;
   background-color: rgb(191, 224, 244);
-  margin: 20px;
+  margin-left: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
 .flex-itemd {
   flex: 1;
-  padding: 10px;
-  border: none;
-  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1;
   background-color: rgb(191, 224, 244);
   border-right: 20px solid white;
 }
@@ -350,4 +355,26 @@ svg {
   width: 700px;
   font-size: large;
   align-items: center;
+}
+
+.select {
+  float: right;
+  position: absolute;
+  /* flex-grow: 0; */
+  top: 10px;
+  left: 10px;
+  display: block;
+  z-index: 100;
+  width: 6vw;
+  height: 1.2vw;
+  font-weight: 0.5vw;
+}
+
+.chart-title {
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  font-size: 1vw;
+  font-weight: bold;
+  width: 100%;
 }
