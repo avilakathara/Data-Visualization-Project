@@ -108,7 +108,7 @@ d3.csv("data/Parsed.csv", function (d) {
                 // Show tooltip information in the div inside axis-description
                 const tooltipDiv = d3.select("#tooltip-info");
 
-                tooltipDiv.html(`<strong>${d.country}</strong><br>${xAxisVar}: ${formatLargeNumber(d[xAxisVar])}<br>${yAxisVar}: ${formatLargeNumber(d[yAxisVar])}`);
+                tooltipDiv.html(`<strong>${d.country}</strong><br>${getFormattedName(xAxisVar)}: ${formatLargeNumber(d[xAxisVar])}<br>${getFormattedName(yAxisVar)}: ${formatLargeNumber(d[yAxisVar])}`);
 
                 tooltipDiv.style("display", "block");
                 tooltipDiv.style("background-color", "white")
