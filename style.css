@@ -45,7 +45,7 @@ iframe {
   box-sizing: border-box;
   width: 100%;
   padding-top: 4%;
-  padding-left: 18%;
+  padding-left: 13%;
 }
 
 .data-div:last-child {
@@ -62,10 +62,6 @@ iframe {
   margin-bottom: 10px;
 }
 
-#data-table {
-  width: 70%;
-}
-
 #data-table th, #data-table td {
   padding: 8px;
 }
@@ -76,15 +72,15 @@ iframe {
 
 
 .table-container {
-  height: 430px;
+  height: 400px;
   overflow-y: auto;
-  width: 65%;
+  width: 90%;
 }
 
 #myInput {
   padding: 5px;
   box-sizing: border-box;
-  width: 20%;
+  width: 30%;
 }
 
 .explanation {

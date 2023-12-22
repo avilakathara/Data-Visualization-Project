@@ -2,7 +2,7 @@ import { onDataReady } from "./dataloader.js";
 
 function createTable() {
       onDataReady((loadedData, headers) => {
-        const defaultHeaders = ["country", "numberOfBillionaires", "topCategories", "GDP", "totalTaxRate"];
+        const defaultHeaders = ["Country", "numberOfBillionaires", "topCategories", "GDP", "totalTaxRate"];
   
         function createArrowIcon() {
           const arrowIcon = document.createElement("span");
@@ -36,6 +36,13 @@ function createTable() {
         
         defaultHeaders.forEach(headerText => {
           const th = document.createElement("th");
+          if(headerText == "totalTaxRate") {
+            headerText = "Total Tax Rate"
+          } else if (headerText == "topCategories") {
+            headerText = "Top Industries"
+          } else if (headerText == "numberOfBillionaires") {
+            headerText = "Number of Billionaires"
+          }
           th.textContent = headerText;
           th.classList.add("sortable");
           th.appendChild(createArrowIcon()); // Add arrow icon to each header
@@ -52,6 +59,10 @@ function createTable() {
           defaultHeaders.forEach(headerText => {
               const cell = row.insertCell();
               cell.textContent = rowData[headerText];
+              // Check if the content is numerical and align to the right
+              if (headerText == "GDP" || headerText == "numberOfBillionaires" || headerText == "totalTaxRate") {
+                  cell.style.textAlign = 'right';
+              }
           });
         });
   
@@ -191,7 +202,7 @@ function createTable() {
       // Build the new dataset
       for (const country in groupedData) {
         const entry = {
-          country: country,
+          Country: country,
           numberOfBillionaires: groupedData[country].count,
           GDP: groupedData[country].GDP == "" ? "N/A" : groupedData[country].GDP,
           totalTaxRate: groupedData[country].totalTaxRate == "" ? "N/A" : + groupedData[country].totalTaxRate + "%",

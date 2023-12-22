@@ -92,7 +92,7 @@ function sortAndSliceData(data, feature) {
 
 function renderPieChart(title, distribution) {
     // Set up the chart dimensions
-    const width = window.innerWidth * 0.8;
+    const width = window.innerWidth * 0.6;
     const height = window.innerHeight * 0.6;
     const radius = Math.min(width, height) / 3;
 
@@ -109,7 +109,7 @@ function renderPieChart(title, distribution) {
         .attr('x', 0)
         .attr('y', -height / 2.25)
         .attr('text-anchor', 'middle')
-        .style("font-size", "18px")
+        .style("font-size", "30px")
         .style("text-decoration", "underline")
         .text(title == "gender" ? 'Distribution of billionaires by ' + title : 'Distribution of billionaires by self-made vs. inherited wealth'); // Customize the title as needed
 
@@ -149,7 +149,7 @@ function renderPieChart(title, distribution) {
         .attr('transform', (d, i) => 'translate(60,' + (i * 20) + ')');
 
     legend.append('rect')
-        .attr('x', width * 0.2)
+        .attr('x', width * 0.26)
         .attr('width', 18)
         .attr('height', 18)
         .style('fill', d => color(d));
@@ -164,8 +164,8 @@ function renderPieChart(title, distribution) {
 
 function renderBarChart(data, feature) {
     // set the dimensions and margins of the graph
-    var margin = { top: 80, right: 100, bottom: 130, left: 30 }, // Adjusted top margin for title
-        width = window.innerWidth * 0.8, // Adjust the multiplier as needed
+    var margin = { top: 80, right: 100, bottom: 130, left: 40 }, // Adjusted top margin for title
+        width = window.innerWidth * 0.5, // Adjust the multiplier as needed
         height = window.innerHeight * 0.6 - margin.top - margin.bottom;
 
     var svg = d3.select('#billionairesBarChart')
@@ -195,7 +195,7 @@ function renderBarChart(data, feature) {
         .attr("x", width / 2)
         .attr("y", -margin.top / 2)
         .attr("text-anchor", "middle")
-        .style("font-size", "18px")
+        .style("font-size", "30px")
         .style("text-decoration", "underline")
         .text("Billionaires Distribution by " + (feature == "category" ? "Category" : "Country"));
 
