@@ -50,6 +50,22 @@ d3.csv("data/Parsed.csv", function (d) {
         return number.toString();
     }
 
+
+    function getFormattedName(axisVar) {
+        switch (axisVar) {
+            case "gdp":
+                return "GDP";
+            case "numBillionaires":
+                return "Number of Billionaires"
+            case "totalWealth":
+                return "Total Wealth"
+            case "totalTaxRate":
+                return "Total Tax Rate"
+            default:
+                return "Error";
+        }
+    }
+
     // Function to update the scatter plot
     function updateScatterPlot(xAxisVar, yAxisVar) {
         // Clear everything
@@ -112,7 +128,7 @@ d3.csv("data/Parsed.csv", function (d) {
         svg.append("text")
             .attr("transform", "translate(" + (width / 2) + " ," + (height + margin.top + 20) + ")")
             .style("text-anchor", "middle")
-            .text(xAxisVar);
+            .text(getFormattedName(xAxisVar));
 
         svg.append("text")
             .attr("transform", "rotate(-90)")
@@ -120,7 +136,7 @@ d3.csv("data/Parsed.csv", function (d) {
             .attr("x", 0 - (height / 2))
             .attr("dy", "1em")
             .style("text-anchor", "middle")
-            .text(yAxisVar);
+            .text(getFormattedName(yAxisVar));
 
         
         // Calculate the trendline and the display the gradient to the user.
