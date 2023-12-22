@@ -293,9 +293,9 @@ function createBarChart(title, num1, num2) {
     }
 }
 
-  var totalNetWorth = createBarChart('Total net worth', 82333, 18);
-  var gdp = createBarChart('GDP', 82, 18);
-  var taxRate = createBarChart('Tax rate', 1182, 18);
-  var count = createBarChart('Amount of billionaires', 1, 18);
-  var perc = createBarChart('Percentage of sector', 1, 18);
+  var totalNetWorth = createBarChart('Total net worth', 1, 1);
+  var gdp = createBarChart('GDP', 1, 1);
+  var taxRate = createBarChart('Tax rate', 1, 1);
+  var count = createBarChart('Amount of billionaires', 1, 1);
+  var perc = createBarChart('Percentage of sector', 1, 1);
 
