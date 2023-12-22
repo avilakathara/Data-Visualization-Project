@@ -100,6 +100,11 @@ iframe {
   width: 20%;
 }
 
+.explanation {
+
+  text-align: center;
+}
+
 /* Ensure that the table header stays fixed during scrolling */
 #data-table thead {
   position: sticky;

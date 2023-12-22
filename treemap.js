@@ -321,7 +321,7 @@ function formatLargeNumber(number) {
 
   var totalNetWorth = createBarChart('Total net worth', 1, 1);
   var gdp = createBarChart('GDP', 1, 1);
-  var taxRate = createBarChart('Tax rate', 1, 1);
+  var taxRate = createBarChart('Total tax rate', 1, 1);
   var count = createBarChart('Amount of billionaires', 1, 1);
   var perc = createBarChart('Percentage of sector', 1, 1);
 
