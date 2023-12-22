@@ -95,7 +95,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
     .on("click", function(d) {
         var dd = d3.select(this)._groups[0][0].__data__;
 
-        console.log(dd)
         if (flip) {
             hover(d3.select(this));
 
@@ -118,7 +117,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         // convert to number
         
         var new_color = function(d) { while (d.depth > 1) d = d.parent; return color(d.id); };
-        updateBarChart(totalNetWorth, flip, dd.value * 1000000, new_color(dd), "large");
+        updateBarChart(totalNetWorth, flip, +dd.value * 1000000, new_color(dd), "large");
 
         var gdpValue = dd.data.gdp_country.replace(/,/g, '').replace('$', '');
         updateBarChart(gdp, flip, +gdpValue, new_color(dd), "large");
@@ -261,25 +260,30 @@ function createBarChart(title, num1, num2) {
     var secondPart = chartDiv.querySelector('.secondpart');
 
     // Convert current values to integers
-    var currentFirstValue = parseInt(firstNum.textContent);
-    var currentSecondValue = parseInt(secondNum.textContent);
+    var currentFirstValue = parseInt(firstNum.value);
+    var currentSecondValue = parseInt(secondNum.value);
+
+
+    var newValueString = newValue;
 
     if (type == "percentage") {
-        newValue = newValue + "%";
+        newValueString = newValue + "%";
     }
 
     if (type == "large") {
-        newValue = formatLargeNumber(newValue) + "$";
+        newValueString = formatLargeNumber(+newValue) + "$";
     }
 
 
     if (partToUpdate) {
         // Update the first part
-        firstNum.textContent = newValue.toString();
+        firstNum.textContent = newValueString.toString();
+        firstNum.value = newValue;
         currentFirstValue = newValue;
     } else {
         // Update the second part
-        secondNum.textContent = newValue.toString();
+        secondNum.textContent = newValueString.toString();
+        secondNum.value = newValue;
         currentSecondValue = newValue;
     } 
     
