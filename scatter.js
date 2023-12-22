@@ -14,6 +14,23 @@ d3.csv("data/Parsed.csv", function (d) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+
+    function calctrend(data, xAxisVar, yAxisVar) {
+        const xValues = data.map(d => +d[xAxisVar]);
+        const yValues = data.map(d => +d[yAxisVar]);
+
+        const xBar = d3.mean(xValues);
+        const yBar = d3.mean(yValues);
+
+        const numerator = d3.sum(xValues.map((xi, i) => (xi - xBar) * (yValues[i] - yBar)));
+        const denominator = d3.sum(xValues.map(xi => Math.pow(xi - xBar, 2)));
+
+        const slope = numerator / denominator;
+        const intercept = yBar - slope * xBar;
+
+        return { slope, intercept };
+    }
+
     // Function to update the scatter plot
     function updateScatterPlot(xAxisVar, yAxisVar) {
         // Clear existing content
@@ -105,6 +122,23 @@ d3.csv("data/Parsed.csv", function (d) {
 
         legend.append("p")
             .text(d => d);
+
+        const trendline = calctrend(filteredData, xAxisVar, yAxisVar);
+
+        const line = d3.line()
+            .x(d => xScale(+d[xAxisVar]))
+            .y(d => yScale(trendline.slope * +d[xAxisVar] + trendline.intercept));
+
+        svg.append("path")
+            .datum(filteredData)
+            .attr("class", "trend-line")
+            .attr("d", line)
+            .attr("stroke", "black")
+            .attr("stroke-width", 0.1)
+            .attr("fill", "none");
+
+        const gradientDiv = d3.select("#gradient-info");
+        gradientDiv.html(`Trendline Gradient: ${trendline.slope.toFixed(2)}`);
     }
 
     updateScatterPlot("gdp", "gdp");
