@@ -177,7 +177,7 @@ function renderBarChart(data, feature) {
     var svg = d3.select('#billionairesBarChart')
         .html('') // Clear the existing content
         .append('svg')
-        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
+        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`)
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
     
@@ -188,6 +188,7 @@ function renderBarChart(data, feature) {
         .domain(data.map(function (d) { return feature == "category" ? d.category : d.countryOfCitizenship; }))
         .padding(0.2);
 
+    // Add country/category names on x-axis
     svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
@@ -206,6 +207,7 @@ function renderBarChart(data, feature) {
 
     var color = d3.scaleOrdinal(d3.schemeCategory10);
 
+    // Tooltip when hovering over the bar
     var tooltipDiv = d3.select("body").append("div")
         .attr("class", "tooltip")
         .style("position", "absolute")
@@ -215,6 +217,7 @@ function renderBarChart(data, feature) {
         .style("border-radius", "5px")
         .style("padding", "8px");
 
+    // Tooltip activation when hovering over the bar
     svg.selectAll("myRect")
         .data(data)
         .enter()
