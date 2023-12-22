@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Visualization</title>
+  <link rel="stylesheet" type="text/css" href="table.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  
   <!-- <script src="map.js" type="module"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
@@ -32,15 +34,15 @@
   </div>
 
 
-  <div class="container-p">
-    <div class="intro-text">
+  <div class="intro-container">
+    <div class="intro">
       <h1>Introduction</h1>
-      <p class="intro">
+      <p>
         Our interactive platform offers a dynamic view of billionaires across various industries and countries. Use this data to gain more insights on billionaires around the world, revealing wealth distribution patterns and trends.
         You can use our interactive map to discover geographical wealth hotspots, and search for specific countries in the table below using our search bar.
       </p>
     </div>
-    <div class="data-div" id="div2">
+    <div class="table">
       <div class="search-bar">
         <label for="searchInput">Search:</label>
         <input type="text" id="myInput" placeholder="Search for country...">
@@ -59,17 +61,16 @@
       <p>This treemap below shows billionaires grouped by country and seperated by their industry. On the right is a comparison bar chart which can be used to compare any two industries of different countries.</p>
     </div>
   </div>
-    <div class="remi">
-      <iframe src="treemap.html" height="100%" width="100%"></iframe>
+    <div>
+      <iframe src="treemap.html" height="100%" width="100%" frameBorder="0"></iframe>
     </div>
-    <div class="whitespace"></div>
     <div class="explanation">
       <h1> Pie chart and Bar chart </h1>
       <p>The pie chart on the left displays the trivial data on billionaires such as gender distribution and self-made vs inherited wealth. The bar chart on the right shows the distribution of billionaires amongst industries and countries.</p>
     </div>
 
-    <div class="flex-containerd">
-      <div class="flex-itemd">
+    <div class="chart-container">
+      <div class="chart-item">
         <select name="piechartFeatures" id="piechartFeatures" class="select">
           <option value="gender">gender</option>
           <option value="self-made">self-made</option>
@@ -77,7 +78,7 @@
         <div id="pieChartTitle" class="chart-title"></div>
         <div id="billionairesPieChart"></div>
       </div>
-      <div class="flex-itemd">
+      <div class="chart-item">
         <select name="barchartFeatures" id="barchartFeatures" class="select">
           <option value="category">industry</option>
           <option value="countryOfCitizenship">country</option>
@@ -87,45 +88,39 @@
       </div>
     </div>
   </div>
-  <div class="whitespace"></div>
   <div class="explanation">
     <h1> Scatter Plot </h1>
     <p>The scatter plot below is used to compare the continuous numerical variables in the statistics grouped by country. Each datapoint on the graph is a country.</p>
   </div>
 
-  <div class="container">
-    <div class="scatter-container">
-      <div class="scatter-plot-container">
-        <svg id="scatter-plot"></svg>
-      </div>
-      <div class="axis-description">
-        <p>Scatter plot can be used to compare GDP, Number of billionares, total wealth and total tax rate.</p>
-        <label for="x-axis"><p>X-Axis:</p></label>
-        <select id="x-axis">
-          <option value="gdp">GDP</option>
-          <option value="numBillionaires">Number of Billionaires</option>
-          <option value="totalWealth">Total Wealth</option>
-          <option value="totalTaxRate">Total Tax Rate</option>
-        </select>
-  
-        <label for="y-axis"><p>Y-Axis:</p></label>
-        <select id="y-axis">
-          <option value="gdp">GDP</option>
-          <option value="numBillionaires">Number of Billionaires</option>
-          <option value="totalWealth">Total Wealth</option>
-          <option value="totalTaxRate">Total Tax Rate</option>
-        </select>
-        <p>Hover over a datapoint to see its details:</p>
-        <div id="tooltip-info"></div>
-        <p id="gradient-info"></p>
-      </div>
+  <div class="scatter-container">
+    <div class="scatter-plot-container">
+      <svg id="scatter-plot"></svg>
+    </div>
+    <div class="axis-description">
+      <p>Scatter plot can be used to compare GDP, Number of billionares, total wealth and total tax rate.</p>
+      <label for="x-axis"><p>X-Axis:</p></label>
+      <select id="x-axis">
+        <option value="gdp">GDP</option>
+        <option value="numBillionaires">Number of Billionaires</option>
+        <option value="totalWealth">Total Wealth</option>
+        <option value="totalTaxRate">Total Tax Rate</option>
+      </select>
+
+      <label for="y-axis"><p>Y-Axis:</p></label>
+      <select id="y-axis">
+        <option value="gdp">GDP</option>
+        <option value="numBillionaires">Number of Billionaires</option>
+        <option value="totalWealth">Total Wealth</option>
+        <option value="totalTaxRate">Total Tax Rate</option>
+      </select>
+      <p>Hover over a datapoint to see its details:</p>
+      <div id="tooltip-info"></div>
+      <p id="gradient-info"></p>
     </div>
   </div>
 
-    <!-- <div id="sliderXmin">X min</div>
-    <div id="sliderXmax">x max</div>
-    <div id="sliderYmin">y min</div>
-    <div id="sliderYmax">Y max</div> -->
+
 </body>
 
 

@@ -1,0 +1,67 @@
+.table {
+    width: 60%;
+  }
+  
+  .search-bar {
+    margin-bottom: 10px;
+  }
+  
+  #data-table th, #data-table td {
+    padding: 8px;
+  }
+  
+  #data-table thead {
+    text-align: left;
+  }
+  
+  .table-container {
+    height:300px;
+    overflow-y: auto;
+    width: 100%;
+  }
+
+  #data-table thead {
+    position: sticky;
+    top: 0;
+    background-color: rgb(58, 130, 174);
+    outline: 1px solid black;
+    color: #fff;
+  }
+  
+  .arrow-icon {
+    display: none;
+    margin-left: 5px;
+  }
+  
+  .sortable.selected .arrow-icon {
+    display: inline-block; /* Display the arrow when selected */
+  }
+  
+  .arrow-up::before {
+    content: '\25B2'; /* Unicode character for upward arrow */
+  }
+  
+  .arrow-down::before {
+    content: '\25BC'; /* Unicode character for downward arrow */
+  }
+
+  #data-table-filter {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  #data-table-filter th,
+  #data-table-filter td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  #data-table-filter th {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  tr:hover, .selected {
+    background-color: #9faab4;
+  }
