@@ -267,7 +267,7 @@ function createBarChart(title, num1, num2) {
     var newValueString = newValue;
 
     if (type == "percentage") {
-        newValueString = newValue + "%";
+        newValueString = newValue.toFixed(0) + "%";
     }
 
     if (type == "large") {

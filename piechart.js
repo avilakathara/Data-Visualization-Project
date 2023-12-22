@@ -172,7 +172,7 @@ function renderBarChart(data, feature) {
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
     
-    document.getElementById('barChartTitle').innerText = "Billionaires Distribution by " + (feature == "category" ? "Category" : "Country");
+    document.getElementById('barChartTitle').innerText = "Billionaires Distribution by " + (feature == "category" ? "Industry" : "Country");
 
     var x = d3.scaleBand()
         .range([0, width])
