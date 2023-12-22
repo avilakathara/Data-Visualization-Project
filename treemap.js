@@ -118,18 +118,18 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         // convert to number
         
         var new_color = function(d) { while (d.depth > 1) d = d.parent; return color(d.id); };
-        updateBarChart(totalNetWorth, flip, dd.value, new_color(dd));
+        updateBarChart(totalNetWorth, flip, dd.value * 1000000, new_color(dd), "large");
 
         var gdpValue = dd.data.gdp_country.replace(/,/g, '').replace('$', '');
-        updateBarChart(gdp, flip, +gdpValue, new_color(dd));
-        updateBarChart(taxRate, flip, +dd.data.tax_rate_country, new_color(dd));
+        updateBarChart(gdp, flip, +gdpValue, new_color(dd), "large");
+        updateBarChart(taxRate, flip, +dd.data.tax_rate_country, new_color(dd), "percentage");
         updateBarChart(count, flip, +dd.data.amount_of_billionaires, new_color(dd));
 
         // convert 0.008438 to 0.84
         // KEEP 2 DECIMAL PLACES
         var percentValue = +(+dd.data.percentage).toPrecision(2) * 100 ;
         
-        updateBarChart(perc, flip, +percentValue, new_color(dd));
+        updateBarChart(perc, flip, +percentValue, new_color(dd), "percentage");
 
         flip = !flip;
     })
@@ -154,10 +154,8 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
     .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
     .attr("y", (d) => { return (d.x1 - d.x0) / 4; })
     .text(function(d) { 
-            // if (d.value < top100)
-            //     return "";
 
-        return format(d.value); 
+        return formatLargeNumber(+d.value  * 1000000) + "$"; 
     }).style("font-size", calculateFontSize);
 
     // Add title for the 3 groups
@@ -250,7 +248,7 @@ function createBarChart(title, num1, num2) {
     return box;
   }
   
-  function updateBarChart(chartDiv, partToUpdate, newValue, newColor) {
+  function updateBarChart(chartDiv, partToUpdate, newValue, newColor, type = "") {
     if (!chartDiv) {
         console.error('Bar chart div not provided or not found.');
         return;
@@ -265,6 +263,15 @@ function createBarChart(title, num1, num2) {
     // Convert current values to integers
     var currentFirstValue = parseInt(firstNum.textContent);
     var currentSecondValue = parseInt(secondNum.textContent);
+
+    if (type == "percentage") {
+        newValue = newValue + "%";
+    }
+
+    if (type == "large") {
+        newValue = formatLargeNumber(newValue) + "$";
+    }
+
 
     if (partToUpdate) {
         // Update the first part
@@ -292,6 +299,21 @@ function createBarChart(title, num1, num2) {
         secondPart.style.backgroundColor = newColor;
     }
 }
+
+function formatLargeNumber(number) {
+    if (Math.abs(number) >= 1e12) {
+        return (number / 1e12).toFixed(1) + 'T';
+    } else if (Math.abs(number) >= 1e9) {
+        return (number / 1e9).toFixed(1) + 'B';
+    } else if (Math.abs(number) >= 1e6) {
+        return (number / 1e6).toFixed(1) + 'M';
+    } else if (Math.abs(number) >= 1e3) {
+        return (number / 1e3).toFixed(1) + 'K';
+    }
+    return number.toString();
+}
+
+
 
   var totalNetWorth = createBarChart('Total net worth', 1, 1);
   var gdp = createBarChart('GDP', 1, 1);
