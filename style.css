@@ -238,6 +238,7 @@ svg {
   justify-content: space-between;
   padding: 0px;
   background-color: rgb(191, 224, 244);
+  margin: 20px;
 }
 
 .flex-itemd {
@@ -246,6 +247,7 @@ svg {
   border: none;
   box-sizing: border-box;
   background-color: rgb(191, 224, 244);
+  border-right: 20px solid white;
 }
 
 .banner {
@@ -340,6 +342,7 @@ svg {
   height: 700px;
   border: none;
   background-color: rgb(191, 224, 244);
+  margin: 20px;
 }
 
 .intro-text {
