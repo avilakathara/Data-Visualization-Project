@@ -15,6 +15,7 @@ var stratify = d3.stratify()
 var treemap = d3.treemap()
     .size([width, height])
     .padding(1)
+    .paddingTop(28)
     .round(true);
 
 
@@ -46,7 +47,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
     function calculateFontSize(d) {
         var rectWidth = d.x1 - d.x0;
-        return (rectWidth / 10.0) + "px";
+        return (rectWidth / 11.0) + "px";
     }
 
     var root = stratify(data)
@@ -153,6 +154,21 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
         return format(d.value); 
     }).style("font-size", calculateFontSize);
+
+    // Add title for the 3 groups
+    group
+    .selectAll("titles")
+    .data(root.descendants().filter(function(d){return d.depth==1}))
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    // .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; })
+    .append("text")
+        .attr("x", function(d){ return d.x0})
+        .attr("y", function(d){ return d.y0 + 25})
+        .text(function(d){ return d.data.id.split(";")[1]})
+        .attr("font-size", calculateFontSize)
+        .attr("fill",  function(d){ while (d.depth > 1) d = d.parent; return color(d.id); } )
 
 });
 
