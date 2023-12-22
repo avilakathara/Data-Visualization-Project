@@ -120,6 +120,10 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.whitespace {
+  height: 90px;
+}
+
 .flex-container {
   display: flex;
   justify-content: space-between;

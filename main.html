@@ -35,11 +35,10 @@
   <div class="container-p">
     <div class="intro-text">
       <h1>Introduction</h1>
-      <p class="intro">Our interactive platform offers a dynamic view of billionaires across sectors and countries. Use this data to gain more insights on billionaires around the world, revealing wealth distribution patterns and trends.
-
+      <p class="intro">
+        Our interactive platform offers a dynamic view of billionaires across various industries and countries. Use this data to gain more insights on billionaires around the world, revealing wealth distribution patterns and trends.
         You can use our interactive map to discover geographical wealth hotspots, and search for specific countries in the table below using our search bar.
-        
-        The websites gain a deeper understanding of the intricate tapestry of global billionaire wealth.</p>
+      </p>
     </div>
     <div class="data-div" id="div2">
       <div class="search-bar">
@@ -55,18 +54,24 @@
     </div>
   </div>
   <div>
+    <div class="whitespace"></div>
     <div class="explanation">
-      <h2> Treemap </h2>
+      <h1> Treemap </h1>
       <p>This treemap below shows billionaires grouped by country and seperated by their industry. On the right is a comparison bar chart which can be used to compare any two industries of different countries.</p>
     </div>
   </div>
     <div class="remi">
       <iframe src="treemap.html" height="100%" width="100%"></iframe>
     </div>
-     
+    <div class="whitespace"></div>
+    <div class="explanation">
+      <h1> Pie chart and Bar chart </h1>
+      <p>The pie chart on the left displays the trivial data on billionaires such as gender distribution. The bar chart on the right shows the distribution of billionaires amongst industries and countries.</p>
+    </div>
+
     <div class="flex-containerd">
       <div class="axis-description-blue">
-        <p>Here you can choose to compare gender and wealth accumulation method distribution using the dropdown selection box.</p>
+        <p>This piechart can be used to compare gender distribution among billionaires and wealth accumulation methods distribution using the dropdown selection box.</p>
         <select name="piechartFeatures" id="piechartFeatures">
           <option value="gender">gender</option>
           <option value="self-made">self-made</option>
@@ -76,9 +81,9 @@
         <div id="billionairesPieChart"></div>
       </div>
       <div class="axis-description-blue">
-        <p>Here you can choose to group the data by industry or country using the dropdown selection box.</p>
+        <p>The bar chart can be used to view number of billionaires grouped by industry or country using the dropdown selection box.</p>
         <select name="barchartFeatures" id="barchartFeatures">
-          <option value="category">category</option>
+          <option value="category">industry</option>
           <option value="countryOfCitizenship">country</option>
         </select>
       </div>
@@ -86,7 +91,11 @@
         <div id="billionairesBarChart"></div>
       </div>
     </div>
-
+  </div>
+  <div class="whitespace"></div>
+  <div class="explanation">
+    <h1> CHANGE TITLE ARJ </h1>
+    <p>CHANGE DISCRIPTION</p>
   </div>
 
   <div class="container">

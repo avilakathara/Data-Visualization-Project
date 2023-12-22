@@ -164,9 +164,9 @@ function renderPieChart(title, distribution) {
 
 function renderBarChart(data, feature) {
     // set the dimensions and margins of the graph
-    var margin = { top: 80, right: 100, bottom: 130, left: 40 }, // Adjusted top margin for title
-        width = window.innerWidth * 0.5, // Adjust the multiplier as needed
-        height = window.innerHeight * 0.6 - margin.top - margin.bottom;
+    var margin = { top: 80, right: 100, bottom: 130, left: 30 }, // Adjusted top margin for title
+        width = window.innerWidth * 0.6, // Adjust the multiplier as needed
+        height = window.innerHeight * 0.6 - margin.bottom;
 
     var svg = d3.select('#billionairesBarChart')
         .html('') // Clear the existing content
@@ -174,22 +174,6 @@ function renderBarChart(data, feature) {
         .attr('viewBox', `0 0 ${width} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
-
-    // var selectedCountryBox = svg.append("rect")
-    //     .attr("class", "selected-country-box")
-    //     .attr("x", width / 3 - ((width - margin.left - margin.right) / 8))  // Adjusted x position for the selected country box
-    //     .attr("y", -margin.top / 2 + 20)  // Adjusted y position for the selected country box
-    //     .attr("width", (width - margin.left - margin.right) / 1.5)  // Adjusted width for the selected country box
-    //     .attr("height", 60)  // Adjusted height for the selected country box
-    //     .attr("fill", "white")
-    //     .attr("stroke", "black");
-
-    // var selectedCountryText = svg.append("text")
-    //     .attr("class", "selected-country-text")
-    //     .attr("x", width / 2)
-    //     .attr("y", -margin.top / 2 + 35)  // Adjusted y position for the selected country text
-    //     .attr("text-anchor", "middle")
-    //     .style("font-size", "16px");
 
     svg.append("text")
         .attr("x", width / 2)
@@ -208,7 +192,7 @@ function renderBarChart(data, feature) {
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
-        .attr("transform", "translate(-10,0)rotate(-45)")
+        .attr("transform", "translate(-5,0)rotate(-45)")
         .style("text-anchor", "end")
         .style("font-size", "12px")
         .on("click", function (event, d) {
