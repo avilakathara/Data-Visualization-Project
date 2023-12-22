@@ -1,15 +1,19 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 
+// Set up width and height 
 var width = self.innerWidth * 0.6;
 var height = self.innerHeight * 0.95;
 
+// Create a color function
 var color = d3.scaleOrdinal()
     .range(d3.schemeCategory10
         .map(function(c) { c = d3.rgb(c); c.opacity = 0.6; return c; }));
 
+// Convert data to a tree format
 var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(";")); });
 
+// Create a treemap 
 var treemap = d3.treemap()
     .size([width, height])
     .padding(1)
@@ -22,7 +26,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height)
     .style("font", "10px sans-serif");
 
-
+// Create a group for the treemap
 var group = svg.append("g");
 
 // Add zoom
@@ -38,16 +42,7 @@ svg.call(zoom);
 // Load your data here
 d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) {
 
-    function calculateFontSize(d) {
-        var rectWidth = d.x1 - d.x0;
-        return (rectWidth / 11.00) + "px";
-    }
-
-    function calculateTitleSize(d) {
-        var rectWidth = d.x1 - d.x0;
-        return Math.min((rectWidth / 11.00), 27) + "px";
-    }
-
+    // Create a root node from the data
     var root = stratify(data)
         .sum(function(d) { return d.value; })
         .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
@@ -55,21 +50,24 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
     treemap(root);
 
+    // Variable to keep track of the current nodes being selected
     var flip = true;
-
     var first;
     var second;
 
+    // Create the nodes and add them to the group
     var nodes = group.selectAll(".node")
         .data(root.leaves())
         .enter().append("g")
         .attr("class", "node")
         .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
 
+    // Create the rectangles for each node
     nodes.append("rect")
+    //On hover, change the color of the rectangle and add a border
     .on("mouseover", function(d) { hover(d3.select(this)); })
+    //On mouseout, reset the color of the rectangle and remove the border
     .on("mouseout", function(d) { 
-        
         if (first && d3.select(this)._groups[0][0] == first._groups[0][0]) {
         }
         else if (second && d3.select(this)._groups[0][0] == second._groups[0][0]) {
@@ -77,11 +75,12 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         else {
             reset(d3.select(this));
         }
-
     })
+    //On click, change the color of the rectangle and add a border
+    //Also update the bar charts with the new data
     .on("click", function(d) {
         var dd = d3.select(this)._groups[0][0].__data__;
-
+        
         if (flip) {
             hover(d3.select(this));
 
@@ -100,6 +99,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
             .text( dd.id.split(";")[1] + ": " + dd.id.split(";")[2]);
         }
 
+        // Update the bar charts
         var new_color = function(d) { while (d.depth > 1) d = d.parent; return color(d.id); };
         updateBarChart(totalNetWorth, flip, +dd.value * 1000000, new_color(dd), "large");
 
@@ -121,14 +121,15 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .style("cursor", "pointer");
         
 
-
+    // Add country name to the rectangles
     nodes.append("text")
         .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
         .attr("y", (d) => { return (d.x1 - d.x0) / 8; })
         .text(function(d) { 
             return d.id.substring(d.id.lastIndexOf(";") + 1).split(/(?=[A-Z][^A-Z])/g); 
         }).style("font-size", calculateFontSize);
-
+    
+    // Add the net worth to the rectangles
     nodes.append("text")
     .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
     .attr("y", (d) => { return (d.x1 - d.x0) / 4; })
@@ -137,7 +138,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         return formatLargeNumber(+d.value  * 1000000) + "$"; 
     }).style("font-size", calculateFontSize);
 
-    // Add title for the 3 groups
+    // Add the title for each industry
     group
     .selectAll("titles")
     .data(root.descendants().filter(function(d){return d.depth==1}))
@@ -152,9 +153,21 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .attr("fill",  function(d){ while (d.depth > 1) d = d.parent; return color(d.id); } )
 
 });
+//Helper functions
 
+// Function to scale the font size of the country name
+function calculateFontSize(d) {
+    var rectWidth = d.x1 - d.x0;
+    return (rectWidth / 11.00) + "px";
+}
 
+// Function to scale the font size of the title
+function calculateTitleSize(d) {
+    var rectWidth = d.x1 - d.x0;
+    return Math.min((rectWidth / 11.00), 27) + "px";
+}
 
+// Function to reset the color and border of a rectangle
 function reset(v) {
     if (v) {
         v.attr("fill", function(d) { while (d.depth > 1) d = d.parent; return color(d.id); });
@@ -162,6 +175,7 @@ function reset(v) {
     }
 }
 
+// Function to change the color and add a border to a rectangle
 function hover(v) {
     if (v) {
         v.attr("fill", function(d) { while (d.depth > 1) d = d.parent; return color(d.id).darker(1); });
@@ -170,9 +184,23 @@ function hover(v) {
     }
 }
 
+// Function to format large numbers
+function formatLargeNumber(number) {
+    if (Math.abs(number) >= 1e12) {
+        return (number / 1e12).toFixed(1) + 'T';
+    } else if (Math.abs(number) >= 1e9) {
+        return (number / 1e9).toFixed(1) + 'B';
+    } else if (Math.abs(number) >= 1e6) {
+        return (number / 1e6).toFixed(1) + 'M';
+    } else if (Math.abs(number) >= 1e3) {
+        return (number / 1e3).toFixed(1) + 'K';
+    }
+    return number.toString();
+}
 
 var barSize = 300;
-  
+
+// Create the bar charts
 function createBarChart(title, num1, num2) {
     // Calculate total and normalize numbers to get percentages
     var total = num1 + num2;
@@ -226,6 +254,7 @@ function createBarChart(title, num1, num2) {
     return box;
   }
   
+  // Update the bar charts
   function updateBarChart(chartDiv, partToUpdate, newValue, newColor, type = "") {
 
     // Find the number elements
@@ -241,10 +270,11 @@ function createBarChart(title, num1, num2) {
 
     var newValueString = newValue;
 
+    // If the type is percentage, round the number and add a percentage sign
     if (type == "percentage") {
         newValueString = Math.round(newValue).toFixed(0) + "%";
     }
-
+    // If the type is large, format the number and add a dollar sign
     if (type == "large") {
         newValueString = formatLargeNumber(+newValue) + "$";
     }
@@ -279,22 +309,11 @@ function createBarChart(title, num1, num2) {
     }
 }
 
-function formatLargeNumber(number) {
-    if (Math.abs(number) >= 1e12) {
-        return (number / 1e12).toFixed(1) + 'T';
-    } else if (Math.abs(number) >= 1e9) {
-        return (number / 1e9).toFixed(1) + 'B';
-    } else if (Math.abs(number) >= 1e6) {
-        return (number / 1e6).toFixed(1) + 'M';
-    } else if (Math.abs(number) >= 1e3) {
-        return (number / 1e3).toFixed(1) + 'K';
-    }
-    return number.toString();
-}
 
-  var totalNetWorth = createBarChart('Total net worth', 1, 1);
-  var gdp = createBarChart('GDP', 1, 1);
-  var taxRate = createBarChart('Total tax rate', 1, 1);
-  var count = createBarChart('Amount of billionaires', 1, 1);
-  var perc = createBarChart('Percentage of sector', 1, 1);
+// Initalize the bar charts
+var totalNetWorth = createBarChart('Total net worth', 1, 1);
+var gdp = createBarChart('GDP', 1, 1);
+var taxRate = createBarChart('Total tax rate', 1, 1);
+var count = createBarChart('Amount of billionaires', 1, 1);
+var perc = createBarChart('Percentage of sector', 1, 1);
 
