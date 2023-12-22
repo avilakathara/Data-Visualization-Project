@@ -12,6 +12,7 @@
   
   #data-table thead {
     text-align: left;
+    cursor: pointer;
   }
   
   .table-container {

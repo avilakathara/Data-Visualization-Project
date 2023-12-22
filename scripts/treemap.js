@@ -53,7 +53,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .sort(function(a, b) { return b.height - a.height || b.value - a.value; });
 
 
-    var top100 = 50000
     treemap(root);
 
     var flip = true;
@@ -118,7 +117,8 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .attr("id", function(d) { return "rect-" + d.id; })
         .attr("width", function(d) { return d.x1 - d.x0; })
         .attr("height", function(d) { return d.y1 - d.y0; })
-        .attr("fill", function(d) { while (d.depth > 1) d = d.parent; return color(d.id); });
+        .attr("fill", function(d) { while (d.depth > 1) d = d.parent; return color(d.id); })
+        .style("cursor", "pointer");
         
 
 
@@ -126,9 +126,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .attr("x", (d) => { return (d.x1 - d.x0) / 100; })
         .attr("y", (d) => { return (d.x1 - d.x0) / 8; })
         .text(function(d) { 
-                // if (d.value < top100)
-                //     return "";
-    
             return d.id.substring(d.id.lastIndexOf(";") + 1).split(/(?=[A-Z][^A-Z])/g); 
         }).style("font-size", calculateFontSize);
 

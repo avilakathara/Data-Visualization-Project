@@ -1,5 +1,6 @@
 # Data-Visualization-Project
 
+## Installation
 Instuctions to run the code: 
 1) Clone the repository.
 2) Open the rpostiory in Visual Studio Code, with the Live Server extention.
