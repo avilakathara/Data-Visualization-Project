@@ -3,8 +3,6 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 var width = self.innerWidth * 0.6;
 var height = self.innerHeight * 0.95;
 
-var format = d3.format(",d");
-
 var color = d3.scaleOrdinal()
     .range(d3.schemeCategory10
         .map(function(c) { c = d3.rgb(c); c.opacity = 0.6; return c; }));
@@ -18,7 +16,6 @@ var treemap = d3.treemap()
     .paddingTop(28)
     .round(true);
 
-
 // Creating an SVG container for the treemap
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -29,7 +26,6 @@ var svg = d3.select("body").append("svg")
 var group = svg.append("g");
 
 // Add zoom
-
 var zoom = d3.zoom()
     .scaleExtent([1, 100])
     .on("zoom", (event) => {
@@ -38,9 +34,6 @@ var zoom = d3.zoom()
 
 // Add zoom event listener to the svg container
 svg.call(zoom);
-
-
-
 
 // Load your data here
 d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) {
@@ -72,12 +65,7 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .data(root.leaves())
         .enter().append("g")
         .attr("class", "node")
-        .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; })
-        // add zoom
-        
-        ;
-
-
+        .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; });
 
     nodes.append("rect")
     .on("mouseover", function(d) { hover(d3.select(this)); })
@@ -113,9 +101,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
             .text( dd.id.split(";")[1] + ": " + dd.id.split(";")[2]);
         }
 
-        // convert $2,715,518,274,227 to 2715518274227
-        // convert to number
-        
         var new_color = function(d) { while (d.depth > 1) d = d.parent; return color(d.id); };
         updateBarChart(totalNetWorth, flip, +dd.value * 1000000, new_color(dd), "large");
 
@@ -124,8 +109,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         updateBarChart(taxRate, flip, +dd.data.tax_rate_country, new_color(dd), "percentage");
         updateBarChart(count, flip, +dd.data.amount_of_billionaires, new_color(dd));
 
-        // convert 0.008438 to 0.84
-        // KEEP 2 DECIMAL PLACES
         var percentValue = +(+dd.data.percentage).toPrecision(2) * 100 ;
         
         updateBarChart(perc, flip, +percentValue, new_color(dd), "percentage");
@@ -164,7 +147,6 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
     .enter()
     .append("g")
     .attr("class", "node")
-    // .attr("transform", function(d) { return "translate(" + d.x0 + "," + d.y0 + ")"; })
     .append("text")
         .attr("x", function(d){ return d.x0})
         .attr("y", function(d){ return d.y0 + 25})
@@ -248,10 +230,6 @@ function createBarChart(title, num1, num2) {
   }
   
   function updateBarChart(chartDiv, partToUpdate, newValue, newColor, type = "") {
-    if (!chartDiv) {
-        console.error('Bar chart div not provided or not found.');
-        return;
-    }
 
     // Find the number elements
     var firstNum = chartDiv.querySelector('.firstnum');
@@ -267,7 +245,7 @@ function createBarChart(title, num1, num2) {
     var newValueString = newValue;
 
     if (type == "percentage") {
-        newValueString = newValue.toFixed(0) + "%";
+        newValueString = Math.round(newValue).toFixed(0) + "%";
     }
 
     if (type == "large") {
@@ -316,8 +294,6 @@ function formatLargeNumber(number) {
     }
     return number.toString();
 }
-
-
 
   var totalNetWorth = createBarChart('Total net worth', 1, 1);
   var gdp = createBarChart('GDP', 1, 1);
