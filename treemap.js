@@ -47,7 +47,12 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
 
     function calculateFontSize(d) {
         var rectWidth = d.x1 - d.x0;
-        return (rectWidth / 11.0) + "px";
+        return (rectWidth / 11.00) + "px";
+    }
+
+    function calculateTitleSize(d) {
+        var rectWidth = d.x1 - d.x0;
+        return Math.min((rectWidth / 11.00), 27) + "px";
     }
 
     var root = stratify(data)
@@ -167,10 +172,12 @@ d3.csv("data/grouped_formatted_billionaires_dataset_2.csv").then(function(data) 
         .attr("x", function(d){ return d.x0})
         .attr("y", function(d){ return d.y0 + 25})
         .text(function(d){ return d.data.id.split(";")[1]})
-        .attr("font-size", calculateFontSize)
+        .attr("font-size", calculateTitleSize)
         .attr("fill",  function(d){ while (d.depth > 1) d = d.parent; return color(d.id); } )
 
 });
+
+
 
 function reset(v) {
     if (v) {
@@ -187,12 +194,8 @@ function hover(v) {
     }
 }
 
-function type(d) {
-d.value = +d.value;
-return d;
-}
 
-var barSize = 200;
+var barSize = 300;
   
 function createBarChart(title, num1, num2) {
     // Calculate total and normalize numbers to get percentages
