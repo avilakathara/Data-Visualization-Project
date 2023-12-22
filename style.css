@@ -283,6 +283,7 @@ button {
 
 .scatter-container {
   display: flex;
+  align-items: center;
 }
 
 .scatter-plot-container {
@@ -293,12 +294,16 @@ button {
 }
 
 .axis-description {
-  width: 200px;
+  width: 15vw;
+  height: fit-content;
   padding: 20px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: rgb(191, 224, 244);
   box-sizing: border-box;
   text-align: left;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 .axis-description-blue {
   width: 200px;

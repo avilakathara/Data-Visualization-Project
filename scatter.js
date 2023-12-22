@@ -1,4 +1,5 @@
 d3.csv("data/Parsed.csv", function (d) {
+    // GDP darts is in ""'s, so need to remove them before computing.
     d.gdp = +d.gdp.replace(/\D/g, '');
     return d;
 }).then(function (data) {
@@ -15,28 +16,46 @@ d3.csv("data/Parsed.csv", function (d) {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 
+    // Calculate the trendline of the data
     function calctrend(data, xAxisVar, yAxisVar) {
+        // Get the x and y values into an array
         const xValues = data.map(d => +d[xAxisVar]);
         const yValues = data.map(d => +d[yAxisVar]);
 
-        const xBar = d3.mean(xValues);
-        const yBar = d3.mean(yValues);
+        // Mean od each array 
+        const xMean = d3.mean(xValues);
+        const yMean = d3.mean(yValues);
 
-        const numerator = d3.sum(xValues.map((xi, i) => (xi - xBar) * (yValues[i] - yBar)));
-        const denominator = d3.sum(xValues.map(xi => Math.pow(xi - xBar, 2)));
+        // Slope calculation
+        const numerator = d3.sum(xValues.map((l, i) => (l - xMean) * (yValues[i] - yMean)));
+        const denominator = d3.sum(xValues.map(l => Math.pow(l - xMean, 2)));
 
-        const slope = numerator / denominator;
-        const intercept = yBar - slope * xBar;
+        const grad = numerator / denominator;
+        const intercept = yMean - grad * xMean;
 
-        return { slope, intercept };
+        return { slope: grad, intercept };
+    }
+
+    // Helper fucntion to format numbers
+    function formatLargeNumber(number) {
+        if (Math.abs(number) >= 1e12) {
+            return '$' + (number / 1e12).toFixed(1) + 'T';
+        } else if (Math.abs(number) >= 1e9) {
+            return '$' + (number / 1e9).toFixed(1) + 'B';
+        } else if (Math.abs(number) >= 1e6) {
+            return '$' + (number / 1e6).toFixed(1) + 'M';
+        } else if (Math.abs(number) >= 1e3) {
+            return '$' + (number / 1e3).toFixed(1) + 'K';
+        }
+        return number.toString();
     }
 
     // Function to update the scatter plot
     function updateScatterPlot(xAxisVar, yAxisVar) {
-        // Clear existing content
+        // Clear everything
         svg.selectAll("*").remove();
 
-        // Extract unique countries for coloring
+        // Extract unique countries 
         const countries = [...new Set(data.map(d => d.country))];
 
         // Filter out data points with NaN values in the selected axes
@@ -46,16 +65,16 @@ d3.csv("data/Parsed.csv", function (d) {
         const xScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[xAxisVar])])
             .range([0, width]);
-        svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale).tickFormat(d3.format(".2s"))); // Use .2s format for billions
+        svg.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale).tickFormat(d3.format(".2s"))); 
 
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(filteredData, d => +d[yAxisVar])])
             .range([height, 0]);
-        svg.append("g").call(d3.axisLeft(yScale).tickFormat(d3.format(".2s"))); // Use .2s format for billions
+        svg.append("g").call(d3.axisLeft(yScale).tickFormat(d3.format(".2s"))); 
 
 
         // Define color scale for countries
-        const colorScale = d3.scaleOrdinal()
+        const colors = d3.scaleOrdinal()
             .domain(countries)
             .range(d3.schemeCategory10);
 
@@ -67,15 +86,13 @@ d3.csv("data/Parsed.csv", function (d) {
             .attr("cx", d => xScale(+d[xAxisVar]))
             .attr("cy", d => yScale(+d[yAxisVar]))
             .attr("r", 8)
-            .attr("fill", d => colorScale(d.country))
+            .attr("fill", d => colors(d.country))
             .attr("opacity", 0.7)
             .on("mouseover", function (_, d) {
                 // Show tooltip information in the div inside axis-description
                 const tooltipDiv = d3.select("#tooltip-info");
 
-                tooltipDiv.html(`<strong>${d.country}</strong><br>${xAxisVar}: ${d[xAxisVar]}<br>${yAxisVar}: ${d[yAxisVar]}`);
-
-                const circleColor = d3.select(this).attr("fill");
+                tooltipDiv.html(`<strong>${d.country}</strong><br>${xAxisVar}: ${formatLargeNumber(d[xAxisVar])}<br>${yAxisVar}: ${formatLargeNumber(d[yAxisVar])}`);
 
                 tooltipDiv.style("display", "block");
                 tooltipDiv.style("background-color", "white")
@@ -105,24 +122,8 @@ d3.csv("data/Parsed.csv", function (d) {
             .style("text-anchor", "middle")
             .text(yAxisVar);
 
-        // Add legend for countries
-        const legend = d3.select("#legend")
-            .selectAll("div")
-            .data(colorScale.domain())
-            .enter()
-            .append("div")
-            .style("display", "flex")
-            .style("align-items", "center");
-
-        legend.append("span")
-            .style("width", "12px")
-            .style("height", "12px")
-            .style("margin-right", "5px")
-            .style("background-color", colorScale);
-
-        legend.append("p")
-            .text(d => d);
-
+        
+        // Calculate the trendline and the display the gradient to the user.
         const trendline = calctrend(filteredData, xAxisVar, yAxisVar);
 
         const line = d3.line()
@@ -141,71 +142,10 @@ d3.csv("data/Parsed.csv", function (d) {
         gradientDiv.html(`Trendline Gradient: ${trendline.slope.toFixed(2)}`);
     }
 
+    // Intitlize with gdp vs gdp just to have something on the grpah.
     updateScatterPlot("gdp", "gdp");
 
-    var xSlider = d3.select("#sliderXmin")
-        .append("input")
-        .attr("type", "range")
-        .attr("min", 0)
-        .attr("max", d3.max(data, d => +d.gdp))
-        .attr("value", 0)
-        .attr("class", "slider");
-
-    var xSlider = d3.select("#sliderXmax")
-        .append("input")
-        .attr("type", "range")
-        .attr("min", 0)
-        .attr("max", d3.max(data, d => +d.gdp))
-        .attr("value", d3.max(data, d => +d.gdp))
-        .attr("class", "slider");
-
-    var ySlider = d3.select("#sliderYmin")
-        .append("input")
-        .attr("type", "range")
-        .attr("min", 0)
-        .attr("max", d3.max(data, d => +d.gdp))
-        .attr("value", 0)
-        .attr("class", "slider");
-
-    var ySlider = d3.select("#sliderYmax")
-        .append("input")
-        .attr("type", "range")
-        .attr("min", 0)
-        .attr("max", d3.max(data, d => +d.gdp))
-        .attr("value", d3.max(data, d => +d.gdp))
-        .attr("class", "slider");
-
-    // Event listener for x-axis slider
-    xSlider.on("input", function () {
-        var xSliderValue = +this.value;
-        var yAxisVar = document.getElementById("y-axis").value;
-        updateScatterPlot("gdp", yAxisVar);
-    });
-
-    // Event listener for y-axis slider
-    ySlider.on("input", function () {
-        var ySliderValue = +this.value;
-        var xAxisVar = document.getElementById("x-axis").value;
-        updateScatterPlot(xAxisVar, "gdp");
-    });
-
-    function updateSliders(xMin, xMax, xValue, yMin, yMax, yValue) {
-        // Update x-axis slider
-        d3.select("#sliderX")
-            .select("input")
-            .attr("min", xMin)
-            .attr("max", xMax)
-            .attr("value", xValue);
-
-        // Update y-axis slider
-        d3.select("#sliderY")
-            .select("input")
-            .attr("min", yMin)
-            .attr("max", yMax)
-            .attr("value", yValue);
-    }
-
-    // Event listeners for dropdown changes
+    // Event listeners for x and y axis selection dropdown changes
     document.getElementById("x-axis").addEventListener("change", function () {
         const xAxisVar = this.value;
         const yAxisVar = document.getElementById("y-axis").value;
