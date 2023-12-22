@@ -314,7 +314,8 @@ svg {
 
 .remi {
   background-color: rgba(255, 0, 0, 0);
-  height: fit-content;
+  height: 45vw;
+  width: 100vw;
 }
 
 .container-p {
