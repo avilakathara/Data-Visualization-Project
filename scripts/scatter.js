@@ -50,7 +50,7 @@ d3.csv("data/Parsed.csv", function (d) {
         return number.toString();
     }
 
-
+    // Convert the feature to a proper name
     function getFormattedName(axisVar) {
         switch (axisVar) {
             case "gdp":

@@ -1,15 +1,19 @@
 import { onDataReady } from "./dataloader.js";
 
 function createTable() {
+  
+      // When the data has been read from the csv file do this.
       onDataReady((loadedData, headers) => {
         const defaultHeaders = ["Country", "numberOfBillionaires", "topCategories", "GDP", "totalTaxRate"];
-  
+        
+        // Add arrow icon above the headers to indicate which "way" it is sorting the rows
         function createArrowIcon() {
           const arrowIcon = document.createElement("span");
           arrowIcon.classList.add("arrow-icon");
           return arrowIcon;
         }
   
+        // Change arrow icon above the headers (up or down)
         function toggleArrow(th, isAscending) {
           document.querySelectorAll('.sortable').forEach(header => {
             header.classList.remove("arrow-up", "arrow-down", "selectedheader");
@@ -21,6 +25,7 @@ function createTable() {
             th.classList.add("arrow-down", "selectedheader");
           }
         }
+
         var data = loadedData;
   
         const tsearch = document.getElementById("myInput");
@@ -31,7 +36,8 @@ function createTable() {
         // Clear existing table content
         thead.innerHTML = "";
         tbody.innerHTML = "";
-  
+        
+        // Group data set by country
         data = createNewDataset(data);
         
         defaultHeaders.forEach(headerText => {
@@ -85,33 +91,12 @@ function createTable() {
 
             // Get the selected row
             const selectedRow = table.querySelector(".selected");
-
-            // Do something with the selected row, for example:
-            if (selectedRow) {
-              console.log("Selected Row Index:", selectedRow.rowIndex);
-            } else {
-              console.log("No row selected");
-            }
           });
         }
       });
       }
-    
-    function removeColumn(headerToRemove) {
-      const headerIndex = headers.indexOf(headerToRemove);
-  
-      if (headerIndex > -1) {
-        headers.splice(headerIndex, 1);
-  
-        data.forEach(rowData => {
-          delete rowData[headerToRemove];
-        });
-  
-        // Update the table with the modified data
-        updateTable();
-      }
-    }
-  
+      
+    // Search for the country provided by the user in the table.
     function searchTable() {
       const input = document.getElementById("myInput").value.toUpperCase();
       const table = document.getElementById("data-table");
@@ -133,6 +118,7 @@ function createTable() {
       }
     }
     
+    // Sort the table by the column that is clicked.
     function sortTable(headerText) {
       const table = document.getElementById("data-table");
       const rows = Array.from(table.getElementsByTagName("tr"));
@@ -159,17 +145,7 @@ function createTable() {
       rows.forEach(row => table.appendChild(row));
     }
   
-    function toggleArrow(th, isAscending) {
-      th.classList.remove("arrow-up", "arrow-down");
-  
-      // Add the appropriate arrow class based on the sorting order
-      if (isAscending) {
-        th.classList.add("arrow-up");
-      } else {
-        th.classList.add("arrow-down");
-      }
-    }
-
+    // Group the dataset by country of citizenship
     function createNewDataset(dataset) {
       const newDataset = [];
     

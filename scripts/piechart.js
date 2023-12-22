@@ -5,9 +5,7 @@ import { createTable } from "./searchlist.js";
 var data = null;
 var selected = null;
 
-
-
-
+// Dropdown selection for the piechart
 document.getElementById("piechartFeatures").addEventListener("change", function () {
     selected = this.value;
     switch (selected) {
@@ -20,6 +18,8 @@ document.getElementById("piechartFeatures").addEventListener("change", function 
     }
 });
 
+// Dropdown selection for the barchart
+
 document.getElementById("barchartFeatures").addEventListener("change", function () {
     selected = this.value;
     switch (selected) {
@@ -30,6 +30,7 @@ document.getElementById("barchartFeatures").addEventListener("change", function 
     }
 });
 
+// When the DOMcontent is loaded create the table and the charts
 document.addEventListener("DOMContentLoaded", function () {
     onDataReady((loadedData, headers) => {
         data = loadedData;
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Create chart based on chosen item in dropdown
 function createChart(title, data, distributionFunction) {
     const distribution = distributionFunction(data);
     if(title == "gender") {
@@ -53,6 +55,7 @@ function createChart(title, data, distributionFunction) {
 
 }
 
+// Get data distribution by gender
 function distributeByGender(data) {
     return data.reduce((acc, { gender }) => ({
         ...acc,
@@ -60,6 +63,7 @@ function distributeByGender(data) {
     }), {});
 }
 
+// Get data distribution by boolean value self-made
 function distributeBySelfmade(data) {
     const selfmadeDistribution = data.reduce((acc, { selfMade }) => {
         acc[selfMade] = (acc[selfMade] || 0) + 1;
@@ -72,12 +76,14 @@ function distributeBySelfmade(data) {
     };
 }
 
+// Create the bar chart based on dropdown selection
 function createBarChart(feature) {
     const distribution = distributeByFeature(data, feature);
-    const sortedData = sortAndSliceData(distribution,feature);
+    const sortedData = sortData(distribution,feature);
     renderBarChart(sortedData, feature);
 }
 
+// Get data distribution by chosen dropdown value
 function distributeByFeature(data, feature) {
     return data.reduce((acc, item) => {
         const key = item[feature];
@@ -86,16 +92,18 @@ function distributeByFeature(data, feature) {
     }, {});
 }
 
-function sortAndSliceData(data, feature) {
+// Sorts by the dropdown selection value
+function sortData(data, feature) {
     let res = Object.entries(data)
         .sort((a, b) => b[1] - a[1])
         .map(([key, count]) => ({ [feature]: key, count }));
     return res;
 }
 
+// Create the piechart SVG with D3
 function renderPieChart(title, distribution) {
     // Set up the chart dimensions
-    var margin = { top: 150, right: 100, bottom: 150, left: 100 }, // Adjusted top margin for title
+    var margin = { top: 150, right: 100, bottom: 150, left: 100 },
     width = window.innerWidth * 0.6,
     height = window.innerHeight * 0.6,
     radius = Math.min(width, height) / 2;
@@ -104,7 +112,7 @@ function renderPieChart(title, distribution) {
     const svg = d3.select('#billionairesPieChart')
         .html('')
         .append('svg')
-        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`) // Use viewBox for responsiveness
+        .attr('viewBox', `0 0 ${width + margin.right + margin.left} ${height + margin.top + margin.bottom}`)
         .append('g')
         .attr('transform', 'translate(' + (width + margin.right + margin.left)/2 + ',' + (height + margin.top + margin.bottom)/2 +  ')');
 
@@ -113,7 +121,7 @@ function renderPieChart(title, distribution) {
     // Create a color scale
     const color = d3.scaleOrdinal()
         .domain(Object.keys(distribution))
-        .range(['#3498db', '#e74c3c']); // Add more colors as needed
+        .range(['#3498db', '#e74c3c']);
 
     const pie = d3.pie().value(d => d[1]);
 
@@ -159,10 +167,11 @@ function renderPieChart(title, distribution) {
         .text(d => d);
 }
 
+// Create the barchart SVG with D3
 function renderBarChart(data, feature) {
-    // set the dimensions and margins of the graph
-    var margin = { top: 150, right: 100, bottom: 150, left: 100 }, // Adjusted top margin for title
-        width = window.innerWidth * 0.6, // Adjust the multiplier as needed
+    // Set the dimensions and margins of the graph
+    var margin = { top: 150, right: 100, bottom: 150, left: 100 },
+        width = window.innerWidth * 0.6,
         height = window.innerHeight * 0.6 ;
 
     var svg = d3.select('#billionairesBarChart')
@@ -179,18 +188,13 @@ function renderBarChart(data, feature) {
         .domain(data.map(function (d) { return feature == "category" ? d.category : d.countryOfCitizenship; }))
         .padding(0.2);
 
-    var xAxis = svg.append("g")
+    svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(x))
         .selectAll("text")
         .attr("transform", "translate(-5,0)rotate(-45)")
         .style("text-anchor", "end")
-        .style("font-size", "12px")
-        .on("click", function (event, d) {
-            // Update the text and show the selected country box
-            selectedCountryText.text(d + " has " + data.filter(x => x.countryOfCitizenship == d)[0].count + " billionaires.");
-            selectedCountryBox.style("visibility", "visible");
-        });
+        .style("font-size", "12px");
 
     var y = d3.scaleLinear()
         .domain([0, d3.max(data, function (d) { return d.count; })])
@@ -230,11 +234,6 @@ function renderBarChart(data, feature) {
         })
         .on("mouseout", function () {
             tooltipDiv.style("visibility", "hidden");
-        })
-        .on("click", function (event, d) {
-            // Update the text and show the selected country box
-            selectedCountryText.text("Selected Country: " + d.countryOfCitizenship);
-            selectedCountryBox.style("visibility", "visible");
         });
 }
 
